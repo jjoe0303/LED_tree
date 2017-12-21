@@ -23,19 +23,25 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"38 C:\Users\knu\Desktop\LEDtree.X\mainproject.c
+"40 C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 [v _init init `(v  1 e 1 0 ]
-"68
+"72
+[v _rgbshowone rgbshowone `(v  1 e 1 0 ]
+"131
+[v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
+"181
 [v _rgbshow rgbshow `(v  1 e 1 0 ]
-"91
+"196
+[v _zerorgb zerorgb `(v  1 e 1 0 ]
+"216
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
-"147
+"369
 [v _wshow wshow `(v  1 e 1 0 ]
-"155
+"377
 [v _wstart wstart `(v  1 e 1 0 ]
-"166
+"388
 [v _Hi Hi `II(v  1 e 1 0 ]
-"178
+"401
 [v _main main `(v  1 e 1 0 ]
 [s S66 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -72,7 +78,7 @@
 ]
 [u S280 . 1 `S66 1 . 1 0 `S257 1 . 1 0 `S266 1 . 1 0 `S275 1 . 1 0 `S277 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES280  1 e 1 @3969 ]
-[s S405 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S399 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -82,7 +88,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1114
-[s S414 . 1 `uc 1 LB0 1 0 :1:0 
+[s S408 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -91,8 +97,8 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S423 . 1 `S405 1 . 1 0 `S414 1 . 1 0 ]
-[v _LATBbits LATBbits `VES423  1 e 1 @3978 ]
+[u S417 . 1 `S399 1 . 1 0 `S408 1 . 1 0 ]
+[v _LATBbits LATBbits `VES417  1 e 1 @3978 ]
 "1199
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 [s S319 . 1 `uc 1 LATC0 1 0 :1:0 
@@ -249,63 +255,109 @@
 [v _INTCONbits INTCONbits `VES186  1 e 1 @4082 ]
 "7737
 [v _RB5 RB5 `VEb  1 e 0 @31757 ]
-"27 C:\Users\knu\Desktop\LEDtree.X\mainproject.c
+"27 C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 [v _red red `i  1 e 2 0 ]
 "28
 [v _green green `i  1 e 2 0 ]
 "29
 [v _blue blue `i  1 e 2 0 ]
-"30
-[v _white white `i  1 e 2 0 ]
+"31
+[v _red2 red2 `i  1 e 2 0 ]
+"32
+[v _green2 green2 `i  1 e 2 0 ]
 "33
-[v _effect effect `i  1 e 2 0 ]
-"34
-[v _flag flag `i  1 e 2 0 ]
-"178
+[v _blue2 blue2 `i  1 e 2 0 ]
+"35
+[v _white white `i  1 e 2 0 ]
+"401
 [v _main main `(v  1 e 1 0 ]
 {
-"182
-[v main@l l `i  1 a 2 34 ]
-[v main@k k `i  1 a 2 32 ]
-"196
+"405
+[v main@l l `i  1 a 2 4 ]
+[v main@k k `i  1 a 2 2 ]
+"419
 } 0
-"155
+"377
 [v _wstart wstart `(v  1 e 1 0 ]
 {
-"164
+"386
 } 0
-"147
+"369
 [v _wshow wshow `(v  1 e 1 0 ]
 {
-"150
-[v wshow@i i `i  1 a 2 30 ]
-"147
-[v wshow@wval wval `i  1 p 2 28 ]
-"153
+"372
+[v wshow@i i `i  1 a 2 0 ]
+"369
+[v wshow@wval wval `i  1 p 2 53 ]
+"375
 } 0
-"38
+"40
 [v _init init `(v  1 e 1 0 ]
 {
-"66
+"70
 } 0
-"166
+"388
 [v _Hi Hi `II(v  1 e 1 0 ]
 {
-"176
+"399
 } 0
-"91
+"216
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
 {
-"145
+"367
 } 0
-"68
+"196
+[v _zerorgb zerorgb `(v  1 e 1 0 ]
+{
+"215
+} 0
+"181
 [v _rgbshow rgbshow `(v  1 e 1 0 ]
 {
-"83
-[v rgbshow@i i `i  1 a 2 6 ]
-"68
-[v rgbshow@rval rval `i  1 p 2 0 ]
-[v rgbshow@gval gval `i  1 p 2 2 ]
-[v rgbshow@bval bval `i  1 p 2 4 ]
-"89
+"183
+[v rgbshow@i i `i  1 a 2 32 ]
+"181
+[v rgbshow@rval rval `i  1 p 2 18 ]
+[v rgbshow@gval gval `i  1 p 2 20 ]
+[v rgbshow@bval bval `i  1 p 2 22 ]
+[v rgbshow@rval2 rval2 `i  1 p 2 24 ]
+[v rgbshow@gval2 gval2 `i  1 p 2 26 ]
+[v rgbshow@bval2 bval2 `i  1 p 2 28 ]
+[v rgbshow@flag flag `i  1 p 2 30 ]
+"194
+} 0
+"131
+[v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
+{
+"171
+[v rgbshowsix@i_539 i `i  1 a 2 16 ]
+"147
+[v rgbshowsix@i i `i  1 a 2 14 ]
+"131
+[v rgbshowsix@rval rval `i  1 p 2 0 ]
+[v rgbshowsix@gval gval `i  1 p 2 2 ]
+[v rgbshowsix@bval bval `i  1 p 2 4 ]
+[v rgbshowsix@rval2 rval2 `i  1 p 2 6 ]
+[v rgbshowsix@gval2 gval2 `i  1 p 2 8 ]
+[v rgbshowsix@bval2 bval2 `i  1 p 2 10 ]
+[v rgbshowsix@flag flag `i  1 p 2 12 ]
+"180
+} 0
+"72
+[v _rgbshowone rgbshowone `(v  1 e 1 0 ]
+{
+"124
+[v rgbshowone@i_529 i `i  1 a 2 14 ]
+"109
+[v rgbshowone@i_528 i `i  1 a 2 12 ]
+"96
+[v rgbshowone@i_527 i `i  1 a 2 10 ]
+"81
+[v rgbshowone@i i `i  1 a 2 8 ]
+"72
+[v rgbshowone@rval rval `i  1 p 2 0 ]
+[v rgbshowone@gval gval `i  1 p 2 2 ]
+[v rgbshowone@bval bval `i  1 p 2 4 ]
+[v rgbshowone@flag flag `i  1 p 2 6 ]
+"130
 } 0

@@ -3998,11 +3998,13 @@ extern int printf(const char *, ...);
 int red;
 int green;
 int blue;
+
+int red2;
+int green2;
+int blue2;
+
 int white;
 
-
-int effect=0;
-int flag=0;
 
 double distance;
 
@@ -4021,7 +4023,9 @@ TRISBbits.TRISB0=1;
 red=0;
 green=0;
 blue=0;
-effect=0;
+red2=0;
+green2=0;
+blue2=0;
 
 RCONbits.IPEN=1;
 INTCONbits.GIEH=1;
@@ -4036,83 +4040,301 @@ TRISBbits.TRISB5=1;
 white=0;
 }
 
-void rgbshow(int rval,int gval ,int bval){
+void rgbshowone(int rval,int gval ,int bval,int flag){
 if(flag==0){
 LATCbits.LATC0=1;
 LATCbits.LATC1=1;
 LATCbits.LATC2=1;
-LATCbits.LATC3=1;
-LATDbits.LATD0=1;
-LATDbits.LATD1=1;
-LATDbits.LATD2=1;
-LATDbits.LATD3=1;
-LATCbits.LATC4=1;
-LATCbits.LATC5=1;
-LATCbits.LATC6=1;
-LATCbits.LATC7=1;
+LATCbits.LATC3=0;
+LATDbits.LATD0=0;
+LATDbits.LATD1=0;
 
-for(int i=0;i<130;i++){
+for(int i=0;i<140;i++){
 if((rval--)==0) LATCbits.LATC0=0;
 if((gval--)==0) LATCbits.LATC1=0;
 if((bval--)==0) LATCbits.LATC2=0;
 }
 }
+
+else if(flag==1){
+LATCbits.LATC0=0;
+LATCbits.LATC1=0;
+LATCbits.LATC2=0;
+LATCbits.LATC3=1;
+LATDbits.LATD0=1;
+LATDbits.LATD1=1;
+
+for(int i=0;i<140;i++){
+if((rval--)==0) LATCbits.LATC3=0;
+if((gval--)==0) LATDbits.LATD0=0;
+if((bval--)==0) LATDbits.LATD1=0;
+}
+}
+else if(flag==2){
+LATCbits.LATC7=1;
+LATCbits.LATC6=1;
+LATCbits.LATC5=1;
+LATCbits.LATC4=0;
+LATDbits.LATD3=0;
+LATDbits.LATD2=0;
+for(int i=0;i<140;i++){
+if((rval--)==0) LATCbits.LATC7=0;
+if((gval--)==0) LATCbits.LATC6=0;
+if((bval--)==0) LATCbits.LATC5=0;
+}
 }
 
+else if(flag==3){
+LATCbits.LATC7=0;
+LATCbits.LATC6=0;
+LATCbits.LATC5=0;
+LATCbits.LATC4=1;
+LATDbits.LATD3=1;
+LATDbits.LATD2=1;
+
+for(int i=0;i<140;i++){
+if((rval--)==0) LATCbits.LATC4=0;
+if((gval--)==0) LATDbits.LATD3=0;
+if((bval--)==0) LATDbits.LATD2=0;
+}
+}
+}
+void rgbshowsix(int rval,int gval ,int bval,int rval2,int gval2 ,int bval2,int flag)
+{
+if(flag==4){
+LATCbits.LATC0=1;
+LATCbits.LATC1=1;
+LATCbits.LATC2=1;
+LATCbits.LATC3=0;
+LATDbits.LATD0=0;
+LATDbits.LATD1=0;
+LATCbits.LATC7=1;
+LATCbits.LATC6=1;
+LATCbits.LATC5=1;
+LATCbits.LATC4=0;
+LATDbits.LATD3=0;
+LATDbits.LATD2=0;
+
+for(int i=0;i<140;i++){
+if((rval--)==0) LATCbits.LATC0=0;
+if((gval--)==0) LATCbits.LATC1=0;
+if((bval--)==0) LATCbits.LATC2=0;
+if((rval2--)==0) LATCbits.LATC7=0;
+if((gval2--)==0) LATCbits.LATC6=0;
+if((bval2--)==0) LATCbits.LATC5=0;
+}
+}
+
+else if(flag==5){
+LATCbits.LATC0=0;
+LATCbits.LATC1=0;
+LATCbits.LATC2=0;
+LATCbits.LATC3=1;
+LATDbits.LATD0=1;
+LATDbits.LATD1=1;
+LATCbits.LATC7=0;
+LATCbits.LATC6=0;
+LATCbits.LATC5=0;
+LATCbits.LATC4=1;
+LATDbits.LATD3=1;
+LATDbits.LATD2=1;
+
+for(int i=0;i<140;i++){
+if((rval--)==0) LATCbits.LATC3=0;
+if((gval--)==0) LATDbits.LATD0=0;
+if((bval--)==0) LATDbits.LATD1=0;
+if((rval2--)==0) LATCbits.LATC4=0;
+if((gval2--)==0) LATDbits.LATD3=0;
+if((bval2--)==0) LATDbits.LATD2=0;
+}
+}
+}
+void rgbshow(int rval,int gval ,int bval,int rval2,int gval2 ,int bval2,int flag)
+{
+int i=60;
+if(flag<4){
+while(i--){
+rgbshowone(rval,gval,bval,flag);
+}
+}
+else{
+while(i--){
+rgbshowsix(rval,gval,bval,rval2,gval2,bval2,flag);
+}
+}
+}
+
+void zerorgb(){
+LATCbits.LATC0=0;
+LATCbits.LATC1=0;
+LATCbits.LATC2=0;
+LATCbits.LATC3=0;
+LATDbits.LATD0=0;
+LATDbits.LATD1=0;
+LATCbits.LATC7=0;
+LATCbits.LATC6=0;
+LATCbits.LATC5=0;
+LATCbits.LATC4=0;
+LATDbits.LATD3=0;
+LATDbits.LATD2=0;
+red=0;
+green=0;
+blue=0;
+red2=0;
+green2=0;
+blue2=0;
+}
 void rgbstart()
 {
+while( red <= 70 ){
+red=red+10;
+rgbshow(red,green,blue,red2,green2,blue2,0);
 
-while( red!= 130 ){
-red++;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+rgbshow(red,green,blue,red2,green2,blue2,1);
+
+}
+
+while( red <= 140 ){
+red=red+10;
+red2=red2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+
 }
 LATBbits.LATB4=1;
-_delay((unsigned long)((10)*(8000000/4000.0)));
+_delay((unsigned long)((1)*(8000000/4000.0)));
 LATBbits.LATB4=0;
-_delay((unsigned long)((100)*(8000000/4000.0)));
-
-while( green!= 130 ){
-green++;
-rgbshow(red,green,blue);
 _delay((unsigned long)((1)*(8000000/4000.0)));
+
+while( green <= 70 ){
+green=green+10;
+red2=red2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+
 }
 
-while( red!= 0 ){
-red--;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+while( green <= 140 ){
+green=green+10;
+green2=green2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
 }
 
-while( blue!= 130 ){
-blue++;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+while(red>=70){
+red=red-10;
+green2=green2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while( red>= 0 ){
+
+red=red-10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
 }
 
-while( red!= 130 ){
-red++;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+
+while( blue <= 70 ){
+blue=blue+10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+
 }
 
-while(green!= 0 ){
-green--;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+while( blue <= 140 ){
+blue=blue+10;
+blue2=blue2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
 }
 
-while( red!= 0 ){
-red--;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+
+while( red <= 70 ){
+red=red+10;
+blue2=blue2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
 }
 
-while( blue!= 0 ){
-blue--;
-rgbshow(red,green,blue);
-_delay((unsigned long)((1)*(8000000/4000.0)));
+while( red <= 140 ){
+red=red+10;
+red2=red2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
 }
+
+while(green>=70){
+green=green-10;
+red2=red2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while(green>= 0 ){
+
+green=green-10;
+green2=green2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while(red>=70){
+red=red-10;
+green2=green2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while( red>= 0 ){
+
+red=red-10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while(blue>=70){
+blue=blue-10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while( blue>= 0 ){
+blue=blue-10;
+blue2=blue2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while( blue2 >= 0 ){
+LATCbits.LATC0=0;
+LATCbits.LATC1=0;
+LATCbits.LATC2=0;
+LATCbits.LATC3=0;
+LATDbits.LATD0=0;
+LATDbits.LATD1=0;
+blue2=blue2-10;
+rgbshow(red,green,blue,red2,green2,blue2,2);
+
+rgbshow(red,green,blue,red2,green2,blue2,3);
+}
+zerorgb();
 }
 
 void wshow(int wval)
@@ -4137,10 +4359,11 @@ wshow(white);
 void interrupt Hi()
 {
 if(INTCONbits.INT0IF == 1) {
-PORTBbits.RB0=0;
+LATDbits.LATD4=0;
+rgbstart();
+
 INTCONbits.INT0IF = 0;
-rgbstart();
-rgbstart();
+
 
 }
 
@@ -4160,7 +4383,7 @@ k--;
 }
 
 if(RB5){
-PORTBbits.RB0=1;
+
 INTCONbits.INT0IF = 1;
 }
 }

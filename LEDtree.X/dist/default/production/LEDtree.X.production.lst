@@ -1,0 +1,3348 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.44 build -154322312 
+                                                                                               Fri Dec 22 00:27:58 2017
+
+Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
+     1                           	processor	18F4520
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    14                           	psect	intcode_body,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    20                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    21                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    22                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    23  0000                     
+    24                           ; Version 1.44
+    25                           ; Generated 14/09/2017 GMT
+    26                           ; 
+    27                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    28                           ; All rights reserved.
+    29                           ; 
+    30                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    31                           ; 
+    32                           ; Redistribution and use in source and binary forms, with or without modification, are
+    33                           ; permitted provided that the following conditions are met:
+    34                           ; 
+    35                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    36                           ;        conditions and the following disclaimer.
+    37                           ; 
+    38                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    39                           ;        of conditions and the following disclaimer in the documentation and/or other
+    40                           ;        materials provided with the distribution.
+    41                           ; 
+    42                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    43                           ;        software without specific prior written permission.
+    44                           ; 
+    45                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    46                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    47                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    48                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    49                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    50                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    51                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    52                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    53                           ; 
+    54                           ; 
+    55                           ; Code-generator required, PIC18F4520 Definitions
+    56                           ; 
+    57                           ; SFR Addresses
+    58  0000                     _LATBbits	set	3978
+    59  0000                     _LATDbits	set	3980
+    60  0000                     _LATCbits	set	3979
+    61  0000                     _PORTBbits	set	3969
+    62  0000                     _INTCON2bits	set	4081
+    63  0000                     _INTCONbits	set	4082
+    64  0000                     _RCONbits	set	4048
+    65  0000                     _TRISBbits	set	3987
+    66  0000                     _LATD	set	3980
+    67  0000                     _LATC	set	3979
+    68  0000                     _TRISD	set	3989
+    69  0000                     _TRISC	set	3988
+    70  0000                     _OSCCONbits	set	4051
+    71  0000                     _RB5	set	31757
+    72                           
+    73                           ; #config settings
+    74  0000                     
+    75                           	psect	cinit
+    76  00105E                     __pcinit:
+    77                           	opt stack 0
+    78  00105E                     start_initialization:
+    79                           	opt stack 0
+    80  00105E                     __initialization:
+    81                           	opt stack 0
+    82                           
+    83                           ; Clear objects allocated to COMRAM (17 bytes)
+    84  00105E  EE00  F038         	lfsr	0,__pbssCOMRAM
+    85  001062  0E11               	movlw	17
+    86  001064                     clear_0:
+    87  001064  6AEE               	clrf	postinc0,c
+    88  001066  06E8               	decf	wreg,f,c
+    89  001068  E1FD               	bnz	clear_0
+    90  00106A                     end_of_initialization:
+    91                           	opt stack 0
+    92  00106A                     __end_of__initialization:
+    93                           	opt stack 0
+    94  00106A  9049               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+    95  00106C  9249               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+    96  00106E  0100               	movlb	0
+    97  001070  EFAA  F007         	goto	_main	;jump to C main() function
+    98                           postinc0	equ	0xFEE
+    99                           wreg	equ	0xFE8
+   100                           
+   101                           	psect	bssCOMRAM
+   102  000038                     __pbssCOMRAM:
+   103                           	opt stack 0
+   104  000038                     _distance:
+   105                           	opt stack 0
+   106  000038                     	ds	3
+   107  00003B                     _white:
+   108                           	opt stack 0
+   109  00003B                     	ds	2
+   110  00003D                     _blue2:
+   111                           	opt stack 0
+   112  00003D                     	ds	2
+   113  00003F                     _green2:
+   114                           	opt stack 0
+   115  00003F                     	ds	2
+   116  000041                     _red2:
+   117                           	opt stack 0
+   118  000041                     	ds	2
+   119  000043                     _blue:
+   120                           	opt stack 0
+   121  000043                     	ds	2
+   122  000045                     _green:
+   123                           	opt stack 0
+   124  000045                     	ds	2
+   125  000047                     _red:
+   126                           	opt stack 0
+   127  000047                     	ds	2
+   128                           postinc0	equ	0xFEE
+   129                           wreg	equ	0xFE8
+   130                           
+   131                           	psect	cstackBANK0
+   132  000080                     __pcstackBANK0:
+   133                           	opt stack 0
+   134  000080                     wshow@i:
+   135                           	opt stack 0
+   136                           
+   137                           ; 2 bytes @ 0x0
+   138  000080                     	ds	2
+   139  000082                     main@k:
+   140                           	opt stack 0
+   141                           
+   142                           ; 2 bytes @ 0x2
+   143  000082                     	ds	2
+   144  000084                     main@l:
+   145                           	opt stack 0
+   146                           
+   147                           ; 2 bytes @ 0x4
+   148  000084                     	ds	2
+   149                           postinc0	equ	0xFEE
+   150                           wreg	equ	0xFE8
+   151                           
+   152                           	psect	cstackCOMRAM
+   153  000001                     __pcstackCOMRAM:
+   154                           	opt stack 0
+   155  000001                     rgbshowone@rval:
+   156                           	opt stack 0
+   157  000001                     rgbshowsix@rval:
+   158                           	opt stack 0
+   159                           
+   160                           ; 2 bytes @ 0x0
+   161  000001                     	ds	2
+   162  000003                     rgbshowone@gval:
+   163                           	opt stack 0
+   164  000003                     rgbshowsix@gval:
+   165                           	opt stack 0
+   166                           
+   167                           ; 2 bytes @ 0x2
+   168  000003                     	ds	2
+   169  000005                     rgbshowone@bval:
+   170                           	opt stack 0
+   171  000005                     rgbshowsix@bval:
+   172                           	opt stack 0
+   173                           
+   174                           ; 2 bytes @ 0x4
+   175  000005                     	ds	2
+   176  000007                     rgbshowone@flag:
+   177                           	opt stack 0
+   178  000007                     rgbshowsix@rval2:
+   179                           	opt stack 0
+   180                           
+   181                           ; 2 bytes @ 0x6
+   182  000007                     	ds	2
+   183  000009                     rgbshowone@i:
+   184                           	opt stack 0
+   185  000009                     rgbshowsix@gval2:
+   186                           	opt stack 0
+   187                           
+   188                           ; 2 bytes @ 0x8
+   189  000009                     	ds	2
+   190  00000B                     rgbshowone@i_527:
+   191                           	opt stack 0
+   192  00000B                     rgbshowsix@bval2:
+   193                           	opt stack 0
+   194                           
+   195                           ; 2 bytes @ 0xA
+   196  00000B                     	ds	2
+   197  00000D                     rgbshowone@i_528:
+   198                           	opt stack 0
+   199  00000D                     rgbshowsix@flag:
+   200                           	opt stack 0
+   201                           
+   202                           ; 2 bytes @ 0xC
+   203  00000D                     	ds	2
+   204  00000F                     rgbshowone@i_529:
+   205                           	opt stack 0
+   206  00000F                     rgbshowsix@i:
+   207                           	opt stack 0
+   208                           
+   209                           ; 2 bytes @ 0xE
+   210  00000F                     	ds	2
+   211  000011                     rgbshowsix@i_539:
+   212                           	opt stack 0
+   213                           
+   214                           ; 2 bytes @ 0x10
+   215  000011                     	ds	2
+   216  000013                     rgbshow@rval:
+   217                           	opt stack 0
+   218                           
+   219                           ; 2 bytes @ 0x12
+   220  000013                     	ds	2
+   221  000015                     rgbshow@gval:
+   222                           	opt stack 0
+   223                           
+   224                           ; 2 bytes @ 0x14
+   225  000015                     	ds	2
+   226  000017                     rgbshow@bval:
+   227                           	opt stack 0
+   228                           
+   229                           ; 2 bytes @ 0x16
+   230  000017                     	ds	2
+   231  000019                     rgbshow@rval2:
+   232                           	opt stack 0
+   233                           
+   234                           ; 2 bytes @ 0x18
+   235  000019                     	ds	2
+   236  00001B                     rgbshow@gval2:
+   237                           	opt stack 0
+   238                           
+   239                           ; 2 bytes @ 0x1A
+   240  00001B                     	ds	2
+   241  00001D                     rgbshow@bval2:
+   242                           	opt stack 0
+   243                           
+   244                           ; 2 bytes @ 0x1C
+   245  00001D                     	ds	2
+   246  00001F                     rgbshow@flag:
+   247                           	opt stack 0
+   248                           
+   249                           ; 2 bytes @ 0x1E
+   250  00001F                     	ds	2
+   251  000021                     rgbshow@i:
+   252                           	opt stack 0
+   253                           
+   254                           ; 2 bytes @ 0x20
+   255  000021                     	ds	2
+   256  000023                     ??_rgbstart:
+   257                           
+   258                           ; 1 bytes @ 0x22
+   259  000023                     	ds	1
+   260  000024                     ??_Hi:
+   261                           
+   262                           ; 1 bytes @ 0x23
+   263  000024                     	ds	18
+   264  000036                     wshow@wval:
+   265                           	opt stack 0
+   266                           
+   267                           ; 2 bytes @ 0x35
+   268  000036                     	ds	2
+   269  000038                     postinc0	equ	0xFEE
+   270                           wreg	equ	0xFE8
+   271                           
+   272                           ; 1 bytes @ 0x37
+   273 ;;
+   274 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   275 ;;
+   276 ;; *************** function _main *****************
+   277 ;; Defined at:
+   278 ;;		line 401 in file "mainproject.c"
+   279 ;; Parameters:    Size  Location     Type
+   280 ;;		None
+   281 ;; Auto vars:     Size  Location     Type
+   282 ;;  l               2    4[BANK0 ] int 
+   283 ;;  k               2    2[BANK0 ] int 
+   284 ;; Return value:  Size  Location     Type
+   285 ;;                  1    wreg      void 
+   286 ;; Registers used:
+   287 ;;		wreg, status,2, status,0, cstack
+   288 ;; Tracked objects:
+   289 ;;		On entry : 0/0
+   290 ;;		On exit  : 0/0
+   291 ;;		Unchanged: 0/0
+   292 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   293 ;;      Params:         0       0       0       0       0       0       0
+   294 ;;      Locals:         0       4       0       0       0       0       0
+   295 ;;      Temps:          0       0       0       0       0       0       0
+   296 ;;      Totals:         0       4       0       0       0       0       0
+   297 ;;Total ram usage:        4 bytes
+   298 ;; Hardware stack levels required when called:    6
+   299 ;; This function calls:
+   300 ;;		_init
+   301 ;;		_wstart
+   302 ;; This function is called by:
+   303 ;;		Startup code after reset
+   304 ;; This function uses a non-reentrant model
+   305 ;;
+   306                           
+   307                           	psect	text0
+   308  000F54                     __ptext0:
+   309                           	opt stack 0
+   310  000F54                     _main:
+   311                           	opt stack 25
+   312                           
+   313                           ;mainproject.c: 402: init();
+   314                           
+   315                           ;incstack = 0
+   316  000F54  EC79  F007         	call	_init	;wreg free
+   317  000F58                     
+   318                           ;mainproject.c: 404: wstart();
+   319  000F58  ECF8  F007         	call	_wstart	;wreg free
+   320                           
+   321                           ;mainproject.c: 405: int k = 10 , l = 255;
+   322  000F5C  0E00               	movlw	0
+   323  000F5E  0100               	movlb	0	; () banked
+   324  000F60  6F83               	movwf	(main@k+1)& (0+255),b
+   325  000F62  0E0A               	movlw	10
+   326  000F64  6F82               	movwf	main@k& (0+255),b
+   327                           
+   328                           ; BSR set to: 0
+   329  000F66  0E00               	movlw	0
+   330  000F68  6F85               	movwf	(main@l+1)& (0+255),b
+   331  000F6A  6984               	setf	main@l& (0+255),b
+   332                           
+   333                           ;mainproject.c: 406: while( k > 0 ) {
+   334  000F6C  D011               	goto	l196
+   335  000F6E                     l1637:
+   336                           
+   337                           ; BSR set to: 0
+   338                           ;mainproject.c: 407: l = 255;
+   339  000F6E  0E00               	movlw	0
+   340  000F70  6F85               	movwf	(main@l+1)& (0+255),b
+   341  000F72  6984               	setf	main@l& (0+255),b
+   342                           
+   343                           ;mainproject.c: 408: while( l > 0) {
+   344  000F74  D003               	goto	l198
+   345  000F76                     l1639:
+   346                           
+   347                           ; BSR set to: 0
+   348                           ;mainproject.c: 409: l--;
+   349  000F76  0784               	decf	main@l& (0+255),f,b
+   350  000F78  A0D8               	btfss	status,0,c
+   351  000F7A  0785               	decf	(main@l+1)& (0+255),f,b
+   352  000F7C                     l198:
+   353                           
+   354                           ; BSR set to: 0
+   355                           
+   356                           ; BSR set to: 0
+   357  000F7C  BF85               	btfsc	(main@l+1)& (0+255),7,b
+   358  000F7E  D005               	goto	u1480
+   359  000F80  5185               	movf	(main@l+1)& (0+255),w,b
+   360  000F82  E1F9               	bnz	l1639
+   361  000F84  0584               	decf	main@l& (0+255),w,b
+   362  000F86  B0D8               	btfsc	status,0,c
+   363  000F88  D7F6               	goto	l199
+   364  000F8A                     u1480:
+   365                           
+   366                           ; BSR set to: 0
+   367                           ;mainproject.c: 410: }
+   368                           ;mainproject.c: 411: k--;
+   369                           
+   370                           ; BSR set to: 0
+   371  000F8A  0782               	decf	main@k& (0+255),f,b
+   372  000F8C  A0D8               	btfss	status,0,c
+   373  000F8E  0783               	decf	(main@k+1)& (0+255),f,b
+   374  000F90                     l196:
+   375                           
+   376                           ; BSR set to: 0
+   377                           
+   378                           ; BSR set to: 0
+   379  000F90  BF83               	btfsc	(main@k+1)& (0+255),7,b
+   380  000F92  D005               	goto	u1490
+   381  000F94  5183               	movf	(main@k+1)& (0+255),w,b
+   382  000F96  E1EB               	bnz	l1637
+   383  000F98  0582               	decf	main@k& (0+255),w,b
+   384  000F9A  B0D8               	btfsc	status,0,c
+   385  000F9C  D7E8               	goto	l197
+   386  000F9E                     u1490:
+   387                           
+   388                           ; BSR set to: 0
+   389                           ;mainproject.c: 412: }
+   390                           ;mainproject.c: 414: if(RB5){
+   391  000F9E  AA81               	btfss	3969,5,c	;volatile
+   392  000FA0  D7DB               	goto	l195
+   393                           
+   394                           ; BSR set to: 0
+   395                           ;mainproject.c: 416: INTCONbits.INT0IF = 1;
+   396  000FA2  82F2               	bsf	intcon,1,c	;volatile
+   397                           
+   398                           ; BSR set to: 0
+   399                           
+   400                           ; BSR set to: 0
+   401  000FA4  D7D9               	goto	l195
+   402  000FA6                     __end_of_main:
+   403                           	opt stack 0
+   404                           intcon	equ	0xFF2
+   405                           postinc0	equ	0xFEE
+   406                           wreg	equ	0xFE8
+   407                           status	equ	0xFD8
+   408                           
+   409 ;; *************** function _wstart *****************
+   410 ;; Defined at:
+   411 ;;		line 377 in file "mainproject.c"
+   412 ;; Parameters:    Size  Location     Type
+   413 ;;		None
+   414 ;; Auto vars:     Size  Location     Type
+   415 ;;		None
+   416 ;; Return value:  Size  Location     Type
+   417 ;;                  1    wreg      void 
+   418 ;; Registers used:
+   419 ;;		wreg, status,2, status,0, cstack
+   420 ;; Tracked objects:
+   421 ;;		On entry : 0/0
+   422 ;;		On exit  : 0/0
+   423 ;;		Unchanged: 0/0
+   424 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   425 ;;      Params:         0       0       0       0       0       0       0
+   426 ;;      Locals:         0       0       0       0       0       0       0
+   427 ;;      Temps:          0       0       0       0       0       0       0
+   428 ;;      Totals:         0       0       0       0       0       0       0
+   429 ;;Total ram usage:        0 bytes
+   430 ;; Hardware stack levels used:    1
+   431 ;; Hardware stack levels required when called:    5
+   432 ;; This function calls:
+   433 ;;		_wshow
+   434 ;; This function is called by:
+   435 ;;		_main
+   436 ;; This function uses a non-reentrant model
+   437 ;;
+   438                           
+   439                           	psect	text1
+   440  000FF0                     __ptext1:
+   441                           	opt stack 0
+   442  000FF0                     _wstart:
+   443                           	opt stack 25
+   444                           
+   445                           ;mainproject.c: 378: while(white!=200){
+   446                           
+   447                           ; BSR set to: 0
+   448                           ;incstack = 0
+   449  000FF0  D008               	goto	l178
+   450  000FF2                     
+   451                           ;mainproject.c: 379: white++;
+   452  000FF2  4A3B               	infsnz	_white,f,c
+   453  000FF4  2A3C               	incf	_white+1,f,c
+   454                           
+   455                           ;mainproject.c: 380: wshow(white);
+   456  000FF6  C03B  F036         	movff	_white,wshow@wval
+   457  000FFA  C03C  F037         	movff	_white+1,wshow@wval+1
+   458  000FFE  EC15  F008         	call	_wshow	;wreg free
+   459  001002                     l178:
+   460  001002  0EC8               	movlw	200
+   461  001004  183B               	xorwf	_white,w,c
+   462  001006  103C               	iorwf	_white+1,w,c
+   463  001008  B4D8               	btfsc	status,2,c
+   464  00100A  D00A               	goto	l181
+   465  00100C  D7F2               	goto	l179
+   466  00100E                     
+   467                           ;mainproject.c: 383: white--;
+   468  00100E  063B               	decf	_white,f,c
+   469  001010  A0D8               	btfss	status,0,c
+   470  001012  063C               	decf	_white+1,f,c
+   471                           
+   472                           ;mainproject.c: 384: wshow(white);
+   473  001014  C03B  F036         	movff	_white,wshow@wval
+   474  001018  C03C  F037         	movff	_white+1,wshow@wval+1
+   475  00101C  EC15  F008         	call	_wshow	;wreg free
+   476  001020                     l181:
+   477  001020  503B               	movf	_white,w,c
+   478  001022  103C               	iorwf	_white+1,w,c
+   479  001024  B4D8               	btfsc	status,2,c
+   480  001026  0012               	return	
+   481  001028  D7F2               	goto	l182
+   482  00102A                     __end_of_wstart:
+   483                           	opt stack 0
+   484                           intcon	equ	0xFF2
+   485                           postinc0	equ	0xFEE
+   486                           wreg	equ	0xFE8
+   487                           status	equ	0xFD8
+   488                           
+   489 ;; *************** function _wshow *****************
+   490 ;; Defined at:
+   491 ;;		line 369 in file "mainproject.c"
+   492 ;; Parameters:    Size  Location     Type
+   493 ;;  wval            2   53[COMRAM] int 
+   494 ;; Auto vars:     Size  Location     Type
+   495 ;;  i               2    0[BANK0 ] int 
+   496 ;; Return value:  Size  Location     Type
+   497 ;;                  1    wreg      void 
+   498 ;; Registers used:
+   499 ;;		wreg, status,2, status,0
+   500 ;; Tracked objects:
+   501 ;;		On entry : 0/0
+   502 ;;		On exit  : 0/0
+   503 ;;		Unchanged: 0/0
+   504 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   505 ;;      Params:         2       0       0       0       0       0       0
+   506 ;;      Locals:         0       2       0       0       0       0       0
+   507 ;;      Temps:          0       0       0       0       0       0       0
+   508 ;;      Totals:         2       2       0       0       0       0       0
+   509 ;;Total ram usage:        4 bytes
+   510 ;; Hardware stack levels used:    1
+   511 ;; Hardware stack levels required when called:    4
+   512 ;; This function calls:
+   513 ;;		Nothing
+   514 ;; This function is called by:
+   515 ;;		_wstart
+   516 ;; This function uses a non-reentrant model
+   517 ;;
+   518                           
+   519                           	psect	text2
+   520  00102A                     __ptext2:
+   521                           	opt stack 0
+   522  00102A                     _wshow:
+   523                           	opt stack 25
+   524                           
+   525                           ;mainproject.c: 371: LATDbits.LATD4=1;
+   526                           
+   527                           ;incstack = 0
+   528  00102A  888C               	bsf	3980,4,c	;volatile
+   529                           
+   530                           ;mainproject.c: 372: for(int i=0;i<200;i++){
+   531  00102C  0E00               	movlw	0
+   532  00102E  0100               	movlb	0	; () banked
+   533  001030  6F81               	movwf	(wshow@i+1)& (0+255),b
+   534  001032  0E00               	movlw	0
+   535  001034  6F80               	movwf	wshow@i& (0+255),b
+   536  001036                     l1581:
+   537                           
+   538                           ; BSR set to: 0
+   539  001036  BF81               	btfsc	(wshow@i+1)& (0+255),7,b
+   540  001038  D006               	goto	l172
+   541  00103A  5181               	movf	(wshow@i+1)& (0+255),w,b
+   542  00103C  E10F               	bnz	l175
+   543  00103E  0EC8               	movlw	200
+   544  001040  5D80               	subwf	wshow@i& (0+255),w,b
+   545  001042  B0D8               	btfsc	status,0,c
+   546  001044  0012               	return	
+   547  001046                     l172:
+   548                           
+   549                           ; BSR set to: 0
+   550                           ;mainproject.c: 373: if((wval--)==0) LATDbits.LATD4=0;
+   551                           
+   552                           ; BSR set to: 0
+   553  001046  0636               	decf	wshow@wval,f,c
+   554  001048  A0D8               	btfss	status,0,c
+   555  00104A  0637               	decf	wshow@wval+1,f,c
+   556  00104C  2836               	incf	wshow@wval,w,c
+   557  00104E  E103               	bnz	l1589
+   558  001050  2837               	incf	wshow@wval+1,w,c
+   559  001052  B4D8               	btfsc	status,2,c
+   560                           
+   561                           ; BSR set to: 0
+   562  001054  988C               	bcf	3980,4,c	;volatile
+   563  001056                     l1589:
+   564                           
+   565                           ; BSR set to: 0
+   566  001056  4B80               	infsnz	wshow@i& (0+255),f,b
+   567  001058  2B81               	incf	(wshow@i+1)& (0+255),f,b
+   568  00105A  D7ED               	goto	l1581
+   569  00105C                     l175:
+   570                           
+   571                           ; BSR set to: 0
+   572  00105C  0012               	return		;funcret
+   573  00105E                     __end_of_wshow:
+   574                           	opt stack 0
+   575                           intcon	equ	0xFF2
+   576                           postinc0	equ	0xFEE
+   577                           wreg	equ	0xFE8
+   578                           status	equ	0xFD8
+   579                           
+   580 ;; *************** function _init *****************
+   581 ;; Defined at:
+   582 ;;		line 40 in file "mainproject.c"
+   583 ;; Parameters:    Size  Location     Type
+   584 ;;		None
+   585 ;; Auto vars:     Size  Location     Type
+   586 ;;		None
+   587 ;; Return value:  Size  Location     Type
+   588 ;;                  1    wreg      void 
+   589 ;; Registers used:
+   590 ;;		wreg, status,2
+   591 ;; Tracked objects:
+   592 ;;		On entry : 0/0
+   593 ;;		On exit  : 0/0
+   594 ;;		Unchanged: 0/0
+   595 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   596 ;;      Params:         0       0       0       0       0       0       0
+   597 ;;      Locals:         0       0       0       0       0       0       0
+   598 ;;      Temps:          0       0       0       0       0       0       0
+   599 ;;      Totals:         0       0       0       0       0       0       0
+   600 ;;Total ram usage:        0 bytes
+   601 ;; Hardware stack levels used:    1
+   602 ;; Hardware stack levels required when called:    4
+   603 ;; This function calls:
+   604 ;;		Nothing
+   605 ;; This function is called by:
+   606 ;;		_main
+   607 ;; This function uses a non-reentrant model
+   608 ;;
+   609                           
+   610                           	psect	text3
+   611  000EF2                     __ptext3:
+   612                           	opt stack 0
+   613  000EF2                     _init:
+   614                           	opt stack 26
+   615                           
+   616                           ;mainproject.c: 42: OSCCONbits.IRCF2 = 1;
+   617                           
+   618                           ; BSR set to: 0
+   619                           ;incstack = 0
+   620  000EF2  8CD3               	bsf	4051,6,c	;volatile
+   621                           
+   622                           ;mainproject.c: 43: OSCCONbits.IRCF1 = 1;
+   623  000EF4  8AD3               	bsf	4051,5,c	;volatile
+   624                           
+   625                           ;mainproject.c: 44: OSCCONbits.IRCF0 = 0;
+   626  000EF6  98D3               	bcf	4051,4,c	;volatile
+   627                           
+   628                           ;mainproject.c: 46: TRISC=0;
+   629  000EF8  0E00               	movlw	0
+   630  000EFA  6E94               	movwf	3988,c	;volatile
+   631                           
+   632                           ;mainproject.c: 47: TRISD=0;
+   633  000EFC  0E00               	movlw	0
+   634  000EFE  6E95               	movwf	3989,c	;volatile
+   635                           
+   636                           ;mainproject.c: 48: LATC=0;
+   637  000F00  0E00               	movlw	0
+   638  000F02  6E8B               	movwf	3979,c	;volatile
+   639                           
+   640                           ;mainproject.c: 49: LATD=0;
+   641  000F04  0E00               	movlw	0
+   642  000F06  6E8C               	movwf	3980,c	;volatile
+   643                           
+   644                           ;mainproject.c: 51: TRISBbits.TRISB0=1;
+   645  000F08  8093               	bsf	3987,0,c	;volatile
+   646                           
+   647                           ;mainproject.c: 52: red=0;
+   648  000F0A  0E00               	movlw	0
+   649  000F0C  6E48               	movwf	_red+1,c
+   650  000F0E  0E00               	movlw	0
+   651  000F10  6E47               	movwf	_red,c
+   652                           
+   653                           ;mainproject.c: 53: green=0;
+   654  000F12  0E00               	movlw	0
+   655  000F14  6E46               	movwf	_green+1,c
+   656  000F16  0E00               	movlw	0
+   657  000F18  6E45               	movwf	_green,c
+   658                           
+   659                           ;mainproject.c: 54: blue=0;
+   660  000F1A  0E00               	movlw	0
+   661  000F1C  6E44               	movwf	_blue+1,c
+   662  000F1E  0E00               	movlw	0
+   663  000F20  6E43               	movwf	_blue,c
+   664                           
+   665                           ;mainproject.c: 55: red2=0;
+   666  000F22  0E00               	movlw	0
+   667  000F24  6E42               	movwf	_red2+1,c
+   668  000F26  0E00               	movlw	0
+   669  000F28  6E41               	movwf	_red2,c
+   670                           
+   671                           ;mainproject.c: 56: green2=0;
+   672  000F2A  0E00               	movlw	0
+   673  000F2C  6E40               	movwf	_green2+1,c
+   674  000F2E  0E00               	movlw	0
+   675  000F30  6E3F               	movwf	_green2,c
+   676                           
+   677                           ;mainproject.c: 57: blue2=0;
+   678  000F32  0E00               	movlw	0
+   679  000F34  6E3E               	movwf	_blue2+1,c
+   680  000F36  0E00               	movlw	0
+   681  000F38  6E3D               	movwf	_blue2,c
+   682                           
+   683                           ;mainproject.c: 59: RCONbits.IPEN=1;
+   684  000F3A  8ED0               	bsf	4048,7,c	;volatile
+   685                           
+   686                           ;mainproject.c: 60: INTCONbits.GIEH=1;
+   687  000F3C  8EF2               	bsf	intcon,7,c	;volatile
+   688                           
+   689                           ;mainproject.c: 61: INTCONbits.INT0IE=1;
+   690  000F3E  88F2               	bsf	intcon,4,c	;volatile
+   691                           
+   692                           ;mainproject.c: 62: INTCONbits.INT0IF=0;
+   693  000F40  92F2               	bcf	intcon,1,c	;volatile
+   694                           
+   695                           ;mainproject.c: 63: INTCON2bits.INTEDG0=1;
+   696  000F42  8CF1               	bsf	intcon2,6,c	;volatile
+   697                           
+   698                           ;mainproject.c: 64: PORTBbits.RB0=0;
+   699  000F44  9081               	bcf	3969,0,c	;volatile
+   700                           
+   701                           ;mainproject.c: 66: TRISBbits.TRISB4=0;
+   702  000F46  9893               	bcf	3987,4,c	;volatile
+   703                           
+   704                           ;mainproject.c: 67: TRISBbits.TRISB5=1;
+   705  000F48  8A93               	bsf	3987,5,c	;volatile
+   706                           
+   707                           ;mainproject.c: 69: white=0;
+   708  000F4A  0E00               	movlw	0
+   709  000F4C  6E3C               	movwf	_white+1,c
+   710  000F4E  0E00               	movlw	0
+   711  000F50  6E3B               	movwf	_white,c
+   712  000F52  0012               	return		;funcret
+   713  000F54                     __end_of_init:
+   714                           	opt stack 0
+   715                           intcon	equ	0xFF2
+   716                           intcon2	equ	0xFF1
+   717                           postinc0	equ	0xFEE
+   718                           wreg	equ	0xFE8
+   719                           status	equ	0xFD8
+   720                           
+   721 ;; *************** function _Hi *****************
+   722 ;; Defined at:
+   723 ;;		line 388 in file "mainproject.c"
+   724 ;; Parameters:    Size  Location     Type
+   725 ;;		None
+   726 ;; Auto vars:     Size  Location     Type
+   727 ;;		None
+   728 ;; Return value:  Size  Location     Type
+   729 ;;                  1    wreg      void 
+   730 ;; Registers used:
+   731 ;;		wreg, status,2, status,0, cstack
+   732 ;; Tracked objects:
+   733 ;;		On entry : 0/0
+   734 ;;		On exit  : 0/0
+   735 ;;		Unchanged: 0/0
+   736 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   737 ;;      Params:         0       0       0       0       0       0       0
+   738 ;;      Locals:         0       0       0       0       0       0       0
+   739 ;;      Temps:         18       0       0       0       0       0       0
+   740 ;;      Totals:        18       0       0       0       0       0       0
+   741 ;;Total ram usage:       18 bytes
+   742 ;; Hardware stack levels used:    1
+   743 ;; Hardware stack levels required when called:    3
+   744 ;; This function calls:
+   745 ;;		_rgbstart
+   746 ;; This function is called by:
+   747 ;;		Interrupt level 2
+   748 ;; This function uses a non-reentrant model
+   749 ;;
+   750                           
+   751                           	psect	intcode
+   752  000008                     __pintcode:
+   753                           	opt stack 0
+   754  000008                     _Hi:
+   755                           	opt stack 25
+   756                           
+   757                           ;incstack = 0
+   758  000008  8249               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
+   759  00000A  EDD9  F006         	call	int_func,f	;refresh shadow registers
+   760                           intcon	equ	0xFF2
+   761                           intcon2	equ	0xFF1
+   762                           postinc0	equ	0xFEE
+   763                           wreg	equ	0xFE8
+   764                           status	equ	0xFD8
+   765                           
+   766                           	psect	intcode_body
+   767  000DB2                     __pintcode_body:
+   768                           	opt stack 25
+   769  000DB2                     int_func:
+   770                           	opt stack 25
+   771  000DB2  0006               	pop		; remove dummy address from shadow register refresh
+   772  000DB4  CFFA F024          	movff	pclath,??_Hi
+   773  000DB8  CFFB F025          	movff	pclatu,??_Hi+1
+   774  000DBC  CFE9 F026          	movff	fsr0l,??_Hi+2
+   775  000DC0  CFEA F027          	movff	fsr0h,??_Hi+3
+   776  000DC4  CFE1 F028          	movff	fsr1l,??_Hi+4
+   777  000DC8  CFE2 F029          	movff	fsr1h,??_Hi+5
+   778  000DCC  CFD9 F02A          	movff	fsr2l,??_Hi+6
+   779  000DD0  CFDA F02B          	movff	fsr2h,??_Hi+7
+   780  000DD4  CFF3 F02C          	movff	prodl,??_Hi+8
+   781  000DD8  CFF4 F02D          	movff	prodh,??_Hi+9
+   782  000DDC  CFF6 F02E          	movff	tblptrl,??_Hi+10
+   783  000DE0  CFF7 F02F          	movff	tblptrh,??_Hi+11
+   784  000DE4  CFF8 F030          	movff	tblptru,??_Hi+12
+   785  000DE8  CFF5 F031          	movff	tablat,??_Hi+13
+   786  000DEC  C049  F032         	movff	btemp,??_Hi+14
+   787  000DF0  C04A  F033         	movff	btemp+1,??_Hi+15
+   788  000DF4  C04B  F034         	movff	btemp+2,??_Hi+16
+   789  000DF8  C04C  F035         	movff	btemp+3,??_Hi+17
+   790                           
+   791                           ;mainproject.c: 390: if(INTCONbits.INT0IF == 1) {
+   792  000DFC  A2F2               	btfss	intcon,1,c	;volatile
+   793  000DFE  D004               	goto	i2l189
+   794                           
+   795                           ;mainproject.c: 391: LATDbits.LATD4=0;
+   796  000E00  988C               	bcf	3980,4,c	;volatile
+   797                           
+   798                           ;mainproject.c: 392: rgbstart();
+   799  000E02  EC09  F000         	call	_rgbstart	;wreg free
+   800                           
+   801                           ;mainproject.c: 394: INTCONbits.INT0IF = 0;
+   802  000E06  92F2               	bcf	intcon,1,c	;volatile
+   803  000E08                     i2l189:
+   804  000E08  C035  F04C         	movff	??_Hi+17,btemp+3
+   805  000E0C  C034  F04B         	movff	??_Hi+16,btemp+2
+   806  000E10  C033  F04A         	movff	??_Hi+15,btemp+1
+   807  000E14  C032  F049         	movff	??_Hi+14,btemp
+   808  000E18  C031  FFF5         	movff	??_Hi+13,tablat
+   809  000E1C  C030  FFF8         	movff	??_Hi+12,tblptru
+   810  000E20  C02F  FFF7         	movff	??_Hi+11,tblptrh
+   811  000E24  C02E  FFF6         	movff	??_Hi+10,tblptrl
+   812  000E28  C02D  FFF4         	movff	??_Hi+9,prodh
+   813  000E2C  C02C  FFF3         	movff	??_Hi+8,prodl
+   814  000E30  C02B  FFDA         	movff	??_Hi+7,fsr2h
+   815  000E34  C02A  FFD9         	movff	??_Hi+6,fsr2l
+   816  000E38  C029  FFE2         	movff	??_Hi+5,fsr1h
+   817  000E3C  C028  FFE1         	movff	??_Hi+4,fsr1l
+   818  000E40  C027  FFEA         	movff	??_Hi+3,fsr0h
+   819  000E44  C026  FFE9         	movff	??_Hi+2,fsr0l
+   820  000E48  C025  FFFB         	movff	??_Hi+1,pclatu
+   821  000E4C  C024  FFFA         	movff	??_Hi,pclath
+   822  000E50  9249               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
+   823  000E52  0011               	retfie		f
+   824  000E54                     __end_of_Hi:
+   825                           	opt stack 0
+   826                           pclatu	equ	0xFFB
+   827                           pclath	equ	0xFFA
+   828                           tblptru	equ	0xFF8
+   829                           tblptrh	equ	0xFF7
+   830                           tblptrl	equ	0xFF6
+   831                           tablat	equ	0xFF5
+   832                           prodh	equ	0xFF4
+   833                           prodl	equ	0xFF3
+   834                           intcon	equ	0xFF2
+   835                           intcon2	equ	0xFF1
+   836                           postinc0	equ	0xFEE
+   837                           fsr0h	equ	0xFEA
+   838                           fsr0l	equ	0xFE9
+   839                           wreg	equ	0xFE8
+   840                           fsr1h	equ	0xFE2
+   841                           fsr1l	equ	0xFE1
+   842                           fsr2h	equ	0xFDA
+   843                           fsr2l	equ	0xFD9
+   844                           status	equ	0xFD8
+   845                           
+   846 ;; *************** function _rgbstart *****************
+   847 ;; Defined at:
+   848 ;;		line 216 in file "mainproject.c"
+   849 ;; Parameters:    Size  Location     Type
+   850 ;;		None
+   851 ;; Auto vars:     Size  Location     Type
+   852 ;;		None
+   853 ;; Return value:  Size  Location     Type
+   854 ;;                  1    wreg      void 
+   855 ;; Registers used:
+   856 ;;		wreg, status,2, status,0, cstack
+   857 ;; Tracked objects:
+   858 ;;		On entry : 0/0
+   859 ;;		On exit  : 0/0
+   860 ;;		Unchanged: 0/0
+   861 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   862 ;;      Params:         0       0       0       0       0       0       0
+   863 ;;      Locals:         0       0       0       0       0       0       0
+   864 ;;      Temps:          1       0       0       0       0       0       0
+   865 ;;      Totals:         1       0       0       0       0       0       0
+   866 ;;Total ram usage:        1 bytes
+   867 ;; Hardware stack levels used:    1
+   868 ;; Hardware stack levels required when called:    2
+   869 ;; This function calls:
+   870 ;;		_rgbshow
+   871 ;;		_zerorgb
+   872 ;; This function is called by:
+   873 ;;		_Hi
+   874 ;; This function uses a non-reentrant model
+   875 ;;
+   876                           
+   877                           	psect	text5
+   878  000012                     __ptext5:
+   879                           	opt stack 0
+   880  000012                     _rgbstart:
+   881                           	opt stack 25
+   882                           
+   883                           ;mainproject.c: 218: while( red <= 70 ){
+   884                           
+   885                           ;incstack = 0
+   886  000012  D042               	goto	i2l118
+   887  000014                     
+   888                           ;mainproject.c: 219: red=red+10;
+   889  000014  0E0A               	movlw	10
+   890  000016  2447               	addwf	_red,w,c
+   891  000018  6E47               	movwf	_red,c
+   892  00001A  0E00               	movlw	0
+   893  00001C  2048               	addwfc	_red+1,w,c
+   894  00001E  6E48               	movwf	_red+1,c
+   895                           
+   896                           ;mainproject.c: 220: rgbshow(red,green,blue,red2,green2,blue2,0);
+   897  000020  C047  F013         	movff	_red,rgbshow@rval
+   898  000024  C048  F014         	movff	_red+1,rgbshow@rval+1
+   899  000028  C045  F015         	movff	_green,rgbshow@gval
+   900  00002C  C046  F016         	movff	_green+1,rgbshow@gval+1
+   901  000030  C043  F017         	movff	_blue,rgbshow@bval
+   902  000034  C044  F018         	movff	_blue+1,rgbshow@bval+1
+   903  000038  C041  F019         	movff	_red2,rgbshow@rval2
+   904  00003C  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+   905  000040  C03F  F01B         	movff	_green2,rgbshow@gval2
+   906  000044  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+   907  000048  C03D  F01D         	movff	_blue2,rgbshow@bval2
+   908  00004C  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+   909  000050  0E00               	movlw	0
+   910  000052  6E20               	movwf	rgbshow@flag+1,c
+   911  000054  0E00               	movlw	0
+   912  000056  6E1F               	movwf	rgbshow@flag,c
+   913  000058  EC2A  F007         	call	_rgbshow	;wreg free
+   914                           
+   915                           ;mainproject.c: 222: rgbshow(red,green,blue,red2,green2,blue2,1);
+   916  00005C  C047  F013         	movff	_red,rgbshow@rval
+   917  000060  C048  F014         	movff	_red+1,rgbshow@rval+1
+   918  000064  C045  F015         	movff	_green,rgbshow@gval
+   919  000068  C046  F016         	movff	_green+1,rgbshow@gval+1
+   920  00006C  C043  F017         	movff	_blue,rgbshow@bval
+   921  000070  C044  F018         	movff	_blue+1,rgbshow@bval+1
+   922  000074  C041  F019         	movff	_red2,rgbshow@rval2
+   923  000078  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+   924  00007C  C03F  F01B         	movff	_green2,rgbshow@gval2
+   925  000080  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+   926  000084  C03D  F01D         	movff	_blue2,rgbshow@bval2
+   927  000088  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+   928  00008C  0E00               	movlw	0
+   929  00008E  6E20               	movwf	rgbshow@flag+1,c
+   930  000090  0E01               	movlw	1
+   931  000092  6E1F               	movwf	rgbshow@flag,c
+   932  000094  EC2A  F007         	call	_rgbshow	;wreg free
+   933  000098                     i2l118:
+   934  000098  BE48               	btfsc	_red+1,7,c
+   935  00009A  D7BC               	goto	i2l119
+   936  00009C  5048               	movf	_red+1,w,c
+   937  00009E  E14D               	bnz	i2l121
+   938  0000A0  0E47               	movlw	71
+   939  0000A2  5C47               	subwf	_red,w,c
+   940  0000A4  B0D8               	btfsc	status,0,c
+   941  0000A6  D049               	goto	i2l121
+   942  0000A8  D7B5               	goto	i2l119
+   943  0000AA                     
+   944                           ;mainproject.c: 227: red=red+10;
+   945  0000AA  0E0A               	movlw	10
+   946  0000AC  2447               	addwf	_red,w,c
+   947  0000AE  6E47               	movwf	_red,c
+   948  0000B0  0E00               	movlw	0
+   949  0000B2  2048               	addwfc	_red+1,w,c
+   950  0000B4  6E48               	movwf	_red+1,c
+   951                           
+   952                           ;mainproject.c: 228: red2=red2+10;
+   953  0000B6  0E0A               	movlw	10
+   954  0000B8  2441               	addwf	_red2,w,c
+   955  0000BA  6E41               	movwf	_red2,c
+   956  0000BC  0E00               	movlw	0
+   957  0000BE  2042               	addwfc	_red2+1,w,c
+   958  0000C0  6E42               	movwf	_red2+1,c
+   959                           
+   960                           ;mainproject.c: 229: rgbshow(red,green,blue,red2,green2,blue2,4);
+   961  0000C2  C047  F013         	movff	_red,rgbshow@rval
+   962  0000C6  C048  F014         	movff	_red+1,rgbshow@rval+1
+   963  0000CA  C045  F015         	movff	_green,rgbshow@gval
+   964  0000CE  C046  F016         	movff	_green+1,rgbshow@gval+1
+   965  0000D2  C043  F017         	movff	_blue,rgbshow@bval
+   966  0000D6  C044  F018         	movff	_blue+1,rgbshow@bval+1
+   967  0000DA  C041  F019         	movff	_red2,rgbshow@rval2
+   968  0000DE  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+   969  0000E2  C03F  F01B         	movff	_green2,rgbshow@gval2
+   970  0000E6  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+   971  0000EA  C03D  F01D         	movff	_blue2,rgbshow@bval2
+   972  0000EE  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+   973  0000F2  0E00               	movlw	0
+   974  0000F4  6E20               	movwf	rgbshow@flag+1,c
+   975  0000F6  0E04               	movlw	4
+   976  0000F8  6E1F               	movwf	rgbshow@flag,c
+   977  0000FA  EC2A  F007         	call	_rgbshow	;wreg free
+   978                           
+   979                           ;mainproject.c: 231: rgbshow(red,green,blue,red2,green2,blue2,5);
+   980  0000FE  C047  F013         	movff	_red,rgbshow@rval
+   981  000102  C048  F014         	movff	_red+1,rgbshow@rval+1
+   982  000106  C045  F015         	movff	_green,rgbshow@gval
+   983  00010A  C046  F016         	movff	_green+1,rgbshow@gval+1
+   984  00010E  C043  F017         	movff	_blue,rgbshow@bval
+   985  000112  C044  F018         	movff	_blue+1,rgbshow@bval+1
+   986  000116  C041  F019         	movff	_red2,rgbshow@rval2
+   987  00011A  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+   988  00011E  C03F  F01B         	movff	_green2,rgbshow@gval2
+   989  000122  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+   990  000126  C03D  F01D         	movff	_blue2,rgbshow@bval2
+   991  00012A  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+   992  00012E  0E00               	movlw	0
+   993  000130  6E20               	movwf	rgbshow@flag+1,c
+   994  000132  0E05               	movlw	5
+   995  000134  6E1F               	movwf	rgbshow@flag,c
+   996  000136  EC2A  F007         	call	_rgbshow	;wreg free
+   997  00013A                     i2l121:
+   998  00013A  BE48               	btfsc	_red+1,7,c
+   999  00013C  D7B6               	goto	i2l122
+  1000  00013E  5048               	movf	_red+1,w,c
+  1001  000140  E104               	bnz	i2u121_40
+  1002  000142  0E8D               	movlw	141
+  1003  000144  5C47               	subwf	_red,w,c
+  1004  000146  A0D8               	btfss	status,0,c
+  1005  000148  D7B0               	goto	i2l122
+  1006  00014A                     i2u121_40:
+  1007                           
+  1008                           ;mainproject.c: 233: }
+  1009                           ;mainproject.c: 234: LATBbits.LATB4=1;
+  1010  00014A  888A               	bsf	3978,4,c	;volatile
+  1011                           
+  1012                           ;mainproject.c: 235: _delay((unsigned long)((1)*(8000000/4000.0)));
+  1013  00014C  0E03               	movlw	3
+  1014  00014E  6E23               	movwf	??_rgbstart& (0+255),c
+  1015  000150  0E98               	movlw	152
+  1016  000152                     i2u151_47:
+  1017  000152  2EE8               	decfsz	wreg,f,c
+  1018  000154  D7FE               	bra	i2u151_47
+  1019  000156  2E23               	decfsz	??_rgbstart& (0+255),f,c
+  1020  000158  D7FC               	bra	i2u151_47
+  1021                           
+  1022                           ;mainproject.c: 236: LATBbits.LATB4=0;
+  1023  00015A  988A               	bcf	3978,4,c	;volatile
+  1024                           
+  1025                           ;mainproject.c: 237: _delay((unsigned long)((1)*(8000000/4000.0)));
+  1026  00015C  0E03               	movlw	3
+  1027  00015E  6E23               	movwf	??_rgbstart& (0+255),c
+  1028  000160  0E98               	movlw	152
+  1029  000162                     i2u152_47:
+  1030  000162  2EE8               	decfsz	wreg,f,c
+  1031  000164  D7FE               	bra	i2u152_47
+  1032  000166  2E23               	decfsz	??_rgbstart& (0+255),f,c
+  1033  000168  D7FC               	bra	i2u152_47
+  1034                           
+  1035                           ;mainproject.c: 239: while( green <= 70 ){
+  1036  00016A  D048               	goto	i2l124
+  1037  00016C                     
+  1038                           ;mainproject.c: 240: green=green+10;
+  1039  00016C  0E0A               	movlw	10
+  1040  00016E  2445               	addwf	_green,w,c
+  1041  000170  6E45               	movwf	_green,c
+  1042  000172  0E00               	movlw	0
+  1043  000174  2046               	addwfc	_green+1,w,c
+  1044  000176  6E46               	movwf	_green+1,c
+  1045                           
+  1046                           ;mainproject.c: 241: red2=red2+10;
+  1047  000178  0E0A               	movlw	10
+  1048  00017A  2441               	addwf	_red2,w,c
+  1049  00017C  6E41               	movwf	_red2,c
+  1050  00017E  0E00               	movlw	0
+  1051  000180  2042               	addwfc	_red2+1,w,c
+  1052  000182  6E42               	movwf	_red2+1,c
+  1053                           
+  1054                           ;mainproject.c: 242: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1055  000184  C047  F013         	movff	_red,rgbshow@rval
+  1056  000188  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1057  00018C  C045  F015         	movff	_green,rgbshow@gval
+  1058  000190  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1059  000194  C043  F017         	movff	_blue,rgbshow@bval
+  1060  000198  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1061  00019C  C041  F019         	movff	_red2,rgbshow@rval2
+  1062  0001A0  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1063  0001A4  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1064  0001A8  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1065  0001AC  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1066  0001B0  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1067  0001B4  0E00               	movlw	0
+  1068  0001B6  6E20               	movwf	rgbshow@flag+1,c
+  1069  0001B8  0E04               	movlw	4
+  1070  0001BA  6E1F               	movwf	rgbshow@flag,c
+  1071  0001BC  EC2A  F007         	call	_rgbshow	;wreg free
+  1072                           
+  1073                           ;mainproject.c: 244: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1074  0001C0  C047  F013         	movff	_red,rgbshow@rval
+  1075  0001C4  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1076  0001C8  C045  F015         	movff	_green,rgbshow@gval
+  1077  0001CC  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1078  0001D0  C043  F017         	movff	_blue,rgbshow@bval
+  1079  0001D4  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1080  0001D8  C041  F019         	movff	_red2,rgbshow@rval2
+  1081  0001DC  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1082  0001E0  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1083  0001E4  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1084  0001E8  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1085  0001EC  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1086  0001F0  0E00               	movlw	0
+  1087  0001F2  6E20               	movwf	rgbshow@flag+1,c
+  1088  0001F4  0E05               	movlw	5
+  1089  0001F6  6E1F               	movwf	rgbshow@flag,c
+  1090  0001F8  EC2A  F007         	call	_rgbshow	;wreg free
+  1091  0001FC                     i2l124:
+  1092  0001FC  BE46               	btfsc	_green+1,7,c
+  1093  0001FE  D7B6               	goto	i2l125
+  1094  000200  5046               	movf	_green+1,w,c
+  1095  000202  E14D               	bnz	i2l127
+  1096  000204  0E47               	movlw	71
+  1097  000206  5C45               	subwf	_green,w,c
+  1098  000208  B0D8               	btfsc	status,0,c
+  1099  00020A  D049               	goto	i2l127
+  1100  00020C  D7AF               	goto	i2l125
+  1101  00020E                     
+  1102                           ;mainproject.c: 249: green=green+10;
+  1103  00020E  0E0A               	movlw	10
+  1104  000210  2445               	addwf	_green,w,c
+  1105  000212  6E45               	movwf	_green,c
+  1106  000214  0E00               	movlw	0
+  1107  000216  2046               	addwfc	_green+1,w,c
+  1108  000218  6E46               	movwf	_green+1,c
+  1109                           
+  1110                           ;mainproject.c: 250: green2=green2+10;
+  1111  00021A  0E0A               	movlw	10
+  1112  00021C  243F               	addwf	_green2,w,c
+  1113  00021E  6E3F               	movwf	_green2,c
+  1114  000220  0E00               	movlw	0
+  1115  000222  2040               	addwfc	_green2+1,w,c
+  1116  000224  6E40               	movwf	_green2+1,c
+  1117                           
+  1118                           ;mainproject.c: 251: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1119  000226  C047  F013         	movff	_red,rgbshow@rval
+  1120  00022A  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1121  00022E  C045  F015         	movff	_green,rgbshow@gval
+  1122  000232  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1123  000236  C043  F017         	movff	_blue,rgbshow@bval
+  1124  00023A  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1125  00023E  C041  F019         	movff	_red2,rgbshow@rval2
+  1126  000242  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1127  000246  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1128  00024A  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1129  00024E  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1130  000252  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1131  000256  0E00               	movlw	0
+  1132  000258  6E20               	movwf	rgbshow@flag+1,c
+  1133  00025A  0E04               	movlw	4
+  1134  00025C  6E1F               	movwf	rgbshow@flag,c
+  1135  00025E  EC2A  F007         	call	_rgbshow	;wreg free
+  1136                           
+  1137                           ;mainproject.c: 253: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1138  000262  C047  F013         	movff	_red,rgbshow@rval
+  1139  000266  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1140  00026A  C045  F015         	movff	_green,rgbshow@gval
+  1141  00026E  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1142  000272  C043  F017         	movff	_blue,rgbshow@bval
+  1143  000276  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1144  00027A  C041  F019         	movff	_red2,rgbshow@rval2
+  1145  00027E  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1146  000282  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1147  000286  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1148  00028A  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1149  00028E  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1150  000292  0E00               	movlw	0
+  1151  000294  6E20               	movwf	rgbshow@flag+1,c
+  1152  000296  0E05               	movlw	5
+  1153  000298  6E1F               	movwf	rgbshow@flag,c
+  1154  00029A  EC2A  F007         	call	_rgbshow	;wreg free
+  1155  00029E                     i2l127:
+  1156  00029E  BE46               	btfsc	_green+1,7,c
+  1157  0002A0  D7B6               	goto	i2l128
+  1158  0002A2  5046               	movf	_green+1,w,c
+  1159  0002A4  E14D               	bnz	i2l130
+  1160  0002A6  0E8D               	movlw	141
+  1161  0002A8  5C45               	subwf	_green,w,c
+  1162  0002AA  B0D8               	btfsc	status,0,c
+  1163  0002AC  D049               	goto	i2l130
+  1164  0002AE  D7AF               	goto	i2l128
+  1165  0002B0                     i2l1455:
+  1166                           
+  1167                           ;mainproject.c: 257: red=red-10;
+  1168  0002B0  0EF6               	movlw	246
+  1169  0002B2  2447               	addwf	_red,w,c
+  1170  0002B4  6E47               	movwf	_red,c
+  1171  0002B6  0EFF               	movlw	255
+  1172  0002B8  2048               	addwfc	_red+1,w,c
+  1173  0002BA  6E48               	movwf	_red+1,c
+  1174                           
+  1175                           ;mainproject.c: 258: green2=green2+10;
+  1176  0002BC  0E0A               	movlw	10
+  1177  0002BE  243F               	addwf	_green2,w,c
+  1178  0002C0  6E3F               	movwf	_green2,c
+  1179  0002C2  0E00               	movlw	0
+  1180  0002C4  2040               	addwfc	_green2+1,w,c
+  1181  0002C6  6E40               	movwf	_green2+1,c
+  1182                           
+  1183                           ;mainproject.c: 259: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1184  0002C8  C047  F013         	movff	_red,rgbshow@rval
+  1185  0002CC  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1186  0002D0  C045  F015         	movff	_green,rgbshow@gval
+  1187  0002D4  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1188  0002D8  C043  F017         	movff	_blue,rgbshow@bval
+  1189  0002DC  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1190  0002E0  C041  F019         	movff	_red2,rgbshow@rval2
+  1191  0002E4  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1192  0002E8  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1193  0002EC  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1194  0002F0  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1195  0002F4  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1196  0002F8  0E00               	movlw	0
+  1197  0002FA  6E20               	movwf	rgbshow@flag+1,c
+  1198  0002FC  0E04               	movlw	4
+  1199  0002FE  6E1F               	movwf	rgbshow@flag,c
+  1200  000300  EC2A  F007         	call	_rgbshow	;wreg free
+  1201                           
+  1202                           ;mainproject.c: 261: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1203  000304  C047  F013         	movff	_red,rgbshow@rval
+  1204  000308  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1205  00030C  C045  F015         	movff	_green,rgbshow@gval
+  1206  000310  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1207  000314  C043  F017         	movff	_blue,rgbshow@bval
+  1208  000318  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1209  00031C  C041  F019         	movff	_red2,rgbshow@rval2
+  1210  000320  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1211  000324  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1212  000328  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1213  00032C  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1214  000330  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1215  000334  0E00               	movlw	0
+  1216  000336  6E20               	movwf	rgbshow@flag+1,c
+  1217  000338  0E05               	movlw	5
+  1218  00033A  6E1F               	movwf	rgbshow@flag,c
+  1219  00033C  EC2A  F007         	call	_rgbshow	;wreg free
+  1220  000340                     i2l130:
+  1221  000340  BE48               	btfsc	_red+1,7,c
+  1222  000342  D04F               	goto	i2l133
+  1223  000344  5048               	movf	_red+1,w,c
+  1224  000346  E1B4               	bnz	i2l1455
+  1225  000348  0E46               	movlw	70
+  1226  00034A  5C47               	subwf	_red,w,c
+  1227  00034C  A0D8               	btfss	status,0,c
+  1228  00034E  D049               	goto	i2l133
+  1229  000350  D7AF               	goto	i2l131
+  1230  000352                     
+  1231                           ;mainproject.c: 265: red=red-10;
+  1232  000352  0EF6               	movlw	246
+  1233  000354  2447               	addwf	_red,w,c
+  1234  000356  6E47               	movwf	_red,c
+  1235  000358  0EFF               	movlw	255
+  1236  00035A  2048               	addwfc	_red+1,w,c
+  1237  00035C  6E48               	movwf	_red+1,c
+  1238                           
+  1239                           ;mainproject.c: 266: red2=red2-10;
+  1240  00035E  0EF6               	movlw	246
+  1241  000360  2441               	addwf	_red2,w,c
+  1242  000362  6E41               	movwf	_red2,c
+  1243  000364  0EFF               	movlw	255
+  1244  000366  2042               	addwfc	_red2+1,w,c
+  1245  000368  6E42               	movwf	_red2+1,c
+  1246                           
+  1247                           ;mainproject.c: 267: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1248  00036A  C047  F013         	movff	_red,rgbshow@rval
+  1249  00036E  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1250  000372  C045  F015         	movff	_green,rgbshow@gval
+  1251  000376  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1252  00037A  C043  F017         	movff	_blue,rgbshow@bval
+  1253  00037E  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1254  000382  C041  F019         	movff	_red2,rgbshow@rval2
+  1255  000386  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1256  00038A  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1257  00038E  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1258  000392  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1259  000396  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1260  00039A  0E00               	movlw	0
+  1261  00039C  6E20               	movwf	rgbshow@flag+1,c
+  1262  00039E  0E04               	movlw	4
+  1263  0003A0  6E1F               	movwf	rgbshow@flag,c
+  1264  0003A2  EC2A  F007         	call	_rgbshow	;wreg free
+  1265                           
+  1266                           ;mainproject.c: 269: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1267  0003A6  C047  F013         	movff	_red,rgbshow@rval
+  1268  0003AA  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1269  0003AE  C045  F015         	movff	_green,rgbshow@gval
+  1270  0003B2  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1271  0003B6  C043  F017         	movff	_blue,rgbshow@bval
+  1272  0003BA  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1273  0003BE  C041  F019         	movff	_red2,rgbshow@rval2
+  1274  0003C2  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1275  0003C6  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1276  0003CA  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1277  0003CE  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1278  0003D2  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1279  0003D6  0E00               	movlw	0
+  1280  0003D8  6E20               	movwf	rgbshow@flag+1,c
+  1281  0003DA  0E05               	movlw	5
+  1282  0003DC  6E1F               	movwf	rgbshow@flag,c
+  1283  0003DE  EC2A  F007         	call	_rgbshow	;wreg free
+  1284  0003E2                     i2l133:
+  1285  0003E2  BE48               	btfsc	_red+1,7,c
+  1286  0003E4  D049               	goto	i2l136
+  1287  0003E6  D7B5               	goto	i2l134
+  1288  0003E8                     
+  1289                           ;mainproject.c: 274: blue=blue+10;
+  1290  0003E8  0E0A               	movlw	10
+  1291  0003EA  2443               	addwf	_blue,w,c
+  1292  0003EC  6E43               	movwf	_blue,c
+  1293  0003EE  0E00               	movlw	0
+  1294  0003F0  2044               	addwfc	_blue+1,w,c
+  1295  0003F2  6E44               	movwf	_blue+1,c
+  1296                           
+  1297                           ;mainproject.c: 275: red2=red2-10;
+  1298  0003F4  0EF6               	movlw	246
+  1299  0003F6  2441               	addwf	_red2,w,c
+  1300  0003F8  6E41               	movwf	_red2,c
+  1301  0003FA  0EFF               	movlw	255
+  1302  0003FC  2042               	addwfc	_red2+1,w,c
+  1303  0003FE  6E42               	movwf	_red2+1,c
+  1304                           
+  1305                           ;mainproject.c: 276: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1306  000400  C047  F013         	movff	_red,rgbshow@rval
+  1307  000404  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1308  000408  C045  F015         	movff	_green,rgbshow@gval
+  1309  00040C  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1310  000410  C043  F017         	movff	_blue,rgbshow@bval
+  1311  000414  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1312  000418  C041  F019         	movff	_red2,rgbshow@rval2
+  1313  00041C  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1314  000420  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1315  000424  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1316  000428  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1317  00042C  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1318  000430  0E00               	movlw	0
+  1319  000432  6E20               	movwf	rgbshow@flag+1,c
+  1320  000434  0E04               	movlw	4
+  1321  000436  6E1F               	movwf	rgbshow@flag,c
+  1322  000438  EC2A  F007         	call	_rgbshow	;wreg free
+  1323                           
+  1324                           ;mainproject.c: 278: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1325  00043C  C047  F013         	movff	_red,rgbshow@rval
+  1326  000440  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1327  000444  C045  F015         	movff	_green,rgbshow@gval
+  1328  000448  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1329  00044C  C043  F017         	movff	_blue,rgbshow@bval
+  1330  000450  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1331  000454  C041  F019         	movff	_red2,rgbshow@rval2
+  1332  000458  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1333  00045C  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1334  000460  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1335  000464  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1336  000468  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1337  00046C  0E00               	movlw	0
+  1338  00046E  6E20               	movwf	rgbshow@flag+1,c
+  1339  000470  0E05               	movlw	5
+  1340  000472  6E1F               	movwf	rgbshow@flag,c
+  1341  000474  EC2A  F007         	call	_rgbshow	;wreg free
+  1342  000478                     i2l136:
+  1343  000478  BE44               	btfsc	_blue+1,7,c
+  1344  00047A  D7B6               	goto	i2l137
+  1345  00047C  5044               	movf	_blue+1,w,c
+  1346  00047E  E14D               	bnz	i2l139
+  1347  000480  0E47               	movlw	71
+  1348  000482  5C43               	subwf	_blue,w,c
+  1349  000484  B0D8               	btfsc	status,0,c
+  1350  000486  D049               	goto	i2l139
+  1351  000488  D7AF               	goto	i2l137
+  1352  00048A                     
+  1353                           ;mainproject.c: 283: blue=blue+10;
+  1354  00048A  0E0A               	movlw	10
+  1355  00048C  2443               	addwf	_blue,w,c
+  1356  00048E  6E43               	movwf	_blue,c
+  1357  000490  0E00               	movlw	0
+  1358  000492  2044               	addwfc	_blue+1,w,c
+  1359  000494  6E44               	movwf	_blue+1,c
+  1360                           
+  1361                           ;mainproject.c: 284: blue2=blue2+10;
+  1362  000496  0E0A               	movlw	10
+  1363  000498  243D               	addwf	_blue2,w,c
+  1364  00049A  6E3D               	movwf	_blue2,c
+  1365  00049C  0E00               	movlw	0
+  1366  00049E  203E               	addwfc	_blue2+1,w,c
+  1367  0004A0  6E3E               	movwf	_blue2+1,c
+  1368                           
+  1369                           ;mainproject.c: 285: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1370  0004A2  C047  F013         	movff	_red,rgbshow@rval
+  1371  0004A6  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1372  0004AA  C045  F015         	movff	_green,rgbshow@gval
+  1373  0004AE  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1374  0004B2  C043  F017         	movff	_blue,rgbshow@bval
+  1375  0004B6  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1376  0004BA  C041  F019         	movff	_red2,rgbshow@rval2
+  1377  0004BE  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1378  0004C2  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1379  0004C6  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1380  0004CA  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1381  0004CE  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1382  0004D2  0E00               	movlw	0
+  1383  0004D4  6E20               	movwf	rgbshow@flag+1,c
+  1384  0004D6  0E04               	movlw	4
+  1385  0004D8  6E1F               	movwf	rgbshow@flag,c
+  1386  0004DA  EC2A  F007         	call	_rgbshow	;wreg free
+  1387                           
+  1388                           ;mainproject.c: 287: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1389  0004DE  C047  F013         	movff	_red,rgbshow@rval
+  1390  0004E2  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1391  0004E6  C045  F015         	movff	_green,rgbshow@gval
+  1392  0004EA  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1393  0004EE  C043  F017         	movff	_blue,rgbshow@bval
+  1394  0004F2  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1395  0004F6  C041  F019         	movff	_red2,rgbshow@rval2
+  1396  0004FA  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1397  0004FE  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1398  000502  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1399  000506  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1400  00050A  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1401  00050E  0E00               	movlw	0
+  1402  000510  6E20               	movwf	rgbshow@flag+1,c
+  1403  000512  0E05               	movlw	5
+  1404  000514  6E1F               	movwf	rgbshow@flag,c
+  1405  000516  EC2A  F007         	call	_rgbshow	;wreg free
+  1406  00051A                     i2l139:
+  1407  00051A  BE44               	btfsc	_blue+1,7,c
+  1408  00051C  D7B6               	goto	i2l140
+  1409  00051E  5044               	movf	_blue+1,w,c
+  1410  000520  E14D               	bnz	i2l142
+  1411  000522  0E8D               	movlw	141
+  1412  000524  5C43               	subwf	_blue,w,c
+  1413  000526  B0D8               	btfsc	status,0,c
+  1414  000528  D049               	goto	i2l142
+  1415  00052A  D7AF               	goto	i2l140
+  1416  00052C                     
+  1417                           ;mainproject.c: 292: red=red+10;
+  1418  00052C  0E0A               	movlw	10
+  1419  00052E  2447               	addwf	_red,w,c
+  1420  000530  6E47               	movwf	_red,c
+  1421  000532  0E00               	movlw	0
+  1422  000534  2048               	addwfc	_red+1,w,c
+  1423  000536  6E48               	movwf	_red+1,c
+  1424                           
+  1425                           ;mainproject.c: 293: blue2=blue2+10;
+  1426  000538  0E0A               	movlw	10
+  1427  00053A  243D               	addwf	_blue2,w,c
+  1428  00053C  6E3D               	movwf	_blue2,c
+  1429  00053E  0E00               	movlw	0
+  1430  000540  203E               	addwfc	_blue2+1,w,c
+  1431  000542  6E3E               	movwf	_blue2+1,c
+  1432                           
+  1433                           ;mainproject.c: 294: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1434  000544  C047  F013         	movff	_red,rgbshow@rval
+  1435  000548  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1436  00054C  C045  F015         	movff	_green,rgbshow@gval
+  1437  000550  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1438  000554  C043  F017         	movff	_blue,rgbshow@bval
+  1439  000558  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1440  00055C  C041  F019         	movff	_red2,rgbshow@rval2
+  1441  000560  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1442  000564  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1443  000568  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1444  00056C  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1445  000570  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1446  000574  0E00               	movlw	0
+  1447  000576  6E20               	movwf	rgbshow@flag+1,c
+  1448  000578  0E04               	movlw	4
+  1449  00057A  6E1F               	movwf	rgbshow@flag,c
+  1450  00057C  EC2A  F007         	call	_rgbshow	;wreg free
+  1451                           
+  1452                           ;mainproject.c: 296: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1453  000580  C047  F013         	movff	_red,rgbshow@rval
+  1454  000584  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1455  000588  C045  F015         	movff	_green,rgbshow@gval
+  1456  00058C  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1457  000590  C043  F017         	movff	_blue,rgbshow@bval
+  1458  000594  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1459  000598  C041  F019         	movff	_red2,rgbshow@rval2
+  1460  00059C  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1461  0005A0  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1462  0005A4  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1463  0005A8  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1464  0005AC  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1465  0005B0  0E00               	movlw	0
+  1466  0005B2  6E20               	movwf	rgbshow@flag+1,c
+  1467  0005B4  0E05               	movlw	5
+  1468  0005B6  6E1F               	movwf	rgbshow@flag,c
+  1469  0005B8  EC2A  F007         	call	_rgbshow	;wreg free
+  1470  0005BC                     i2l142:
+  1471  0005BC  BE48               	btfsc	_red+1,7,c
+  1472  0005BE  D7B6               	goto	i2l143
+  1473  0005C0  5048               	movf	_red+1,w,c
+  1474  0005C2  E14D               	bnz	i2l145
+  1475  0005C4  0E47               	movlw	71
+  1476  0005C6  5C47               	subwf	_red,w,c
+  1477  0005C8  B0D8               	btfsc	status,0,c
+  1478  0005CA  D049               	goto	i2l145
+  1479  0005CC  D7AF               	goto	i2l143
+  1480  0005CE                     
+  1481                           ;mainproject.c: 300: red=red+10;
+  1482  0005CE  0E0A               	movlw	10
+  1483  0005D0  2447               	addwf	_red,w,c
+  1484  0005D2  6E47               	movwf	_red,c
+  1485  0005D4  0E00               	movlw	0
+  1486  0005D6  2048               	addwfc	_red+1,w,c
+  1487  0005D8  6E48               	movwf	_red+1,c
+  1488                           
+  1489                           ;mainproject.c: 301: red2=red2+10;
+  1490  0005DA  0E0A               	movlw	10
+  1491  0005DC  2441               	addwf	_red2,w,c
+  1492  0005DE  6E41               	movwf	_red2,c
+  1493  0005E0  0E00               	movlw	0
+  1494  0005E2  2042               	addwfc	_red2+1,w,c
+  1495  0005E4  6E42               	movwf	_red2+1,c
+  1496                           
+  1497                           ;mainproject.c: 302: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1498  0005E6  C047  F013         	movff	_red,rgbshow@rval
+  1499  0005EA  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1500  0005EE  C045  F015         	movff	_green,rgbshow@gval
+  1501  0005F2  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1502  0005F6  C043  F017         	movff	_blue,rgbshow@bval
+  1503  0005FA  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1504  0005FE  C041  F019         	movff	_red2,rgbshow@rval2
+  1505  000602  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1506  000606  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1507  00060A  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1508  00060E  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1509  000612  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1510  000616  0E00               	movlw	0
+  1511  000618  6E20               	movwf	rgbshow@flag+1,c
+  1512  00061A  0E04               	movlw	4
+  1513  00061C  6E1F               	movwf	rgbshow@flag,c
+  1514  00061E  EC2A  F007         	call	_rgbshow	;wreg free
+  1515                           
+  1516                           ;mainproject.c: 304: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1517  000622  C047  F013         	movff	_red,rgbshow@rval
+  1518  000626  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1519  00062A  C045  F015         	movff	_green,rgbshow@gval
+  1520  00062E  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1521  000632  C043  F017         	movff	_blue,rgbshow@bval
+  1522  000636  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1523  00063A  C041  F019         	movff	_red2,rgbshow@rval2
+  1524  00063E  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1525  000642  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1526  000646  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1527  00064A  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1528  00064E  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1529  000652  0E00               	movlw	0
+  1530  000654  6E20               	movwf	rgbshow@flag+1,c
+  1531  000656  0E05               	movlw	5
+  1532  000658  6E1F               	movwf	rgbshow@flag,c
+  1533  00065A  EC2A  F007         	call	_rgbshow	;wreg free
+  1534  00065E                     i2l145:
+  1535  00065E  BE48               	btfsc	_red+1,7,c
+  1536  000660  D7B6               	goto	i2l146
+  1537  000662  5048               	movf	_red+1,w,c
+  1538  000664  E14D               	bnz	i2l148
+  1539  000666  0E8D               	movlw	141
+  1540  000668  5C47               	subwf	_red,w,c
+  1541  00066A  B0D8               	btfsc	status,0,c
+  1542  00066C  D049               	goto	i2l148
+  1543  00066E  D7AF               	goto	i2l146
+  1544  000670                     i2l1491:
+  1545                           
+  1546                           ;mainproject.c: 308: green=green-10;
+  1547  000670  0EF6               	movlw	246
+  1548  000672  2445               	addwf	_green,w,c
+  1549  000674  6E45               	movwf	_green,c
+  1550  000676  0EFF               	movlw	255
+  1551  000678  2046               	addwfc	_green+1,w,c
+  1552  00067A  6E46               	movwf	_green+1,c
+  1553                           
+  1554                           ;mainproject.c: 309: red2=red2+10;
+  1555  00067C  0E0A               	movlw	10
+  1556  00067E  2441               	addwf	_red2,w,c
+  1557  000680  6E41               	movwf	_red2,c
+  1558  000682  0E00               	movlw	0
+  1559  000684  2042               	addwfc	_red2+1,w,c
+  1560  000686  6E42               	movwf	_red2+1,c
+  1561                           
+  1562                           ;mainproject.c: 310: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1563  000688  C047  F013         	movff	_red,rgbshow@rval
+  1564  00068C  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1565  000690  C045  F015         	movff	_green,rgbshow@gval
+  1566  000694  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1567  000698  C043  F017         	movff	_blue,rgbshow@bval
+  1568  00069C  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1569  0006A0  C041  F019         	movff	_red2,rgbshow@rval2
+  1570  0006A4  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1571  0006A8  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1572  0006AC  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1573  0006B0  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1574  0006B4  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1575  0006B8  0E00               	movlw	0
+  1576  0006BA  6E20               	movwf	rgbshow@flag+1,c
+  1577  0006BC  0E04               	movlw	4
+  1578  0006BE  6E1F               	movwf	rgbshow@flag,c
+  1579  0006C0  EC2A  F007         	call	_rgbshow	;wreg free
+  1580                           
+  1581                           ;mainproject.c: 312: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1582  0006C4  C047  F013         	movff	_red,rgbshow@rval
+  1583  0006C8  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1584  0006CC  C045  F015         	movff	_green,rgbshow@gval
+  1585  0006D0  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1586  0006D4  C043  F017         	movff	_blue,rgbshow@bval
+  1587  0006D8  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1588  0006DC  C041  F019         	movff	_red2,rgbshow@rval2
+  1589  0006E0  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1590  0006E4  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1591  0006E8  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1592  0006EC  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1593  0006F0  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1594  0006F4  0E00               	movlw	0
+  1595  0006F6  6E20               	movwf	rgbshow@flag+1,c
+  1596  0006F8  0E05               	movlw	5
+  1597  0006FA  6E1F               	movwf	rgbshow@flag,c
+  1598  0006FC  EC2A  F007         	call	_rgbshow	;wreg free
+  1599  000700                     i2l148:
+  1600  000700  BE46               	btfsc	_green+1,7,c
+  1601  000702  D04F               	goto	i2l151
+  1602  000704  5046               	movf	_green+1,w,c
+  1603  000706  E1B4               	bnz	i2l1491
+  1604  000708  0E46               	movlw	70
+  1605  00070A  5C45               	subwf	_green,w,c
+  1606  00070C  A0D8               	btfss	status,0,c
+  1607  00070E  D049               	goto	i2l151
+  1608  000710  D7AF               	goto	i2l149
+  1609  000712                     
+  1610                           ;mainproject.c: 316: green=green-10;
+  1611  000712  0EF6               	movlw	246
+  1612  000714  2445               	addwf	_green,w,c
+  1613  000716  6E45               	movwf	_green,c
+  1614  000718  0EFF               	movlw	255
+  1615  00071A  2046               	addwfc	_green+1,w,c
+  1616  00071C  6E46               	movwf	_green+1,c
+  1617                           
+  1618                           ;mainproject.c: 317: green2=green2-10;
+  1619  00071E  0EF6               	movlw	246
+  1620  000720  243F               	addwf	_green2,w,c
+  1621  000722  6E3F               	movwf	_green2,c
+  1622  000724  0EFF               	movlw	255
+  1623  000726  2040               	addwfc	_green2+1,w,c
+  1624  000728  6E40               	movwf	_green2+1,c
+  1625                           
+  1626                           ;mainproject.c: 318: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1627  00072A  C047  F013         	movff	_red,rgbshow@rval
+  1628  00072E  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1629  000732  C045  F015         	movff	_green,rgbshow@gval
+  1630  000736  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1631  00073A  C043  F017         	movff	_blue,rgbshow@bval
+  1632  00073E  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1633  000742  C041  F019         	movff	_red2,rgbshow@rval2
+  1634  000746  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1635  00074A  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1636  00074E  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1637  000752  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1638  000756  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1639  00075A  0E00               	movlw	0
+  1640  00075C  6E20               	movwf	rgbshow@flag+1,c
+  1641  00075E  0E04               	movlw	4
+  1642  000760  6E1F               	movwf	rgbshow@flag,c
+  1643  000762  EC2A  F007         	call	_rgbshow	;wreg free
+  1644                           
+  1645                           ;mainproject.c: 320: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1646  000766  C047  F013         	movff	_red,rgbshow@rval
+  1647  00076A  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1648  00076E  C045  F015         	movff	_green,rgbshow@gval
+  1649  000772  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1650  000776  C043  F017         	movff	_blue,rgbshow@bval
+  1651  00077A  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1652  00077E  C041  F019         	movff	_red2,rgbshow@rval2
+  1653  000782  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1654  000786  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1655  00078A  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1656  00078E  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1657  000792  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1658  000796  0E00               	movlw	0
+  1659  000798  6E20               	movwf	rgbshow@flag+1,c
+  1660  00079A  0E05               	movlw	5
+  1661  00079C  6E1F               	movwf	rgbshow@flag,c
+  1662  00079E  EC2A  F007         	call	_rgbshow	;wreg free
+  1663  0007A2                     i2l151:
+  1664  0007A2  BE46               	btfsc	_green+1,7,c
+  1665  0007A4  D049               	goto	i2l154
+  1666  0007A6  D7B5               	goto	i2l152
+  1667  0007A8                     i2l1503:
+  1668                           
+  1669                           ;mainproject.c: 324: red=red-10;
+  1670  0007A8  0EF6               	movlw	246
+  1671  0007AA  2447               	addwf	_red,w,c
+  1672  0007AC  6E47               	movwf	_red,c
+  1673  0007AE  0EFF               	movlw	255
+  1674  0007B0  2048               	addwfc	_red+1,w,c
+  1675  0007B2  6E48               	movwf	_red+1,c
+  1676                           
+  1677                           ;mainproject.c: 325: green2=green2-10;
+  1678  0007B4  0EF6               	movlw	246
+  1679  0007B6  243F               	addwf	_green2,w,c
+  1680  0007B8  6E3F               	movwf	_green2,c
+  1681  0007BA  0EFF               	movlw	255
+  1682  0007BC  2040               	addwfc	_green2+1,w,c
+  1683  0007BE  6E40               	movwf	_green2+1,c
+  1684                           
+  1685                           ;mainproject.c: 326: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1686  0007C0  C047  F013         	movff	_red,rgbshow@rval
+  1687  0007C4  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1688  0007C8  C045  F015         	movff	_green,rgbshow@gval
+  1689  0007CC  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1690  0007D0  C043  F017         	movff	_blue,rgbshow@bval
+  1691  0007D4  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1692  0007D8  C041  F019         	movff	_red2,rgbshow@rval2
+  1693  0007DC  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1694  0007E0  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1695  0007E4  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1696  0007E8  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1697  0007EC  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1698  0007F0  0E00               	movlw	0
+  1699  0007F2  6E20               	movwf	rgbshow@flag+1,c
+  1700  0007F4  0E04               	movlw	4
+  1701  0007F6  6E1F               	movwf	rgbshow@flag,c
+  1702  0007F8  EC2A  F007         	call	_rgbshow	;wreg free
+  1703                           
+  1704                           ;mainproject.c: 328: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1705  0007FC  C047  F013         	movff	_red,rgbshow@rval
+  1706  000800  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1707  000804  C045  F015         	movff	_green,rgbshow@gval
+  1708  000808  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1709  00080C  C043  F017         	movff	_blue,rgbshow@bval
+  1710  000810  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1711  000814  C041  F019         	movff	_red2,rgbshow@rval2
+  1712  000818  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1713  00081C  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1714  000820  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1715  000824  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1716  000828  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1717  00082C  0E00               	movlw	0
+  1718  00082E  6E20               	movwf	rgbshow@flag+1,c
+  1719  000830  0E05               	movlw	5
+  1720  000832  6E1F               	movwf	rgbshow@flag,c
+  1721  000834  EC2A  F007         	call	_rgbshow	;wreg free
+  1722  000838                     i2l154:
+  1723  000838  BE48               	btfsc	_red+1,7,c
+  1724  00083A  D04F               	goto	i2l157
+  1725  00083C  5048               	movf	_red+1,w,c
+  1726  00083E  E1B4               	bnz	i2l1503
+  1727  000840  0E46               	movlw	70
+  1728  000842  5C47               	subwf	_red,w,c
+  1729  000844  A0D8               	btfss	status,0,c
+  1730  000846  D049               	goto	i2l157
+  1731  000848  D7AF               	goto	i2l155
+  1732  00084A                     
+  1733                           ;mainproject.c: 332: red=red-10;
+  1734  00084A  0EF6               	movlw	246
+  1735  00084C  2447               	addwf	_red,w,c
+  1736  00084E  6E47               	movwf	_red,c
+  1737  000850  0EFF               	movlw	255
+  1738  000852  2048               	addwfc	_red+1,w,c
+  1739  000854  6E48               	movwf	_red+1,c
+  1740                           
+  1741                           ;mainproject.c: 333: red2=red2-10;
+  1742  000856  0EF6               	movlw	246
+  1743  000858  2441               	addwf	_red2,w,c
+  1744  00085A  6E41               	movwf	_red2,c
+  1745  00085C  0EFF               	movlw	255
+  1746  00085E  2042               	addwfc	_red2+1,w,c
+  1747  000860  6E42               	movwf	_red2+1,c
+  1748                           
+  1749                           ;mainproject.c: 334: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1750  000862  C047  F013         	movff	_red,rgbshow@rval
+  1751  000866  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1752  00086A  C045  F015         	movff	_green,rgbshow@gval
+  1753  00086E  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1754  000872  C043  F017         	movff	_blue,rgbshow@bval
+  1755  000876  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1756  00087A  C041  F019         	movff	_red2,rgbshow@rval2
+  1757  00087E  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1758  000882  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1759  000886  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1760  00088A  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1761  00088E  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1762  000892  0E00               	movlw	0
+  1763  000894  6E20               	movwf	rgbshow@flag+1,c
+  1764  000896  0E04               	movlw	4
+  1765  000898  6E1F               	movwf	rgbshow@flag,c
+  1766  00089A  EC2A  F007         	call	_rgbshow	;wreg free
+  1767                           
+  1768                           ;mainproject.c: 336: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1769  00089E  C047  F013         	movff	_red,rgbshow@rval
+  1770  0008A2  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1771  0008A6  C045  F015         	movff	_green,rgbshow@gval
+  1772  0008AA  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1773  0008AE  C043  F017         	movff	_blue,rgbshow@bval
+  1774  0008B2  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1775  0008B6  C041  F019         	movff	_red2,rgbshow@rval2
+  1776  0008BA  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1777  0008BE  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1778  0008C2  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1779  0008C6  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1780  0008CA  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1781  0008CE  0E00               	movlw	0
+  1782  0008D0  6E20               	movwf	rgbshow@flag+1,c
+  1783  0008D2  0E05               	movlw	5
+  1784  0008D4  6E1F               	movwf	rgbshow@flag,c
+  1785  0008D6  EC2A  F007         	call	_rgbshow	;wreg free
+  1786  0008DA                     i2l157:
+  1787  0008DA  BE48               	btfsc	_red+1,7,c
+  1788  0008DC  D049               	goto	i2l160
+  1789  0008DE  D7B5               	goto	i2l158
+  1790  0008E0                     i2l1515:
+  1791                           
+  1792                           ;mainproject.c: 340: blue=blue-10;
+  1793  0008E0  0EF6               	movlw	246
+  1794  0008E2  2443               	addwf	_blue,w,c
+  1795  0008E4  6E43               	movwf	_blue,c
+  1796  0008E6  0EFF               	movlw	255
+  1797  0008E8  2044               	addwfc	_blue+1,w,c
+  1798  0008EA  6E44               	movwf	_blue+1,c
+  1799                           
+  1800                           ;mainproject.c: 341: red2=red2-10;
+  1801  0008EC  0EF6               	movlw	246
+  1802  0008EE  2441               	addwf	_red2,w,c
+  1803  0008F0  6E41               	movwf	_red2,c
+  1804  0008F2  0EFF               	movlw	255
+  1805  0008F4  2042               	addwfc	_red2+1,w,c
+  1806  0008F6  6E42               	movwf	_red2+1,c
+  1807                           
+  1808                           ;mainproject.c: 342: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1809  0008F8  C047  F013         	movff	_red,rgbshow@rval
+  1810  0008FC  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1811  000900  C045  F015         	movff	_green,rgbshow@gval
+  1812  000904  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1813  000908  C043  F017         	movff	_blue,rgbshow@bval
+  1814  00090C  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1815  000910  C041  F019         	movff	_red2,rgbshow@rval2
+  1816  000914  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1817  000918  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1818  00091C  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1819  000920  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1820  000924  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1821  000928  0E00               	movlw	0
+  1822  00092A  6E20               	movwf	rgbshow@flag+1,c
+  1823  00092C  0E04               	movlw	4
+  1824  00092E  6E1F               	movwf	rgbshow@flag,c
+  1825  000930  EC2A  F007         	call	_rgbshow	;wreg free
+  1826                           
+  1827                           ;mainproject.c: 344: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1828  000934  C047  F013         	movff	_red,rgbshow@rval
+  1829  000938  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1830  00093C  C045  F015         	movff	_green,rgbshow@gval
+  1831  000940  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1832  000944  C043  F017         	movff	_blue,rgbshow@bval
+  1833  000948  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1834  00094C  C041  F019         	movff	_red2,rgbshow@rval2
+  1835  000950  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1836  000954  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1837  000958  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1838  00095C  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1839  000960  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1840  000964  0E00               	movlw	0
+  1841  000966  6E20               	movwf	rgbshow@flag+1,c
+  1842  000968  0E05               	movlw	5
+  1843  00096A  6E1F               	movwf	rgbshow@flag,c
+  1844  00096C  EC2A  F007         	call	_rgbshow	;wreg free
+  1845  000970                     i2l160:
+  1846  000970  BE44               	btfsc	_blue+1,7,c
+  1847  000972  D04F               	goto	i2l163
+  1848  000974  5044               	movf	_blue+1,w,c
+  1849  000976  E1B4               	bnz	i2l1515
+  1850  000978  0E46               	movlw	70
+  1851  00097A  5C43               	subwf	_blue,w,c
+  1852  00097C  A0D8               	btfss	status,0,c
+  1853  00097E  D049               	goto	i2l163
+  1854  000980  D7AF               	goto	i2l161
+  1855  000982                     
+  1856                           ;mainproject.c: 347: blue=blue-10;
+  1857  000982  0EF6               	movlw	246
+  1858  000984  2443               	addwf	_blue,w,c
+  1859  000986  6E43               	movwf	_blue,c
+  1860  000988  0EFF               	movlw	255
+  1861  00098A  2044               	addwfc	_blue+1,w,c
+  1862  00098C  6E44               	movwf	_blue+1,c
+  1863                           
+  1864                           ;mainproject.c: 348: blue2=blue2-10;
+  1865  00098E  0EF6               	movlw	246
+  1866  000990  243D               	addwf	_blue2,w,c
+  1867  000992  6E3D               	movwf	_blue2,c
+  1868  000994  0EFF               	movlw	255
+  1869  000996  203E               	addwfc	_blue2+1,w,c
+  1870  000998  6E3E               	movwf	_blue2+1,c
+  1871                           
+  1872                           ;mainproject.c: 349: rgbshow(red,green,blue,red2,green2,blue2,4);
+  1873  00099A  C047  F013         	movff	_red,rgbshow@rval
+  1874  00099E  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1875  0009A2  C045  F015         	movff	_green,rgbshow@gval
+  1876  0009A6  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1877  0009AA  C043  F017         	movff	_blue,rgbshow@bval
+  1878  0009AE  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1879  0009B2  C041  F019         	movff	_red2,rgbshow@rval2
+  1880  0009B6  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1881  0009BA  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1882  0009BE  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1883  0009C2  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1884  0009C6  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1885  0009CA  0E00               	movlw	0
+  1886  0009CC  6E20               	movwf	rgbshow@flag+1,c
+  1887  0009CE  0E04               	movlw	4
+  1888  0009D0  6E1F               	movwf	rgbshow@flag,c
+  1889  0009D2  EC2A  F007         	call	_rgbshow	;wreg free
+  1890                           
+  1891                           ;mainproject.c: 351: rgbshow(red,green,blue,red2,green2,blue2,5);
+  1892  0009D6  C047  F013         	movff	_red,rgbshow@rval
+  1893  0009DA  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1894  0009DE  C045  F015         	movff	_green,rgbshow@gval
+  1895  0009E2  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1896  0009E6  C043  F017         	movff	_blue,rgbshow@bval
+  1897  0009EA  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1898  0009EE  C041  F019         	movff	_red2,rgbshow@rval2
+  1899  0009F2  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1900  0009F6  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1901  0009FA  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1902  0009FE  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1903  000A02  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1904  000A06  0E00               	movlw	0
+  1905  000A08  6E20               	movwf	rgbshow@flag+1,c
+  1906  000A0A  0E05               	movlw	5
+  1907  000A0C  6E1F               	movwf	rgbshow@flag,c
+  1908  000A0E  EC2A  F007         	call	_rgbshow	;wreg free
+  1909  000A12                     i2l163:
+  1910  000A12  BE44               	btfsc	_blue+1,7,c
+  1911  000A14  D049               	goto	i2l166
+  1912  000A16  D7B5               	goto	i2l164
+  1913  000A18                     i2l167:
+  1914                           
+  1915                           ;mainproject.c: 355: LATCbits.LATC0=0;
+  1916  000A18  908B               	bcf	3979,0,c	;volatile
+  1917                           
+  1918                           ;mainproject.c: 356: LATCbits.LATC1=0;
+  1919  000A1A  928B               	bcf	3979,1,c	;volatile
+  1920                           
+  1921                           ;mainproject.c: 357: LATCbits.LATC2=0;
+  1922  000A1C  948B               	bcf	3979,2,c	;volatile
+  1923                           
+  1924                           ;mainproject.c: 358: LATCbits.LATC3=0;
+  1925  000A1E  968B               	bcf	3979,3,c	;volatile
+  1926                           
+  1927                           ;mainproject.c: 359: LATDbits.LATD0=0;
+  1928  000A20  908C               	bcf	3980,0,c	;volatile
+  1929                           
+  1930                           ;mainproject.c: 360: LATDbits.LATD1=0;
+  1931  000A22  928C               	bcf	3980,1,c	;volatile
+  1932                           
+  1933                           ;mainproject.c: 361: blue2=blue2-10;
+  1934  000A24  0EF6               	movlw	246
+  1935  000A26  243D               	addwf	_blue2,w,c
+  1936  000A28  6E3D               	movwf	_blue2,c
+  1937  000A2A  0EFF               	movlw	255
+  1938  000A2C  203E               	addwfc	_blue2+1,w,c
+  1939  000A2E  6E3E               	movwf	_blue2+1,c
+  1940                           
+  1941                           ;mainproject.c: 362: rgbshow(red,green,blue,red2,green2,blue2,2);
+  1942  000A30  C047  F013         	movff	_red,rgbshow@rval
+  1943  000A34  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1944  000A38  C045  F015         	movff	_green,rgbshow@gval
+  1945  000A3C  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1946  000A40  C043  F017         	movff	_blue,rgbshow@bval
+  1947  000A44  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1948  000A48  C041  F019         	movff	_red2,rgbshow@rval2
+  1949  000A4C  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1950  000A50  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1951  000A54  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1952  000A58  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1953  000A5C  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1954  000A60  0E00               	movlw	0
+  1955  000A62  6E20               	movwf	rgbshow@flag+1,c
+  1956  000A64  0E02               	movlw	2
+  1957  000A66  6E1F               	movwf	rgbshow@flag,c
+  1958  000A68  EC2A  F007         	call	_rgbshow	;wreg free
+  1959                           
+  1960                           ;mainproject.c: 364: rgbshow(red,green,blue,red2,green2,blue2,3);
+  1961  000A6C  C047  F013         	movff	_red,rgbshow@rval
+  1962  000A70  C048  F014         	movff	_red+1,rgbshow@rval+1
+  1963  000A74  C045  F015         	movff	_green,rgbshow@gval
+  1964  000A78  C046  F016         	movff	_green+1,rgbshow@gval+1
+  1965  000A7C  C043  F017         	movff	_blue,rgbshow@bval
+  1966  000A80  C044  F018         	movff	_blue+1,rgbshow@bval+1
+  1967  000A84  C041  F019         	movff	_red2,rgbshow@rval2
+  1968  000A88  C042  F01A         	movff	_red2+1,rgbshow@rval2+1
+  1969  000A8C  C03F  F01B         	movff	_green2,rgbshow@gval2
+  1970  000A90  C040  F01C         	movff	_green2+1,rgbshow@gval2+1
+  1971  000A94  C03D  F01D         	movff	_blue2,rgbshow@bval2
+  1972  000A98  C03E  F01E         	movff	_blue2+1,rgbshow@bval2+1
+  1973  000A9C  0E00               	movlw	0
+  1974  000A9E  6E20               	movwf	rgbshow@flag+1,c
+  1975  000AA0  0E03               	movlw	3
+  1976  000AA2  6E1F               	movwf	rgbshow@flag,c
+  1977  000AA4  EC2A  F007         	call	_rgbshow	;wreg free
+  1978  000AA8                     i2l166:
+  1979  000AA8  AE3E               	btfss	_blue2+1,7,c
+  1980  000AAA  D7B6               	goto	i2l167
+  1981                           
+  1982                           ;mainproject.c: 365: }
+  1983                           ;mainproject.c: 366: zerorgb();
+  1984  000AAC  ECD3  F007         	call	_zerorgb	;wreg free
+  1985  000AB0  0012               	return		;funcret
+  1986  000AB2                     __end_of_rgbstart:
+  1987                           	opt stack 0
+  1988                           pclatu	equ	0xFFB
+  1989                           pclath	equ	0xFFA
+  1990                           tblptru	equ	0xFF8
+  1991                           tblptrh	equ	0xFF7
+  1992                           tblptrl	equ	0xFF6
+  1993                           tablat	equ	0xFF5
+  1994                           prodh	equ	0xFF4
+  1995                           prodl	equ	0xFF3
+  1996                           intcon	equ	0xFF2
+  1997                           intcon2	equ	0xFF1
+  1998                           postinc0	equ	0xFEE
+  1999                           fsr0h	equ	0xFEA
+  2000                           fsr0l	equ	0xFE9
+  2001                           wreg	equ	0xFE8
+  2002                           fsr1h	equ	0xFE2
+  2003                           fsr1l	equ	0xFE1
+  2004                           fsr2h	equ	0xFDA
+  2005                           fsr2l	equ	0xFD9
+  2006                           status	equ	0xFD8
+  2007                           
+  2008 ;; *************** function _zerorgb *****************
+  2009 ;; Defined at:
+  2010 ;;		line 196 in file "mainproject.c"
+  2011 ;; Parameters:    Size  Location     Type
+  2012 ;;		None
+  2013 ;; Auto vars:     Size  Location     Type
+  2014 ;;		None
+  2015 ;; Return value:  Size  Location     Type
+  2016 ;;                  1    wreg      void 
+  2017 ;; Registers used:
+  2018 ;;		wreg, status,2
+  2019 ;; Tracked objects:
+  2020 ;;		On entry : 0/0
+  2021 ;;		On exit  : 0/0
+  2022 ;;		Unchanged: 0/0
+  2023 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  2024 ;;      Params:         0       0       0       0       0       0       0
+  2025 ;;      Locals:         0       0       0       0       0       0       0
+  2026 ;;      Temps:          0       0       0       0       0       0       0
+  2027 ;;      Totals:         0       0       0       0       0       0       0
+  2028 ;;Total ram usage:        0 bytes
+  2029 ;; Hardware stack levels used:    1
+  2030 ;; This function calls:
+  2031 ;;		Nothing
+  2032 ;; This function is called by:
+  2033 ;;		_rgbstart
+  2034 ;; This function uses a non-reentrant model
+  2035 ;;
+  2036                           
+  2037                           	psect	text6
+  2038  000FA6                     __ptext6:
+  2039                           	opt stack 0
+  2040  000FA6                     _zerorgb:
+  2041                           	opt stack 26
+  2042                           
+  2043                           ;mainproject.c: 197: LATCbits.LATC0=0;
+  2044                           
+  2045                           ;incstack = 0
+  2046  000FA6  908B               	bcf	3979,0,c	;volatile
+  2047                           
+  2048                           ;mainproject.c: 198: LATCbits.LATC1=0;
+  2049  000FA8  928B               	bcf	3979,1,c	;volatile
+  2050                           
+  2051                           ;mainproject.c: 199: LATCbits.LATC2=0;
+  2052  000FAA  948B               	bcf	3979,2,c	;volatile
+  2053                           
+  2054                           ;mainproject.c: 200: LATCbits.LATC3=0;
+  2055  000FAC  968B               	bcf	3979,3,c	;volatile
+  2056                           
+  2057                           ;mainproject.c: 201: LATDbits.LATD0=0;
+  2058  000FAE  908C               	bcf	3980,0,c	;volatile
+  2059                           
+  2060                           ;mainproject.c: 202: LATDbits.LATD1=0;
+  2061  000FB0  928C               	bcf	3980,1,c	;volatile
+  2062                           
+  2063                           ;mainproject.c: 203: LATCbits.LATC7=0;
+  2064  000FB2  9E8B               	bcf	3979,7,c	;volatile
+  2065                           
+  2066                           ;mainproject.c: 204: LATCbits.LATC6=0;
+  2067  000FB4  9C8B               	bcf	3979,6,c	;volatile
+  2068                           
+  2069                           ;mainproject.c: 205: LATCbits.LATC5=0;
+  2070  000FB6  9A8B               	bcf	3979,5,c	;volatile
+  2071                           
+  2072                           ;mainproject.c: 206: LATCbits.LATC4=0;
+  2073  000FB8  988B               	bcf	3979,4,c	;volatile
+  2074                           
+  2075                           ;mainproject.c: 207: LATDbits.LATD3=0;
+  2076  000FBA  968C               	bcf	3980,3,c	;volatile
+  2077                           
+  2078                           ;mainproject.c: 208: LATDbits.LATD2=0;
+  2079  000FBC  948C               	bcf	3980,2,c	;volatile
+  2080                           
+  2081                           ;mainproject.c: 209: red=0;
+  2082  000FBE  0E00               	movlw	0
+  2083  000FC0  6E48               	movwf	_red+1,c
+  2084  000FC2  0E00               	movlw	0
+  2085  000FC4  6E47               	movwf	_red,c
+  2086                           
+  2087                           ;mainproject.c: 210: green=0;
+  2088  000FC6  0E00               	movlw	0
+  2089  000FC8  6E46               	movwf	_green+1,c
+  2090  000FCA  0E00               	movlw	0
+  2091  000FCC  6E45               	movwf	_green,c
+  2092                           
+  2093                           ;mainproject.c: 211: blue=0;
+  2094  000FCE  0E00               	movlw	0
+  2095  000FD0  6E44               	movwf	_blue+1,c
+  2096  000FD2  0E00               	movlw	0
+  2097  000FD4  6E43               	movwf	_blue,c
+  2098                           
+  2099                           ;mainproject.c: 212: red2=0;
+  2100  000FD6  0E00               	movlw	0
+  2101  000FD8  6E42               	movwf	_red2+1,c
+  2102  000FDA  0E00               	movlw	0
+  2103  000FDC  6E41               	movwf	_red2,c
+  2104                           
+  2105                           ;mainproject.c: 213: green2=0;
+  2106  000FDE  0E00               	movlw	0
+  2107  000FE0  6E40               	movwf	_green2+1,c
+  2108  000FE2  0E00               	movlw	0
+  2109  000FE4  6E3F               	movwf	_green2,c
+  2110                           
+  2111                           ;mainproject.c: 214: blue2=0;
+  2112  000FE6  0E00               	movlw	0
+  2113  000FE8  6E3E               	movwf	_blue2+1,c
+  2114  000FEA  0E00               	movlw	0
+  2115  000FEC  6E3D               	movwf	_blue2,c
+  2116  000FEE  0012               	return		;funcret
+  2117  000FF0                     __end_of_zerorgb:
+  2118                           	opt stack 0
+  2119                           pclatu	equ	0xFFB
+  2120                           pclath	equ	0xFFA
+  2121                           tblptru	equ	0xFF8
+  2122                           tblptrh	equ	0xFF7
+  2123                           tblptrl	equ	0xFF6
+  2124                           tablat	equ	0xFF5
+  2125                           prodh	equ	0xFF4
+  2126                           prodl	equ	0xFF3
+  2127                           intcon	equ	0xFF2
+  2128                           intcon2	equ	0xFF1
+  2129                           postinc0	equ	0xFEE
+  2130                           fsr0h	equ	0xFEA
+  2131                           fsr0l	equ	0xFE9
+  2132                           wreg	equ	0xFE8
+  2133                           fsr1h	equ	0xFE2
+  2134                           fsr1l	equ	0xFE1
+  2135                           fsr2h	equ	0xFDA
+  2136                           fsr2l	equ	0xFD9
+  2137                           status	equ	0xFD8
+  2138                           
+  2139 ;; *************** function _rgbshow *****************
+  2140 ;; Defined at:
+  2141 ;;		line 181 in file "mainproject.c"
+  2142 ;; Parameters:    Size  Location     Type
+  2143 ;;  rval            2   18[COMRAM] int 
+  2144 ;;  gval            2   20[COMRAM] int 
+  2145 ;;  bval            2   22[COMRAM] int 
+  2146 ;;  rval2           2   24[COMRAM] int 
+  2147 ;;  gval2           2   26[COMRAM] int 
+  2148 ;;  bval2           2   28[COMRAM] int 
+  2149 ;;  flag            2   30[COMRAM] int 
+  2150 ;; Auto vars:     Size  Location     Type
+  2151 ;;  i               2   32[COMRAM] int 
+  2152 ;; Return value:  Size  Location     Type
+  2153 ;;                  1    wreg      void 
+  2154 ;; Registers used:
+  2155 ;;		wreg, status,2, status,0, cstack
+  2156 ;; Tracked objects:
+  2157 ;;		On entry : 0/0
+  2158 ;;		On exit  : 0/0
+  2159 ;;		Unchanged: 0/0
+  2160 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  2161 ;;      Params:        14       0       0       0       0       0       0
+  2162 ;;      Locals:         2       0       0       0       0       0       0
+  2163 ;;      Temps:          0       0       0       0       0       0       0
+  2164 ;;      Totals:        16       0       0       0       0       0       0
+  2165 ;;Total ram usage:       16 bytes
+  2166 ;; Hardware stack levels used:    1
+  2167 ;; Hardware stack levels required when called:    1
+  2168 ;; This function calls:
+  2169 ;;		_rgbshowone
+  2170 ;;		_rgbshowsix
+  2171 ;; This function is called by:
+  2172 ;;		_rgbstart
+  2173 ;; This function uses a non-reentrant model
+  2174 ;;
+  2175                           
+  2176                           	psect	text7
+  2177  000E54                     __ptext7:
+  2178                           	opt stack 0
+  2179  000E54                     _rgbshow:
+  2180                           	opt stack 25
+  2181                           
+  2182                           ;mainproject.c: 183: int i=60;
+  2183                           
+  2184                           ;incstack = 0
+  2185  000E54  0E00               	movlw	0
+  2186  000E56  6E22               	movwf	rgbshow@i+1,c
+  2187  000E58  0E3C               	movlw	60
+  2188  000E5A  6E21               	movwf	rgbshow@i,c
+  2189                           
+  2190                           ;mainproject.c: 184: if(flag<4){
+  2191  000E5C  BE20               	btfsc	rgbshow@flag+1,7,c
+  2192  000E5E  D019               	goto	i2l105
+  2193  000E60  5020               	movf	rgbshow@flag+1,w,c
+  2194  000E62  E13E               	bnz	i2l1407
+  2195  000E64  0E04               	movlw	4
+  2196  000E66  5C1F               	subwf	rgbshow@flag,w,c
+  2197  000E68  A0D8               	btfss	status,0,c
+  2198  000E6A  D013               	goto	i2l105
+  2199  000E6C  D039               	goto	i2l109
+  2200  000E6E                     i2l1401:
+  2201                           
+  2202                           ;mainproject.c: 186: rgbshowone(rval,gval,bval,flag);
+  2203  000E6E  C013  F001         	movff	rgbshow@rval,rgbshowone@rval
+  2204  000E72  C014  F002         	movff	rgbshow@rval+1,rgbshowone@rval+1
+  2205  000E76  C015  F003         	movff	rgbshow@gval,rgbshowone@gval
+  2206  000E7A  C016  F004         	movff	rgbshow@gval+1,rgbshowone@gval+1
+  2207  000E7E  C017  F005         	movff	rgbshow@bval,rgbshowone@bval
+  2208  000E82  C018  F006         	movff	rgbshow@bval+1,rgbshowone@bval+1
+  2209  000E86  C01F  F007         	movff	rgbshow@flag,rgbshowone@flag
+  2210  000E8A  C020  F008         	movff	rgbshow@flag+1,rgbshowone@flag+1
+  2211  000E8E  EC59  F005         	call	_rgbshowone	;wreg free
+  2212  000E92                     i2l105:
+  2213  000E92  0621               	decf	rgbshow@i,f,c
+  2214  000E94  A0D8               	btfss	status,0,c
+  2215  000E96  0622               	decf	rgbshow@i+1,f,c
+  2216  000E98  2821               	incf	rgbshow@i,w,c
+  2217  000E9A  E1E9               	bnz	i2l1401
+  2218  000E9C  2822               	incf	rgbshow@i+1,w,c
+  2219  000E9E  B4D8               	btfsc	status,2,c
+  2220  000EA0  0012               	return	
+  2221  000EA2  D7E5               	goto	i2l106
+  2222  000EA4                     i2l1405:
+  2223                           
+  2224                           ;mainproject.c: 191: rgbshowsix(rval,gval,bval,rval2,gval2,bval2,flag);
+  2225  000EA4  C013  F001         	movff	rgbshow@rval,rgbshowsix@rval
+  2226  000EA8  C014  F002         	movff	rgbshow@rval+1,rgbshowsix@rval+1
+  2227  000EAC  C015  F003         	movff	rgbshow@gval,rgbshowsix@gval
+  2228  000EB0  C016  F004         	movff	rgbshow@gval+1,rgbshowsix@gval+1
+  2229  000EB4  C017  F005         	movff	rgbshow@bval,rgbshowsix@bval
+  2230  000EB8  C018  F006         	movff	rgbshow@bval+1,rgbshowsix@bval+1
+  2231  000EBC  C019  F007         	movff	rgbshow@rval2,rgbshowsix@rval2
+  2232  000EC0  C01A  F008         	movff	rgbshow@rval2+1,rgbshowsix@rval2+1
+  2233  000EC4  C01B  F009         	movff	rgbshow@gval2,rgbshowsix@gval2
+  2234  000EC8  C01C  F00A         	movff	rgbshow@gval2+1,rgbshowsix@gval2+1
+  2235  000ECC  C01D  F00B         	movff	rgbshow@bval2,rgbshowsix@bval2
+  2236  000ED0  C01E  F00C         	movff	rgbshow@bval2+1,rgbshowsix@bval2+1
+  2237  000ED4  C01F  F00D         	movff	rgbshow@flag,rgbshowsix@flag
+  2238  000ED8  C020  F00E         	movff	rgbshow@flag+1,rgbshowsix@flag+1
+  2239  000EDC  EC32  F006         	call	_rgbshowsix	;wreg free
+  2240  000EE0                     i2l109:
+  2241  000EE0                     i2l1407:
+  2242  000EE0  0621               	decf	rgbshow@i,f,c
+  2243  000EE2  A0D8               	btfss	status,0,c
+  2244  000EE4  0622               	decf	rgbshow@i+1,f,c
+  2245  000EE6  2821               	incf	rgbshow@i,w,c
+  2246  000EE8  E1DD               	bnz	i2l1405
+  2247  000EEA  2822               	incf	rgbshow@i+1,w,c
+  2248  000EEC  B4D8               	btfsc	status,2,c
+  2249  000EEE  0012               	return	
+  2250  000EF0  D7D9               	goto	i2l110
+  2251  000EF2                     __end_of_rgbshow:
+  2252                           	opt stack 0
+  2253                           pclatu	equ	0xFFB
+  2254                           pclath	equ	0xFFA
+  2255                           tblptru	equ	0xFF8
+  2256                           tblptrh	equ	0xFF7
+  2257                           tblptrl	equ	0xFF6
+  2258                           tablat	equ	0xFF5
+  2259                           prodh	equ	0xFF4
+  2260                           prodl	equ	0xFF3
+  2261                           intcon	equ	0xFF2
+  2262                           intcon2	equ	0xFF1
+  2263                           postinc0	equ	0xFEE
+  2264                           fsr0h	equ	0xFEA
+  2265                           fsr0l	equ	0xFE9
+  2266                           wreg	equ	0xFE8
+  2267                           fsr1h	equ	0xFE2
+  2268                           fsr1l	equ	0xFE1
+  2269                           fsr2h	equ	0xFDA
+  2270                           fsr2l	equ	0xFD9
+  2271                           status	equ	0xFD8
+  2272                           
+  2273 ;; *************** function _rgbshowsix *****************
+  2274 ;; Defined at:
+  2275 ;;		line 131 in file "mainproject.c"
+  2276 ;; Parameters:    Size  Location     Type
+  2277 ;;  rval            2    0[COMRAM] int 
+  2278 ;;  gval            2    2[COMRAM] int 
+  2279 ;;  bval            2    4[COMRAM] int 
+  2280 ;;  rval2           2    6[COMRAM] int 
+  2281 ;;  gval2           2    8[COMRAM] int 
+  2282 ;;  bval2           2   10[COMRAM] int 
+  2283 ;;  flag            2   12[COMRAM] int 
+  2284 ;; Auto vars:     Size  Location     Type
+  2285 ;;  i               2   16[COMRAM] int 
+  2286 ;;  i               2   14[COMRAM] int 
+  2287 ;; Return value:  Size  Location     Type
+  2288 ;;                  1    wreg      void 
+  2289 ;; Registers used:
+  2290 ;;		wreg, status,2, status,0
+  2291 ;; Tracked objects:
+  2292 ;;		On entry : 0/0
+  2293 ;;		On exit  : 0/0
+  2294 ;;		Unchanged: 0/0
+  2295 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  2296 ;;      Params:        14       0       0       0       0       0       0
+  2297 ;;      Locals:         4       0       0       0       0       0       0
+  2298 ;;      Temps:          0       0       0       0       0       0       0
+  2299 ;;      Totals:        18       0       0       0       0       0       0
+  2300 ;;Total ram usage:       18 bytes
+  2301 ;; Hardware stack levels used:    1
+  2302 ;; This function calls:
+  2303 ;;		Nothing
+  2304 ;; This function is called by:
+  2305 ;;		_rgbshow
+  2306 ;; This function uses a non-reentrant model
+  2307 ;;
+  2308                           
+  2309                           	psect	text8
+  2310  000C64                     __ptext8:
+  2311                           	opt stack 0
+  2312  000C64                     _rgbshowsix:
+  2313                           	opt stack 25
+  2314                           
+  2315                           ;mainproject.c: 133: if(flag==4){
+  2316                           
+  2317                           ;incstack = 0
+  2318  000C64  0E04               	movlw	4
+  2319  000C66  180D               	xorwf	rgbshowsix@flag,w,c
+  2320  000C68  100E               	iorwf	rgbshowsix@flag+1,w,c
+  2321  000C6A  A4D8               	btfss	status,2,c
+  2322  000C6C  D051               	goto	i2l82
+  2323                           
+  2324                           ;mainproject.c: 134: LATCbits.LATC0=1;
+  2325  000C6E  808B               	bsf	3979,0,c	;volatile
+  2326                           
+  2327                           ;mainproject.c: 135: LATCbits.LATC1=1;
+  2328  000C70  828B               	bsf	3979,1,c	;volatile
+  2329                           
+  2330                           ;mainproject.c: 136: LATCbits.LATC2=1;
+  2331  000C72  848B               	bsf	3979,2,c	;volatile
+  2332                           
+  2333                           ;mainproject.c: 137: LATCbits.LATC3=0;
+  2334  000C74  968B               	bcf	3979,3,c	;volatile
+  2335                           
+  2336                           ;mainproject.c: 138: LATDbits.LATD0=0;
+  2337  000C76  908C               	bcf	3980,0,c	;volatile
+  2338                           
+  2339                           ;mainproject.c: 139: LATDbits.LATD1=0;
+  2340  000C78  928C               	bcf	3980,1,c	;volatile
+  2341                           
+  2342                           ;mainproject.c: 140: LATCbits.LATC7=1;
+  2343  000C7A  8E8B               	bsf	3979,7,c	;volatile
+  2344                           
+  2345                           ;mainproject.c: 141: LATCbits.LATC6=1;
+  2346  000C7C  8C8B               	bsf	3979,6,c	;volatile
+  2347                           
+  2348                           ;mainproject.c: 142: LATCbits.LATC5=1;
+  2349  000C7E  8A8B               	bsf	3979,5,c	;volatile
+  2350                           
+  2351                           ;mainproject.c: 143: LATCbits.LATC4=0;
+  2352  000C80  988B               	bcf	3979,4,c	;volatile
+  2353                           
+  2354                           ;mainproject.c: 144: LATDbits.LATD3=0;
+  2355  000C82  968C               	bcf	3980,3,c	;volatile
+  2356                           
+  2357                           ;mainproject.c: 145: LATDbits.LATD2=0;
+  2358  000C84  948C               	bcf	3980,2,c	;volatile
+  2359                           
+  2360                           ;mainproject.c: 147: for(int i=0;i<140;i++){
+  2361  000C86  0E00               	movlw	0
+  2362  000C88  6E10               	movwf	rgbshowsix@i+1,c
+  2363  000C8A  0E00               	movlw	0
+  2364  000C8C  6E0F               	movwf	rgbshowsix@i,c
+  2365  000C8E  BE10               	btfsc	rgbshowsix@i+1,7,c
+  2366  000C90  D008               	goto	i2l83
+  2367  000C92  5010               	movf	rgbshowsix@i+1,w,c
+  2368  000C94  E105               	bnz	i2u97_40
+  2369  000C96  0E8C               	movlw	140
+  2370  000C98  5C0F               	subwf	rgbshowsix@i,w,c
+  2371  000C9A  B0D8               	btfsc	status,0,c
+  2372  000C9C  0012               	return	
+  2373  000C9E  D001               	goto	i2l83
+  2374  000CA0                     i2u97_40:
+  2375  000CA0  0012               	return	
+  2376  000CA2                     i2l83:
+  2377                           
+  2378                           ;mainproject.c: 148: if((rval--)==0) LATCbits.LATC0=0;
+  2379  000CA2  0601               	decf	rgbshowsix@rval,f,c
+  2380  000CA4  A0D8               	btfss	status,0,c
+  2381  000CA6  0602               	decf	rgbshowsix@rval+1,f,c
+  2382  000CA8  2801               	incf	rgbshowsix@rval,w,c
+  2383  000CAA  E103               	bnz	i2l1333
+  2384  000CAC  2802               	incf	rgbshowsix@rval+1,w,c
+  2385  000CAE  B4D8               	btfsc	status,2,c
+  2386  000CB0  908B               	bcf	3979,0,c	;volatile
+  2387  000CB2                     i2l1333:
+  2388                           
+  2389                           ;mainproject.c: 149: if((gval--)==0) LATCbits.LATC1=0;
+  2390  000CB2  0603               	decf	rgbshowsix@gval,f,c
+  2391  000CB4  A0D8               	btfss	status,0,c
+  2392  000CB6  0604               	decf	rgbshowsix@gval+1,f,c
+  2393  000CB8  2803               	incf	rgbshowsix@gval,w,c
+  2394  000CBA  E103               	bnz	i2l1337
+  2395  000CBC  2804               	incf	rgbshowsix@gval+1,w,c
+  2396  000CBE  B4D8               	btfsc	status,2,c
+  2397  000CC0  928B               	bcf	3979,1,c	;volatile
+  2398  000CC2                     i2l1337:
+  2399                           
+  2400                           ;mainproject.c: 150: if((bval--)==0) LATCbits.LATC2=0;
+  2401  000CC2  0605               	decf	rgbshowsix@bval,f,c
+  2402  000CC4  A0D8               	btfss	status,0,c
+  2403  000CC6  0606               	decf	rgbshowsix@bval+1,f,c
+  2404  000CC8  2805               	incf	rgbshowsix@bval,w,c
+  2405  000CCA  E103               	bnz	i2l1341
+  2406  000CCC  2806               	incf	rgbshowsix@bval+1,w,c
+  2407  000CCE  B4D8               	btfsc	status,2,c
+  2408  000CD0  948B               	bcf	3979,2,c	;volatile
+  2409  000CD2                     i2l1341:
+  2410                           
+  2411                           ;mainproject.c: 151: if((rval2--)==0) LATCbits.LATC7=0;
+  2412  000CD2  0607               	decf	rgbshowsix@rval2,f,c
+  2413  000CD4  A0D8               	btfss	status,0,c
+  2414  000CD6  0608               	decf	rgbshowsix@rval2+1,f,c
+  2415  000CD8  2807               	incf	rgbshowsix@rval2,w,c
+  2416  000CDA  E103               	bnz	i2l1345
+  2417  000CDC  2808               	incf	rgbshowsix@rval2+1,w,c
+  2418  000CDE  B4D8               	btfsc	status,2,c
+  2419  000CE0  9E8B               	bcf	3979,7,c	;volatile
+  2420  000CE2                     i2l1345:
+  2421                           
+  2422                           ;mainproject.c: 152: if((gval2--)==0) LATCbits.LATC6=0;
+  2423  000CE2  0609               	decf	rgbshowsix@gval2,f,c
+  2424  000CE4  A0D8               	btfss	status,0,c
+  2425  000CE6  060A               	decf	rgbshowsix@gval2+1,f,c
+  2426  000CE8  2809               	incf	rgbshowsix@gval2,w,c
+  2427  000CEA  E103               	bnz	i2l1349
+  2428  000CEC  280A               	incf	rgbshowsix@gval2+1,w,c
+  2429  000CEE  B4D8               	btfsc	status,2,c
+  2430  000CF0  9C8B               	bcf	3979,6,c	;volatile
+  2431  000CF2                     i2l1349:
+  2432                           
+  2433                           ;mainproject.c: 153: if((bval2--)==0) LATCbits.LATC5=0;
+  2434  000CF2  060B               	decf	rgbshowsix@bval2,f,c
+  2435  000CF4  A0D8               	btfss	status,0,c
+  2436  000CF6  060C               	decf	rgbshowsix@bval2+1,f,c
+  2437  000CF8  280B               	incf	rgbshowsix@bval2,w,c
+  2438  000CFA  E103               	bnz	i2l1353
+  2439  000CFC  280C               	incf	rgbshowsix@bval2+1,w,c
+  2440  000CFE  B4D8               	btfsc	status,2,c
+  2441  000D00  9A8B               	bcf	3979,5,c	;volatile
+  2442  000D02                     i2l1353:
+  2443  000D02  4A0F               	infsnz	rgbshowsix@i,f,c
+  2444  000D04  2A10               	incf	rgbshowsix@i+1,f,c
+  2445  000D06  BE10               	btfsc	rgbshowsix@i+1,7,c
+  2446  000D08  D7CC               	goto	i2l83
+  2447  000D0A  5010               	movf	rgbshowsix@i+1,w,c
+  2448  000D0C  E151               	bnz	i2l91
+  2449  000D0E  D7C3               	goto	L1
+  2450  000D10                     i2l82:
+  2451                           
+  2452                           ;mainproject.c: 157: else if(flag==5){
+  2453  000D10  0E05               	movlw	5
+  2454  000D12  180D               	xorwf	rgbshowsix@flag,w,c
+  2455  000D14  100E               	iorwf	rgbshowsix@flag+1,w,c
+  2456  000D16  A4D8               	btfss	status,2,c
+  2457  000D18  0012               	return	
+  2458                           
+  2459                           ;mainproject.c: 158: LATCbits.LATC0=0;
+  2460  000D1A  908B               	bcf	3979,0,c	;volatile
+  2461                           
+  2462                           ;mainproject.c: 159: LATCbits.LATC1=0;
+  2463  000D1C  928B               	bcf	3979,1,c	;volatile
+  2464                           
+  2465                           ;mainproject.c: 160: LATCbits.LATC2=0;
+  2466  000D1E  948B               	bcf	3979,2,c	;volatile
+  2467                           
+  2468                           ;mainproject.c: 161: LATCbits.LATC3=1;
+  2469  000D20  868B               	bsf	3979,3,c	;volatile
+  2470                           
+  2471                           ;mainproject.c: 162: LATDbits.LATD0=1;
+  2472  000D22  808C               	bsf	3980,0,c	;volatile
+  2473                           
+  2474                           ;mainproject.c: 163: LATDbits.LATD1=1;
+  2475  000D24  828C               	bsf	3980,1,c	;volatile
+  2476                           
+  2477                           ;mainproject.c: 164: LATCbits.LATC7=0;
+  2478  000D26  9E8B               	bcf	3979,7,c	;volatile
+  2479                           
+  2480                           ;mainproject.c: 165: LATCbits.LATC6=0;
+  2481  000D28  9C8B               	bcf	3979,6,c	;volatile
+  2482                           
+  2483                           ;mainproject.c: 166: LATCbits.LATC5=0;
+  2484  000D2A  9A8B               	bcf	3979,5,c	;volatile
+  2485                           
+  2486                           ;mainproject.c: 167: LATCbits.LATC4=1;
+  2487  000D2C  888B               	bsf	3979,4,c	;volatile
+  2488                           
+  2489                           ;mainproject.c: 168: LATDbits.LATD3=1;
+  2490  000D2E  868C               	bsf	3980,3,c	;volatile
+  2491                           
+  2492                           ;mainproject.c: 169: LATDbits.LATD2=1;
+  2493  000D30  848C               	bsf	3980,2,c	;volatile
+  2494                           
+  2495                           ;mainproject.c: 171: for(int i=0;i<140;i++){
+  2496  000D32  0E00               	movlw	0
+  2497  000D34  6E12               	movwf	rgbshowsix@i_539+1,c
+  2498  000D36  0E00               	movlw	0
+  2499  000D38  6E11               	movwf	rgbshowsix@i_539,c
+  2500  000D3A                     i2l1363:
+  2501  000D3A  BE12               	btfsc	rgbshowsix@i_539+1,7,c
+  2502  000D3C  D006               	goto	i2l93
+  2503  000D3E  5012               	movf	rgbshowsix@i_539+1,w,c
+  2504  000D40  E137               	bnz	i2l101
+  2505  000D42  0E8C               	movlw	140
+  2506  000D44  5C11               	subwf	rgbshowsix@i_539,w,c
+  2507  000D46  B0D8               	btfsc	status,0,c
+  2508  000D48  0012               	return	
+  2509  000D4A                     i2l93:
+  2510                           
+  2511                           ;mainproject.c: 172: if((rval--)==0) LATCbits.LATC3=0;
+  2512  000D4A  0601               	decf	rgbshowsix@rval,f,c
+  2513  000D4C  A0D8               	btfss	status,0,c
+  2514  000D4E  0602               	decf	rgbshowsix@rval+1,f,c
+  2515  000D50  2801               	incf	rgbshowsix@rval,w,c
+  2516  000D52  E103               	bnz	i2l1371
+  2517  000D54  2802               	incf	rgbshowsix@rval+1,w,c
+  2518  000D56  B4D8               	btfsc	status,2,c
+  2519  000D58  968B               	bcf	3979,3,c	;volatile
+  2520  000D5A                     i2l1371:
+  2521                           
+  2522                           ;mainproject.c: 173: if((gval--)==0) LATDbits.LATD0=0;
+  2523  000D5A  0603               	decf	rgbshowsix@gval,f,c
+  2524  000D5C  A0D8               	btfss	status,0,c
+  2525  000D5E  0604               	decf	rgbshowsix@gval+1,f,c
+  2526  000D60  2803               	incf	rgbshowsix@gval,w,c
+  2527  000D62  E103               	bnz	i2l1375
+  2528  000D64  2804               	incf	rgbshowsix@gval+1,w,c
+  2529  000D66  B4D8               	btfsc	status,2,c
+  2530  000D68  908C               	bcf	3980,0,c	;volatile
+  2531  000D6A                     i2l1375:
+  2532                           
+  2533                           ;mainproject.c: 174: if((bval--)==0) LATDbits.LATD1=0;
+  2534  000D6A  0605               	decf	rgbshowsix@bval,f,c
+  2535  000D6C  A0D8               	btfss	status,0,c
+  2536  000D6E  0606               	decf	rgbshowsix@bval+1,f,c
+  2537  000D70  2805               	incf	rgbshowsix@bval,w,c
+  2538  000D72  E103               	bnz	i2l1379
+  2539  000D74  2806               	incf	rgbshowsix@bval+1,w,c
+  2540  000D76  B4D8               	btfsc	status,2,c
+  2541  000D78  928C               	bcf	3980,1,c	;volatile
+  2542  000D7A                     i2l1379:
+  2543                           
+  2544                           ;mainproject.c: 175: if((rval2--)==0) LATCbits.LATC4=0;
+  2545  000D7A  0607               	decf	rgbshowsix@rval2,f,c
+  2546  000D7C  A0D8               	btfss	status,0,c
+  2547  000D7E  0608               	decf	rgbshowsix@rval2+1,f,c
+  2548  000D80  2807               	incf	rgbshowsix@rval2,w,c
+  2549  000D82  E103               	bnz	i2l1383
+  2550  000D84  2808               	incf	rgbshowsix@rval2+1,w,c
+  2551  000D86  B4D8               	btfsc	status,2,c
+  2552  000D88  988B               	bcf	3979,4,c	;volatile
+  2553  000D8A                     i2l1383:
+  2554                           
+  2555                           ;mainproject.c: 176: if((gval2--)==0) LATDbits.LATD3=0;
+  2556  000D8A  0609               	decf	rgbshowsix@gval2,f,c
+  2557  000D8C  A0D8               	btfss	status,0,c
+  2558  000D8E  060A               	decf	rgbshowsix@gval2+1,f,c
+  2559  000D90  2809               	incf	rgbshowsix@gval2,w,c
+  2560  000D92  E103               	bnz	i2l1387
+  2561  000D94  280A               	incf	rgbshowsix@gval2+1,w,c
+  2562  000D96  B4D8               	btfsc	status,2,c
+  2563  000D98  968C               	bcf	3980,3,c	;volatile
+  2564  000D9A                     i2l1387:
+  2565                           
+  2566                           ;mainproject.c: 177: if((bval2--)==0) LATDbits.LATD2=0;
+  2567  000D9A  060B               	decf	rgbshowsix@bval2,f,c
+  2568  000D9C  A0D8               	btfss	status,0,c
+  2569  000D9E  060C               	decf	rgbshowsix@bval2+1,f,c
+  2570  000DA0  280B               	incf	rgbshowsix@bval2,w,c
+  2571  000DA2  E103               	bnz	i2l1391
+  2572  000DA4  280C               	incf	rgbshowsix@bval2+1,w,c
+  2573  000DA6  B4D8               	btfsc	status,2,c
+  2574  000DA8  948C               	bcf	3980,2,c	;volatile
+  2575  000DAA                     i2l1391:
+  2576  000DAA  4A11               	infsnz	rgbshowsix@i_539,f,c
+  2577  000DAC  2A12               	incf	rgbshowsix@i_539+1,f,c
+  2578  000DAE  D7C5               	goto	i2l1363
+  2579  000DB0                     i2l91:
+  2580  000DB0                     i2l101:
+  2581  000DB0  0012               	return		;funcret
+  2582  000DB2                     __end_of_rgbshowsix:
+  2583                           	opt stack 0
+  2584                           pclatu	equ	0xFFB
+  2585                           pclath	equ	0xFFA
+  2586                           tblptru	equ	0xFF8
+  2587                           tblptrh	equ	0xFF7
+  2588                           tblptrl	equ	0xFF6
+  2589                           tablat	equ	0xFF5
+  2590                           prodh	equ	0xFF4
+  2591                           prodl	equ	0xFF3
+  2592                           intcon	equ	0xFF2
+  2593                           intcon2	equ	0xFF1
+  2594                           postinc0	equ	0xFEE
+  2595                           fsr0h	equ	0xFEA
+  2596                           fsr0l	equ	0xFE9
+  2597                           wreg	equ	0xFE8
+  2598                           fsr1h	equ	0xFE2
+  2599                           fsr1l	equ	0xFE1
+  2600                           fsr2h	equ	0xFDA
+  2601                           fsr2l	equ	0xFD9
+  2602                           status	equ	0xFD8
+  2603                           
+  2604 ;; *************** function _rgbshowone *****************
+  2605 ;; Defined at:
+  2606 ;;		line 72 in file "mainproject.c"
+  2607 ;; Parameters:    Size  Location     Type
+  2608 ;;  rval            2    0[COMRAM] int 
+  2609 ;;  gval            2    2[COMRAM] int 
+  2610 ;;  bval            2    4[COMRAM] int 
+  2611 ;;  flag            2    6[COMRAM] int 
+  2612 ;; Auto vars:     Size  Location     Type
+  2613 ;;  i               2   14[COMRAM] int 
+  2614 ;;  i               2   12[COMRAM] int 
+  2615 ;;  i               2   10[COMRAM] int 
+  2616 ;;  i               2    8[COMRAM] int 
+  2617 ;; Return value:  Size  Location     Type
+  2618 ;;                  1    wreg      void 
+  2619 ;; Registers used:
+  2620 ;;		wreg, status,2, status,0
+  2621 ;; Tracked objects:
+  2622 ;;		On entry : 0/0
+  2623 ;;		On exit  : 0/0
+  2624 ;;		Unchanged: 0/0
+  2625 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  2626 ;;      Params:         8       0       0       0       0       0       0
+  2627 ;;      Locals:         8       0       0       0       0       0       0
+  2628 ;;      Temps:          0       0       0       0       0       0       0
+  2629 ;;      Totals:        16       0       0       0       0       0       0
+  2630 ;;Total ram usage:       16 bytes
+  2631 ;; Hardware stack levels used:    1
+  2632 ;; This function calls:
+  2633 ;;		Nothing
+  2634 ;; This function is called by:
+  2635 ;;		_rgbshow
+  2636 ;; This function uses a non-reentrant model
+  2637 ;;
+  2638                           
+  2639                           	psect	text9
+  2640  000AB2                     __ptext9:
+  2641                           	opt stack 0
+  2642  000AB2                     _rgbshowone:
+  2643                           	opt stack 25
+  2644                           
+  2645                           ;mainproject.c: 73: if(flag==0){
+  2646                           
+  2647                           ;incstack = 0
+  2648  000AB2  5007               	movf	rgbshowone@flag,w,c
+  2649  000AB4  1008               	iorwf	rgbshowone@flag+1,w,c
+  2650  000AB6  A4D8               	btfss	status,2,c
+  2651  000AB8  D034               	goto	i2l52
+  2652                           
+  2653                           ;mainproject.c: 74: LATCbits.LATC0=1;
+  2654  000ABA  808B               	bsf	3979,0,c	;volatile
+  2655                           
+  2656                           ;mainproject.c: 75: LATCbits.LATC1=1;
+  2657  000ABC  828B               	bsf	3979,1,c	;volatile
+  2658                           
+  2659                           ;mainproject.c: 76: LATCbits.LATC2=1;
+  2660  000ABE  848B               	bsf	3979,2,c	;volatile
+  2661                           
+  2662                           ;mainproject.c: 77: LATCbits.LATC3=0;
+  2663  000AC0  968B               	bcf	3979,3,c	;volatile
+  2664                           
+  2665                           ;mainproject.c: 78: LATDbits.LATD0=0;
+  2666  000AC2  908C               	bcf	3980,0,c	;volatile
+  2667                           
+  2668                           ;mainproject.c: 79: LATDbits.LATD1=0;
+  2669  000AC4  928C               	bcf	3980,1,c	;volatile
+  2670                           
+  2671                           ;mainproject.c: 81: for(int i=0;i<140;i++){
+  2672  000AC6  0E00               	movlw	0
+  2673  000AC8  6E0A               	movwf	rgbshowone@i+1,c
+  2674  000ACA  0E00               	movlw	0
+  2675  000ACC  6E09               	movwf	rgbshowone@i,c
+  2676  000ACE  BE0A               	btfsc	rgbshowone@i+1,7,c
+  2677  000AD0  D008               	goto	i2l53
+  2678  000AD2  500A               	movf	rgbshowone@i+1,w,c
+  2679  000AD4  E105               	bnz	i2u73_40
+  2680  000AD6  0E8C               	movlw	140
+  2681  000AD8  5C09               	subwf	rgbshowone@i,w,c
+  2682  000ADA  B0D8               	btfsc	status,0,c
+  2683  000ADC  0012               	return	
+  2684  000ADE  D001               	goto	i2l53
+  2685  000AE0                     i2u73_40:
+  2686  000AE0  0012               	return	
+  2687  000AE2                     i2l53:
+  2688                           
+  2689                           ;mainproject.c: 82: if((rval--)==0) LATCbits.LATC0=0;
+  2690  000AE2  0601               	decf	rgbshowone@rval,f,c
+  2691  000AE4  A0D8               	btfss	status,0,c
+  2692  000AE6  0602               	decf	rgbshowone@rval+1,f,c
+  2693  000AE8  2801               	incf	rgbshowone@rval,w,c
+  2694  000AEA  E103               	bnz	i2l1229
+  2695  000AEC  2802               	incf	rgbshowone@rval+1,w,c
+  2696  000AEE  B4D8               	btfsc	status,2,c
+  2697  000AF0  908B               	bcf	3979,0,c	;volatile
+  2698  000AF2                     i2l1229:
+  2699                           
+  2700                           ;mainproject.c: 83: if((gval--)==0) LATCbits.LATC1=0;
+  2701  000AF2  0603               	decf	rgbshowone@gval,f,c
+  2702  000AF4  A0D8               	btfss	status,0,c
+  2703  000AF6  0604               	decf	rgbshowone@gval+1,f,c
+  2704  000AF8  2803               	incf	rgbshowone@gval,w,c
+  2705  000AFA  E103               	bnz	i2l1233
+  2706  000AFC  2804               	incf	rgbshowone@gval+1,w,c
+  2707  000AFE  B4D8               	btfsc	status,2,c
+  2708  000B00  928B               	bcf	3979,1,c	;volatile
+  2709  000B02                     i2l1233:
+  2710                           
+  2711                           ;mainproject.c: 84: if((bval--)==0) LATCbits.LATC2=0;
+  2712  000B02  0605               	decf	rgbshowone@bval,f,c
+  2713  000B04  A0D8               	btfss	status,0,c
+  2714  000B06  0606               	decf	rgbshowone@bval+1,f,c
+  2715  000B08  2805               	incf	rgbshowone@bval,w,c
+  2716  000B0A  E103               	bnz	i2l1237
+  2717  000B0C  2806               	incf	rgbshowone@bval+1,w,c
+  2718  000B0E  B4D8               	btfsc	status,2,c
+  2719  000B10  948B               	bcf	3979,2,c	;volatile
+  2720  000B12                     i2l1237:
+  2721  000B12  4A09               	infsnz	rgbshowone@i,f,c
+  2722  000B14  2A0A               	incf	rgbshowone@i+1,f,c
+  2723  000B16  BE0A               	btfsc	rgbshowone@i+1,7,c
+  2724  000B18  D7E4               	goto	i2l53
+  2725  000B1A  500A               	movf	rgbshowone@i+1,w,c
+  2726  000B1C  E101               	bnz	i2u77_40
+  2727  000B1E  D7DB               	goto	L2
+  2728  000B20                     i2u77_40:
+  2729                           
+  2730                           ;mainproject.c: 85: }
+  2731                           ;mainproject.c: 86: }
+  2732  000B20  0012               	return	
+  2733  000B22                     i2l52:
+  2734                           
+  2735                           ;mainproject.c: 88: else if(flag==1){
+  2736  000B22  0407               	decf	rgbshowone@flag,w,c
+  2737  000B24  1008               	iorwf	rgbshowone@flag+1,w,c
+  2738  000B26  A4D8               	btfss	status,2,c
+  2739  000B28  D034               	goto	i2l59
+  2740                           
+  2741                           ;mainproject.c: 89: LATCbits.LATC0=0;
+  2742  000B2A  908B               	bcf	3979,0,c	;volatile
+  2743                           
+  2744                           ;mainproject.c: 90: LATCbits.LATC1=0;
+  2745  000B2C  928B               	bcf	3979,1,c	;volatile
+  2746                           
+  2747                           ;mainproject.c: 91: LATCbits.LATC2=0;
+  2748  000B2E  948B               	bcf	3979,2,c	;volatile
+  2749                           
+  2750                           ;mainproject.c: 92: LATCbits.LATC3=1;
+  2751  000B30  868B               	bsf	3979,3,c	;volatile
+  2752                           
+  2753                           ;mainproject.c: 93: LATDbits.LATD0=1;
+  2754  000B32  808C               	bsf	3980,0,c	;volatile
+  2755                           
+  2756                           ;mainproject.c: 94: LATDbits.LATD1=1;
+  2757  000B34  828C               	bsf	3980,1,c	;volatile
+  2758                           
+  2759                           ;mainproject.c: 96: for(int i=0;i<140;i++){
+  2760  000B36  0E00               	movlw	0
+  2761  000B38  6E0C               	movwf	rgbshowone@i_527+1,c
+  2762  000B3A  0E00               	movlw	0
+  2763  000B3C  6E0B               	movwf	rgbshowone@i_527,c
+  2764  000B3E  BE0C               	btfsc	rgbshowone@i_527+1,7,c
+  2765  000B40  D008               	goto	i2l60
+  2766  000B42  500C               	movf	rgbshowone@i_527+1,w,c
+  2767  000B44  E105               	bnz	i2u79_40
+  2768  000B46  0E8C               	movlw	140
+  2769  000B48  5C0B               	subwf	rgbshowone@i_527,w,c
+  2770  000B4A  B0D8               	btfsc	status,0,c
+  2771  000B4C  0012               	return	
+  2772  000B4E  D001               	goto	i2l60
+  2773  000B50                     i2u79_40:
+  2774  000B50  0012               	return	
+  2775  000B52                     i2l60:
+  2776                           
+  2777                           ;mainproject.c: 97: if((rval--)==0) LATCbits.LATC3=0;
+  2778  000B52  0601               	decf	rgbshowone@rval,f,c
+  2779  000B54  A0D8               	btfss	status,0,c
+  2780  000B56  0602               	decf	rgbshowone@rval+1,f,c
+  2781  000B58  2801               	incf	rgbshowone@rval,w,c
+  2782  000B5A  E103               	bnz	i2l1255
+  2783  000B5C  2802               	incf	rgbshowone@rval+1,w,c
+  2784  000B5E  B4D8               	btfsc	status,2,c
+  2785  000B60  968B               	bcf	3979,3,c	;volatile
+  2786  000B62                     i2l1255:
+  2787                           
+  2788                           ;mainproject.c: 98: if((gval--)==0) LATDbits.LATD0=0;
+  2789  000B62  0603               	decf	rgbshowone@gval,f,c
+  2790  000B64  A0D8               	btfss	status,0,c
+  2791  000B66  0604               	decf	rgbshowone@gval+1,f,c
+  2792  000B68  2803               	incf	rgbshowone@gval,w,c
+  2793  000B6A  E103               	bnz	i2l1259
+  2794  000B6C  2804               	incf	rgbshowone@gval+1,w,c
+  2795  000B6E  B4D8               	btfsc	status,2,c
+  2796  000B70  908C               	bcf	3980,0,c	;volatile
+  2797  000B72                     i2l1259:
+  2798                           
+  2799                           ;mainproject.c: 99: if((bval--)==0) LATDbits.LATD1=0;
+  2800  000B72  0605               	decf	rgbshowone@bval,f,c
+  2801  000B74  A0D8               	btfss	status,0,c
+  2802  000B76  0606               	decf	rgbshowone@bval+1,f,c
+  2803  000B78  2805               	incf	rgbshowone@bval,w,c
+  2804  000B7A  E103               	bnz	i2l1263
+  2805  000B7C  2806               	incf	rgbshowone@bval+1,w,c
+  2806  000B7E  B4D8               	btfsc	status,2,c
+  2807  000B80  928C               	bcf	3980,1,c	;volatile
+  2808  000B82                     i2l1263:
+  2809  000B82  4A0B               	infsnz	rgbshowone@i_527,f,c
+  2810  000B84  2A0C               	incf	rgbshowone@i_527+1,f,c
+  2811  000B86  BE0C               	btfsc	rgbshowone@i_527+1,7,c
+  2812  000B88  D7E4               	goto	i2l60
+  2813  000B8A  500C               	movf	rgbshowone@i_527+1,w,c
+  2814  000B8C  E101               	bnz	i2u83_40
+  2815  000B8E  D7DB               	goto	L3
+  2816  000B90                     i2u83_40:
+  2817                           
+  2818                           ;mainproject.c: 100: }
+  2819                           ;mainproject.c: 101: }
+  2820  000B90  0012               	return	
+  2821  000B92                     i2l59:
+  2822                           
+  2823                           ;mainproject.c: 102: else if(flag==2){
+  2824  000B92  0E02               	movlw	2
+  2825  000B94  1807               	xorwf	rgbshowone@flag,w,c
+  2826  000B96  1008               	iorwf	rgbshowone@flag+1,w,c
+  2827  000B98  A4D8               	btfss	status,2,c
+  2828  000B9A  D031               	goto	i2l66
+  2829                           
+  2830                           ;mainproject.c: 103: LATCbits.LATC7=1;
+  2831  000B9C  8E8B               	bsf	3979,7,c	;volatile
+  2832                           
+  2833                           ;mainproject.c: 104: LATCbits.LATC6=1;
+  2834  000B9E  8C8B               	bsf	3979,6,c	;volatile
+  2835                           
+  2836                           ;mainproject.c: 105: LATCbits.LATC5=1;
+  2837  000BA0  8A8B               	bsf	3979,5,c	;volatile
+  2838                           
+  2839                           ;mainproject.c: 106: LATCbits.LATC4=0;
+  2840  000BA2  988B               	bcf	3979,4,c	;volatile
+  2841                           
+  2842                           ;mainproject.c: 107: LATDbits.LATD3=0;
+  2843  000BA4  968C               	bcf	3980,3,c	;volatile
+  2844                           
+  2845                           ;mainproject.c: 108: LATDbits.LATD2=0;
+  2846  000BA6  948C               	bcf	3980,2,c	;volatile
+  2847                           
+  2848                           ;mainproject.c: 109: for(int i=0;i<140;i++){
+  2849  000BA8  0E00               	movlw	0
+  2850  000BAA  6E0E               	movwf	rgbshowone@i_528+1,c
+  2851  000BAC  0E00               	movlw	0
+  2852  000BAE  6E0D               	movwf	rgbshowone@i_528,c
+  2853  000BB0  BE0E               	btfsc	rgbshowone@i_528+1,7,c
+  2854  000BB2  D006               	goto	i2l67
+  2855  000BB4  500E               	movf	rgbshowone@i_528+1,w,c
+  2856  000BB6  E155               	bnz	i2l58
+  2857  000BB8  0E8C               	movlw	140
+  2858  000BBA  5C0D               	subwf	rgbshowone@i_528,w,c
+  2859  000BBC  B0D8               	btfsc	status,0,c
+  2860  000BBE  0012               	return	
+  2861  000BC0                     i2l67:
+  2862                           
+  2863                           ;mainproject.c: 110: if((rval--)==0) LATCbits.LATC7=0;
+  2864  000BC0  0601               	decf	rgbshowone@rval,f,c
+  2865  000BC2  A0D8               	btfss	status,0,c
+  2866  000BC4  0602               	decf	rgbshowone@rval+1,f,c
+  2867  000BC6  2801               	incf	rgbshowone@rval,w,c
+  2868  000BC8  E103               	bnz	i2l1281
+  2869  000BCA  2802               	incf	rgbshowone@rval+1,w,c
+  2870  000BCC  B4D8               	btfsc	status,2,c
+  2871  000BCE  9E8B               	bcf	3979,7,c	;volatile
+  2872  000BD0                     i2l1281:
+  2873                           
+  2874                           ;mainproject.c: 111: if((gval--)==0) LATCbits.LATC6=0;
+  2875  000BD0  0603               	decf	rgbshowone@gval,f,c
+  2876  000BD2  A0D8               	btfss	status,0,c
+  2877  000BD4  0604               	decf	rgbshowone@gval+1,f,c
+  2878  000BD6  2803               	incf	rgbshowone@gval,w,c
+  2879  000BD8  E103               	bnz	i2l1285
+  2880  000BDA  2804               	incf	rgbshowone@gval+1,w,c
+  2881  000BDC  B4D8               	btfsc	status,2,c
+  2882  000BDE  9C8B               	bcf	3979,6,c	;volatile
+  2883  000BE0                     i2l1285:
+  2884                           
+  2885                           ;mainproject.c: 112: if((bval--)==0) LATCbits.LATC5=0;
+  2886  000BE0  0605               	decf	rgbshowone@bval,f,c
+  2887  000BE2  A0D8               	btfss	status,0,c
+  2888  000BE4  0606               	decf	rgbshowone@bval+1,f,c
+  2889  000BE6  2805               	incf	rgbshowone@bval,w,c
+  2890  000BE8  E103               	bnz	i2l1289
+  2891  000BEA  2806               	incf	rgbshowone@bval+1,w,c
+  2892  000BEC  B4D8               	btfsc	status,2,c
+  2893  000BEE  9A8B               	bcf	3979,5,c	;volatile
+  2894  000BF0                     i2l1289:
+  2895  000BF0  4A0D               	infsnz	rgbshowone@i_528,f,c
+  2896  000BF2  2A0E               	incf	rgbshowone@i_528+1,f,c
+  2897  000BF4  BE0E               	btfsc	rgbshowone@i_528+1,7,c
+  2898  000BF6  D7E4               	goto	i2l67
+  2899  000BF8  500E               	movf	rgbshowone@i_528+1,w,c
+  2900  000BFA  E133               	bnz	i2l79
+  2901  000BFC  D7DD               	goto	L4
+  2902  000BFE                     i2l66:
+  2903                           
+  2904                           ;mainproject.c: 116: else if(flag==3){
+  2905  000BFE  0E03               	movlw	3
+  2906  000C00  1807               	xorwf	rgbshowone@flag,w,c
+  2907  000C02  1008               	iorwf	rgbshowone@flag+1,w,c
+  2908  000C04  A4D8               	btfss	status,2,c
+  2909  000C06  0012               	return	
+  2910                           
+  2911                           ;mainproject.c: 117: LATCbits.LATC7=0;
+  2912  000C08  9E8B               	bcf	3979,7,c	;volatile
+  2913                           
+  2914                           ;mainproject.c: 118: LATCbits.LATC6=0;
+  2915  000C0A  9C8B               	bcf	3979,6,c	;volatile
+  2916                           
+  2917                           ;mainproject.c: 119: LATCbits.LATC5=0;
+  2918  000C0C  9A8B               	bcf	3979,5,c	;volatile
+  2919                           
+  2920                           ;mainproject.c: 120: LATCbits.LATC4=1;
+  2921  000C0E  888B               	bsf	3979,4,c	;volatile
+  2922                           
+  2923                           ;mainproject.c: 121: LATDbits.LATD3=1;
+  2924  000C10  868C               	bsf	3980,3,c	;volatile
+  2925                           
+  2926                           ;mainproject.c: 122: LATDbits.LATD2=1;
+  2927  000C12  848C               	bsf	3980,2,c	;volatile
+  2928                           
+  2929                           ;mainproject.c: 124: for(int i=0;i<140;i++){
+  2930  000C14  0E00               	movlw	0
+  2931  000C16  6E10               	movwf	rgbshowone@i_529+1,c
+  2932  000C18  0E00               	movlw	0
+  2933  000C1A  6E0F               	movwf	rgbshowone@i_529,c
+  2934  000C1C                     i2l1299:
+  2935  000C1C  BE10               	btfsc	rgbshowone@i_529+1,7,c
+  2936  000C1E  D006               	goto	i2l74
+  2937  000C20  5010               	movf	rgbshowone@i_529+1,w,c
+  2938  000C22  E11F               	bnz	i2l79
+  2939  000C24  0E8C               	movlw	140
+  2940  000C26  5C0F               	subwf	rgbshowone@i_529,w,c
+  2941  000C28  B0D8               	btfsc	status,0,c
+  2942  000C2A  0012               	return	
+  2943  000C2C                     i2l74:
+  2944                           
+  2945                           ;mainproject.c: 125: if((rval--)==0) LATCbits.LATC4=0;
+  2946  000C2C  0601               	decf	rgbshowone@rval,f,c
+  2947  000C2E  A0D8               	btfss	status,0,c
+  2948  000C30  0602               	decf	rgbshowone@rval+1,f,c
+  2949  000C32  2801               	incf	rgbshowone@rval,w,c
+  2950  000C34  E103               	bnz	i2l1307
+  2951  000C36  2802               	incf	rgbshowone@rval+1,w,c
+  2952  000C38  B4D8               	btfsc	status,2,c
+  2953  000C3A  988B               	bcf	3979,4,c	;volatile
+  2954  000C3C                     i2l1307:
+  2955                           
+  2956                           ;mainproject.c: 126: if((gval--)==0) LATDbits.LATD3=0;
+  2957  000C3C  0603               	decf	rgbshowone@gval,f,c
+  2958  000C3E  A0D8               	btfss	status,0,c
+  2959  000C40  0604               	decf	rgbshowone@gval+1,f,c
+  2960  000C42  2803               	incf	rgbshowone@gval,w,c
+  2961  000C44  E103               	bnz	i2l1311
+  2962  000C46  2804               	incf	rgbshowone@gval+1,w,c
+  2963  000C48  B4D8               	btfsc	status,2,c
+  2964  000C4A  968C               	bcf	3980,3,c	;volatile
+  2965  000C4C                     i2l1311:
+  2966                           
+  2967                           ;mainproject.c: 127: if((bval--)==0) LATDbits.LATD2=0;
+  2968  000C4C  0605               	decf	rgbshowone@bval,f,c
+  2969  000C4E  A0D8               	btfss	status,0,c
+  2970  000C50  0606               	decf	rgbshowone@bval+1,f,c
+  2971  000C52  2805               	incf	rgbshowone@bval,w,c
+  2972  000C54  E103               	bnz	i2l1315
+  2973  000C56  2806               	incf	rgbshowone@bval+1,w,c
+  2974  000C58  B4D8               	btfsc	status,2,c
+  2975  000C5A  948C               	bcf	3980,2,c	;volatile
+  2976  000C5C                     i2l1315:
+  2977  000C5C  4A0F               	infsnz	rgbshowone@i_529,f,c
+  2978  000C5E  2A10               	incf	rgbshowone@i_529+1,f,c
+  2979  000C60  D7DD               	goto	i2l1299
+  2980  000C62                     i2l58:
+  2981  000C62                     i2l79:
+  2982  000C62  0012               	return		;funcret
+  2983  000C64                     __end_of_rgbshowone:
+  2984                           	opt stack 0
+  2985  0000                     pclatu	equ	0xFFB
+  2986                           pclath	equ	0xFFA
+  2987                           tblptru	equ	0xFF8
+  2988                           tblptrh	equ	0xFF7
+  2989                           tblptrl	equ	0xFF6
+  2990                           tablat	equ	0xFF5
+  2991                           prodh	equ	0xFF4
+  2992                           prodl	equ	0xFF3
+  2993                           intcon	equ	0xFF2
+  2994                           intcon2	equ	0xFF1
+  2995                           postinc0	equ	0xFEE
+  2996                           fsr0h	equ	0xFEA
+  2997                           fsr0l	equ	0xFE9
+  2998                           wreg	equ	0xFE8
+  2999                           fsr1h	equ	0xFE2
+  3000                           fsr1l	equ	0xFE1
+  3001                           fsr2h	equ	0xFDA
+  3002                           fsr2l	equ	0xFD9
+  3003                           status	equ	0xFD8
+  3004                           pclatu	equ	0xFFB
+  3005                           pclath	equ	0xFFA
+  3006                           tblptru	equ	0xFF8
+  3007                           tblptrh	equ	0xFF7
+  3008                           tblptrl	equ	0xFF6
+  3009                           tablat	equ	0xFF5
+  3010                           prodh	equ	0xFF4
+  3011                           prodl	equ	0xFF3
+  3012                           intcon	equ	0xFF2
+  3013                           intcon2	equ	0xFF1
+  3014                           postinc0	equ	0xFEE
+  3015                           fsr0h	equ	0xFEA
+  3016                           fsr0l	equ	0xFE9
+  3017                           wreg	equ	0xFE8
+  3018                           fsr1h	equ	0xFE2
+  3019                           fsr1l	equ	0xFE1
+  3020                           fsr2h	equ	0xFDA
+  3021                           fsr2l	equ	0xFD9
+  3022                           status	equ	0xFD8
+  3023                           
+  3024                           	psect	rparam
+  3025  0000                     pclatu	equ	0xFFB
+  3026                           pclath	equ	0xFFA
+  3027                           tblptru	equ	0xFF8
+  3028                           tblptrh	equ	0xFF7
+  3029                           tblptrl	equ	0xFF6
+  3030                           tablat	equ	0xFF5
+  3031                           prodh	equ	0xFF4
+  3032                           prodl	equ	0xFF3
+  3033                           intcon	equ	0xFF2
+  3034                           intcon2	equ	0xFF1
+  3035                           postinc0	equ	0xFEE
+  3036                           fsr0h	equ	0xFEA
+  3037                           fsr0l	equ	0xFE9
+  3038                           wreg	equ	0xFE8
+  3039                           fsr1h	equ	0xFE2
+  3040                           fsr1l	equ	0xFE1
+  3041                           fsr2h	equ	0xFDA
+  3042                           fsr2l	equ	0xFD9
+  3043                           status	equ	0xFD8
+  3044                           
+  3045                           	psect	temp
+  3046  000049                     btemp:
+  3047                           	opt stack 0
+  3048  000049                     	ds	1
+  3049  0000                     int$flags	set	btemp
+  3050  0000                     wtemp6	set	btemp+1
+  3051                           pclatu	equ	0xFFB
+  3052                           pclath	equ	0xFFA
+  3053                           tblptru	equ	0xFF8
+  3054                           tblptrh	equ	0xFF7
+  3055                           tblptrl	equ	0xFF6
+  3056                           tablat	equ	0xFF5
+  3057                           prodh	equ	0xFF4
+  3058                           prodl	equ	0xFF3
+  3059                           intcon	equ	0xFF2
+  3060                           intcon2	equ	0xFF1
+  3061                           postinc0	equ	0xFEE
+  3062                           fsr0h	equ	0xFEA
+  3063                           fsr0l	equ	0xFE9
+  3064                           wreg	equ	0xFE8
+  3065                           fsr1h	equ	0xFE2
+  3066                           fsr1l	equ	0xFE1
+  3067                           fsr2h	equ	0xFDA
+  3068                           fsr2l	equ	0xFD9
+  3069                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         17
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          126     55      72
+    BANK0           128      6       6
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _wstart->_wshow
+
+Critical Paths under _Hi in COMRAM
+
+    _Hi->_rgbstart
+    _rgbstart->_rgbshow
+    _rgbshow->_rgbshowsix
+
+Critical Paths under _main in BANK0
+
+    _wstart->_wshow
+
+Critical Paths under _Hi in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _Hi in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _Hi in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _Hi in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _Hi in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _Hi in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 4     4      0     356
+                                              2 BANK0      4     4      0
+                               _init
+                             _wstart
+ ---------------------------------------------------------------------------------
+ (1) _wstart                                               0     0      0     279
+                              _wshow
+ ---------------------------------------------------------------------------------
+ (2) _wshow                                                4     2      2     279
+                                             53 COMRAM     2     0      2
+                                              0 BANK0      2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _init                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _Hi                                                  18    18      0   20169
+                                             35 COMRAM    18    18      0
+                           _rgbstart
+ ---------------------------------------------------------------------------------
+ (4) _rgbstart                                             1     1      0   20169
+                                             34 COMRAM     1     1      0
+                            _rgbshow
+                            _zerorgb
+ ---------------------------------------------------------------------------------
+ (5) _zerorgb                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _rgbshow                                             16     2     14   20169
+                                             18 COMRAM    16     2     14
+                         _rgbshowone
+                         _rgbshowsix
+ ---------------------------------------------------------------------------------
+ (6) _rgbshowsix                                          18     4     14     932
+                                              0 COMRAM    18     4     14
+ ---------------------------------------------------------------------------------
+ (6) _rgbshowone                                          16     8      8     840
+                                              0 COMRAM    16     8      8
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 6
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _init
+   _wstart
+     _wshow
+
+ _Hi (ROOT)
+   _rgbstart
+     _rgbshow
+       _rgbshowone
+       _rgbshowsix
+     _zerorgb
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      17        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      16        0.0%
+BANK5              100      0       0      14        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            80      0       0       4        0.0%
+BANK0               80      6       6       5        4.7%
+BITCOMRAM           7E      0       0       0        0.0%
+COMRAM              7E     37      48       1       57.1%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      4E      15        0.0%
+DATA                 0      0      4E       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.44 build -154322312 
+Symbol Table                                                                                   Fri Dec 22 00:27:58 2017
+
+        rgbshowone@i_527 000B          rgbshowone@i_528 000D          rgbshowone@i_529 000F  
+         rgbshowone@flag 0007           rgbshowone@bval 0005           rgbshowone@gval 0003  
+         rgbshowone@rval 0001                       _Hi 0008           rgbshowsix@flag 000D  
+         rgbshowsix@bval 0005           rgbshowsix@gval 0003                      ?_Hi 0001  
+         rgbshowsix@rval 0001                      l172 1046                      l181 1020  
+                    l182 100E                      l175 105C                      l178 1002  
+                    l179 0FF2                      l195 0F58                      l196 0F90  
+                    l197 0F6E                      l198 0F7C                      l199 0F76  
+                    _RB5 007C0D             __CFG_CPD$OFF 000000                      _red 0047  
+                    wreg 000FE8          rgbshowsix@i_539 0011                     ??_Hi 0024  
+        rgbshowsix@bval2 000B          rgbshowsix@gval2 0009             __CFG_LVP$OFF 000000  
+        rgbshowsix@rval2 0007             __CFG_WDT$OFF 000000                     l1581 1036  
+                   l1637 0F6E                     l1639 0F76                     l1589 1056  
+                   _LATC 000F8B                     _LATD 000F8C                     u1480 0F8A  
+                   u1490 0F9E                     i2l60 0B52                     i2l52 0B22  
+                   i2l53 0AE2                     i2l58 0C62                     i2l74 0C2C  
+                   i2l66 0BFE                     i2l82 0D10                     i2l67 0BC0  
+                   i2l59 0B92                     i2l91 0DB0                     i2l83 0CA2  
+                   i2l93 0D4A                     i2l79 0C62                     _blue 0043  
+                   _red2 0041                     _main 0F54                     _init 0EF2  
+                   fsr0h 000FEA                     fsr1h 000FE2                     fsr2h 000FDA  
+                   fsr0l 000FE9                     fsr1l 000FE1                     fsr2l 000FD9  
+                   btemp 0049            __CFG_BOREN$ON 000000                     prodh 000FF4  
+                   prodl 000FF3                     start 000E            __CFG_MCLRE$ON 000000  
+           ___param_bank 000000                    ?_main 0001                    ?_init 0001  
+                  i2l101 0DB0                    i2l110 0EA4                    i2l105 0E92  
+                  i2l121 013A                    i2l106 0E6E                    i2l130 0340  
+                  i2l122 00AA                    i2l131 02B0                    i2l140 048A  
+                  i2l124 01FC                    i2l109 0EE0                    i2l133 03E2  
+                  i2l125 016C                    i2l142 05BC                    i2l134 0352  
+                  i2l118 0098                    i2l151 07A2                    i2l143 052C  
+                  i2l127 029E                    i2l119 0014                    i2l160 0970  
+                  i2l152 0712                    i2l136 0478                    i2l128 020E  
+                  i2l161 08E0                    i2l145 065E                    i2l137 03E8  
+                  i2l154 0838                    i2l146 05CE                    i2l163 0A12  
+                  i2l155 07A8                    i2l139 051A                    i2l164 0982  
+                  i2l148 0700                    i2l157 08DA                    i2l149 0670  
+                  i2l166 0AA8                    i2l158 084A                    i2l167 0A18  
+                  i2l189 0E08                    _TRISC 000F94                    _TRISD 000F95  
+          __CFG_PWRT$OFF 000000                    _blue2 003D                    _green 0045  
+                  _white 003B                    main@k 0082                    main@l 0084  
+                  _wshow 102A          __end_of_rgbshow 0EF2                    pclath 000FFA  
+                  tablat 000FF5                    status 000FD8                    wtemp6 004A  
+        __end_of_zerorgb 0FF0          __initialization 105E             __end_of_main 0FA6  
+           __end_of_init 0F54                   ??_main 0038                   ??_init 0036  
+          __activetblptr 000000                   ?_wshow 0036                   i2l1311 0C4C  
+                 i2l1233 0B02                   i2l1401 0E6E                   i2l1315 0C5C  
+                 i2l1307 0C3C                   i2l1237 0B12                   i2l1229 0AF2  
+                 i2l1341 0CD2                   i2l1333 0CB2                   i2l1405 0EA4  
+                 i2l1263 0B82                   i2l1255 0B62                   i2l1407 0EE0  
+                 i2l1503 07A8                   i2l1281 0BD0                   i2l1353 0D02  
+                 i2l1345 0CE2                   i2l1337 0CC2                   i2l1259 0B72  
+                 i2l1371 0D5A                   i2l1363 0D3A                   i2l1515 08E0  
+                 i2l1285 0BE0                   i2l1349 0CF2                   i2l1391 0DAA  
+                 i2l1383 0D8A                   i2l1375 0D6A                   i2l1455 02B0  
+                 i2l1289 0BF0                   i2l1299 0C1C                   i2l1387 0D9A  
+                 i2l1379 0D7A                   i2l1491 0670                   _green2 003F  
+                 clear_0 1064                   _wstart 0FF0         __end_of_rgbstart 0AB2  
+              ??_rgbshow 0021                   tblptrh 000FF7                   tblptrl 000FF6  
+                 tblptru 000FF8                   wshow@i 0080                ??_zerorgb 0001  
+             __accesstop 0080  __end_of__initialization 106A          __CFG_PBADEN$OFF 000000  
+          ___rparam_used 000001           __pcstackCOMRAM 0001            __end_of_wshow 105E  
+             __end_of_Hi 0E54                  ??_wshow 0038                  ?_wstart 0001  
+            rgbshow@flag 001F              rgbshow@bval 0017              rgbshow@gval 0015  
+            rgbshow@rval 0013                  i2u73_40 0AE0                  i2u83_40 0B90  
+                i2u77_40 0B20                  i2u79_40 0B50                  i2u97_40 0CA0  
+            rgbshowone@i 0009              rgbshowsix@i 000F                  __Hparam 0000  
+              ?_rgbstart 0001                  __Lparam 0000                  __pcinit 105E  
+                __ramtop 0600                  __ptext0 0F54                  __ptext1 0FF0  
+                __ptext2 102A                  __ptext3 0EF2                  __ptext5 0012  
+                __ptext6 0FA6                  __ptext7 0E54                  __ptext8 0C64  
+                __ptext9 0AB2          __size_of_wstart 003A                  _rgbshow 0E54  
+         __pintcode_body 0DB2                  _zerorgb 0FA6     end_of_initialization 106A  
+             _rgbshowone 0AB2               _rgbshowsix 0C64                  int_func 0DB2  
+             ??_rgbstart 0023                  postinc0 000FEE                _PORTBbits 000F81  
+              _TRISBbits 000F93      start_initialization 105E           __end_of_wstart 102A  
+            ?_rgbshowone 0001              ?_rgbshowsix 0001         __CFG_OSC$INTIO67 000000  
+               ??_wstart 0038              __pbssCOMRAM 0038            __pcstackBANK0 0080  
+              __pintcode 0008        __size_of_rgbstart 0AA0      __size_of_rgbshowone 01B2  
+    __size_of_rgbshowsix 014E                 ?_rgbshow 0013                 ?_zerorgb 0001  
+            __size_of_Hi 0E4C           __size_of_wshow 0034                 _LATBbits 000F8A  
+               _LATCbits 000F8B                 _LATDbits 000F8C             rgbshow@bval2 001D  
+           rgbshow@gval2 001B                 i2u121_40 014A                 i2u151_47 0152  
+               i2u152_47 0162             rgbshow@rval2 0019                 _RCONbits 000FD0  
+            _INTCON2bits 000FF1                 __Hrparam 0000                 __Lrparam 0000  
+       __size_of_rgbshow 009E                 _distance 0038         __size_of_zerorgb 004A  
+           ??_rgbshowone 0009             ??_rgbshowsix 000F            __size_of_main 0052  
+          __size_of_init 0062                 _rgbstart 0012                 int$flags 0049  
+     __end_of_rgbshowone 0C64       __end_of_rgbshowsix 0DB2               _INTCONbits 000FF2  
+               intlevel2 0000                 rgbshow@i 0021               _OSCCONbits 000FD3  
+              wshow@wval 0036  
