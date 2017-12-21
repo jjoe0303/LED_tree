@@ -58,13 +58,15 @@ void init()
     
     RCONbits.IPEN=1;
     INTCONbits.GIEH=1;
-    INTCONbits.INT0IE=1;//enable interrupt 0
     INTCONbits.INT0IF=0;
+    INTCONbits.INT0IE=1;//enable interrupt 0
     INTCON2bits.INTEDG0=1;//high edge trigger
+    LATBbits.LATB0=0;
     PORTBbits.RB0=0;
     
     TRISBbits.TRISB4=0; //acivate next pic
     TRISBbits.TRISB5=1; //IR module port
+    LATBbits.LATB5=0;
     
     white=0;
 }
@@ -390,10 +392,9 @@ void interrupt Hi()
     if(INTCONbits.INT0IF == 1) {
         LATDbits.LATD4=0;
         rgbstart();
-       // PORTBbits.RB0=0;
-        INTCONbits.INT0IF = 0; //clear interrupt
-      
-       
+        PORTBbits.RB0=0;
+        LATBbits.LATB0=0;
+        INTCONbits.INT0IF = 0; //clear interrupt     
     } 
     
 }

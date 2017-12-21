@@ -25,23 +25,23 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "40 C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 [v _init init `(v  1 e 1 0 ]
-"72
+"74
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
-"131
+"133
 [v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
-"181
+"183
 [v _rgbshow rgbshow `(v  1 e 1 0 ]
-"196
+"198
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
-"216
+"218
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
-"369
+"371
 [v _wshow wshow `(v  1 e 1 0 ]
-"377
+"379
 [v _wstart wstart `(v  1 e 1 0 ]
-"388
+"390
 [v _Hi Hi `II(v  1 e 1 0 ]
-"401
+"402
 [v _main main `(v  1 e 1 0 ]
 [s S66 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -53,7 +53,7 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "313 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f4520.h
-[s S257 . 1 `uc 1 INT0 1 0 :1:0 
+[s S297 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -62,7 +62,7 @@
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S266 . 1 `uc 1 AN12 1 0 :1:0 
+[s S306 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -71,14 +71,14 @@
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S275 . 1 `uc 1 FLT0 1 0 :1:0 
+[s S315 . 1 `uc 1 FLT0 1 0 :1:0 
 ]
-[s S277 . 1 `uc 1 . 1 0 :3:0 
+[s S317 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S280 . 1 `S66 1 . 1 0 `S257 1 . 1 0 `S266 1 . 1 0 `S275 1 . 1 0 `S277 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES280  1 e 1 @3969 ]
-[s S399 . 1 `uc 1 LATB0 1 0 :1:0 
+[u S320 . 1 `S66 1 . 1 0 `S297 1 . 1 0 `S306 1 . 1 0 `S315 1 . 1 0 `S317 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES320  1 e 1 @3969 ]
+[s S248 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -88,7 +88,7 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1114
-[s S408 . 1 `uc 1 LB0 1 0 :1:0 
+[s S257 . 1 `uc 1 LB0 1 0 :1:0 
 `uc 1 LB1 1 0 :1:1 
 `uc 1 LB2 1 0 :1:2 
 `uc 1 LB3 1 0 :1:3 
@@ -97,11 +97,11 @@
 `uc 1 LB6 1 0 :1:6 
 `uc 1 LB7 1 0 :1:7 
 ]
-[u S417 . 1 `S399 1 . 1 0 `S408 1 . 1 0 ]
-[v _LATBbits LATBbits `VES417  1 e 1 @3978 ]
+[u S266 . 1 `S248 1 . 1 0 `S257 1 . 1 0 ]
+[v _LATBbits LATBbits `VES266  1 e 1 @3978 ]
 "1199
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S319 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S359 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -111,7 +111,7 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1226
-[s S328 . 1 `uc 1 LC0 1 0 :1:0 
+[s S368 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -120,11 +120,11 @@
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S337 . 1 `S319 1 . 1 0 `S328 1 . 1 0 ]
-[v _LATCbits LATCbits `VES337  1 e 1 @3979 ]
+[u S377 . 1 `S359 1 . 1 0 `S368 1 . 1 0 ]
+[v _LATCbits LATCbits `VES377  1 e 1 @3979 ]
 "1311
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S359 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S399 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -134,7 +134,7 @@
 `uc 1 LATD7 1 0 :1:7 
 ]
 "1338
-[s S368 . 1 `uc 1 LD0 1 0 :1:0 
+[s S408 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -143,8 +143,8 @@
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S377 . 1 `S359 1 . 1 0 `S368 1 . 1 0 ]
-[v _LATDbits LATDbits `VES377  1 e 1 @3980 ]
+[u S417 . 1 `S399 1 . 1 0 `S408 1 . 1 0 ]
+[v _LATDbits LATDbits `VES417  1 e 1 @3980 ]
 [s S57 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
@@ -269,54 +269,54 @@
 [v _blue2 blue2 `i  1 e 2 0 ]
 "35
 [v _white white `i  1 e 2 0 ]
-"401
+"402
 [v _main main `(v  1 e 1 0 ]
 {
-"405
+"406
 [v main@l l `i  1 a 2 4 ]
 [v main@k k `i  1 a 2 2 ]
-"419
+"420
 } 0
-"377
+"379
 [v _wstart wstart `(v  1 e 1 0 ]
 {
-"386
+"388
 } 0
-"369
+"371
 [v _wshow wshow `(v  1 e 1 0 ]
 {
-"372
+"374
 [v wshow@i i `i  1 a 2 0 ]
-"369
+"371
 [v wshow@wval wval `i  1 p 2 53 ]
-"375
+"377
 } 0
 "40
 [v _init init `(v  1 e 1 0 ]
 {
-"70
+"72
 } 0
-"388
+"390
 [v _Hi Hi `II(v  1 e 1 0 ]
 {
-"399
+"400
 } 0
-"216
+"218
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
 {
-"367
+"369
 } 0
-"196
+"198
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
 {
-"215
+"217
 } 0
-"181
+"183
 [v _rgbshow rgbshow `(v  1 e 1 0 ]
 {
-"183
+"185
 [v rgbshow@i i `i  1 a 2 32 ]
-"181
+"183
 [v rgbshow@rval rval `i  1 p 2 18 ]
 [v rgbshow@gval gval `i  1 p 2 20 ]
 [v rgbshow@bval bval `i  1 p 2 22 ]
@@ -324,16 +324,16 @@
 [v rgbshow@gval2 gval2 `i  1 p 2 26 ]
 [v rgbshow@bval2 bval2 `i  1 p 2 28 ]
 [v rgbshow@flag flag `i  1 p 2 30 ]
-"194
+"196
 } 0
-"131
+"133
 [v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
 {
-"171
-[v rgbshowsix@i_539 i `i  1 a 2 16 ]
-"147
+"173
+[v rgbshowsix@i_547 i `i  1 a 2 16 ]
+"149
 [v rgbshowsix@i i `i  1 a 2 14 ]
-"131
+"133
 [v rgbshowsix@rval rval `i  1 p 2 0 ]
 [v rgbshowsix@gval gval `i  1 p 2 2 ]
 [v rgbshowsix@bval bval `i  1 p 2 4 ]
@@ -341,23 +341,23 @@
 [v rgbshowsix@gval2 gval2 `i  1 p 2 8 ]
 [v rgbshowsix@bval2 bval2 `i  1 p 2 10 ]
 [v rgbshowsix@flag flag `i  1 p 2 12 ]
-"180
+"182
 } 0
-"72
+"74
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
 {
-"124
-[v rgbshowone@i_529 i `i  1 a 2 14 ]
-"109
-[v rgbshowone@i_528 i `i  1 a 2 12 ]
-"96
-[v rgbshowone@i_527 i `i  1 a 2 10 ]
-"81
+"126
+[v rgbshowone@i_537 i `i  1 a 2 14 ]
+"111
+[v rgbshowone@i_536 i `i  1 a 2 12 ]
+"98
+[v rgbshowone@i_535 i `i  1 a 2 10 ]
+"83
 [v rgbshowone@i i `i  1 a 2 8 ]
-"72
+"74
 [v rgbshowone@rval rval `i  1 p 2 0 ]
 [v rgbshowone@gval gval `i  1 p 2 2 ]
 [v rgbshowone@bval bval `i  1 p 2 4 ]
 [v rgbshowone@flag flag `i  1 p 2 6 ]
-"130
+"132
 } 0
