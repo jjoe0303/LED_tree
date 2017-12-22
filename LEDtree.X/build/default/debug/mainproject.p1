@@ -136,14 +136,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S48 . . . ]
 "1338
 [v _LATDbits `VS48 ~T0 @X0 0 e@3980 ]
-[v F2995 `(v ~T0 @X0 1 tf1`ul ]
-"164 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18.h
-[v __delay `JF2995 ~T0 @X0 0 e ]
-[p i __delay ]
 [p mainexit ]
 [t ~ __deprecated__ ]
 [t T16 __deprecated__ ]
-"7737 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic18f4520.h
+"7737
 [v _RB5 `Vb ~T16 @X0 0 e@31757 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -3809,593 +3805,245 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ <= _red -> 140 `i 351  ]
 [e :U 352 ]
 [; ;mainproject.c: 235: }
-[; ;mainproject.c: 236: LATBbits.LATB4=1;
-"236
-[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-[; ;mainproject.c: 237: _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;mainproject.c: 237: LATBbits.LATB4=0;
 "237
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;mainproject.c: 238: LATBbits.LATB4=0;
-"238
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-[; ;mainproject.c: 239: _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;mainproject.c: 239: LATBbits.LATB4=1;
 "239
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-[; ;mainproject.c: 241: while( green <= 70 ){
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+[; ;mainproject.c: 241: LATBbits.LATB4=0;
 "241
+[e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
+[; ;mainproject.c: 244: while( green <= 70 ){
+"244
 [e $U 353  ]
 [e :U 354 ]
 {
-[; ;mainproject.c: 242: green=green+10;
-"242
+[; ;mainproject.c: 245: green=green+10;
+"245
 [e = _green + _green -> 10 `i ]
-[; ;mainproject.c: 243: red2=red2+10;
-"243
-[e = _red2 + _red2 -> 10 `i ]
-[; ;mainproject.c: 244: rgbshow(red,green,blue,red2,green2,blue2,4);
-"244
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 246: rgbshow(red,green,blue,red2,green2,blue2,5);
+[; ;mainproject.c: 246: red2=red2+10;
 "246
+[e = _red2 + _red2 -> 10 `i ]
+[; ;mainproject.c: 247: rgbshow(red,green,blue,red2,green2,blue2,4);
+"247
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 249: rgbshow(red,green,blue,red2,green2,blue2,5);
+"249
 [e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"248
+"251
 }
 [e :U 353 ]
-"241
+"244
 [e $ <= _green -> 70 `i 354  ]
 [e :U 355 ]
-[; ;mainproject.c: 248: }
-[; ;mainproject.c: 250: while( green <= 140 ){
-"250
-[e $U 356  ]
-[e :U 357 ]
-{
-[; ;mainproject.c: 251: green=green+10;
-"251
-[e = _green + _green -> 10 `i ]
-[; ;mainproject.c: 252: green2=green2+10;
-"252
-[e = _green2 + _green2 -> 10 `i ]
-[; ;mainproject.c: 253: rgbshow(red,green,blue,red2,green2,blue2,4);
-"253
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 255: rgbshow(red,green,blue,red2,green2,blue2,5);
-"255
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"256
-}
-[e :U 356 ]
-"250
-[e $ <= _green -> 140 `i 357  ]
-[e :U 358 ]
-[; ;mainproject.c: 256: }
-[; ;mainproject.c: 258: while(red>=70){
-"258
-[e $U 359  ]
-[e :U 360 ]
-{
-[; ;mainproject.c: 259: red=red-10;
-"259
-[e = _red - _red -> 10 `i ]
-[; ;mainproject.c: 260: green2=green2+10;
-"260
-[e = _green2 + _green2 -> 10 `i ]
-[; ;mainproject.c: 261: rgbshow(red,green,blue,red2,green2,blue2,4);
-"261
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 263: rgbshow(red,green,blue,red2,green2,blue2,5);
-"263
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"264
-}
-[e :U 359 ]
-"258
-[e $ >= _red -> 70 `i 360  ]
-[e :U 361 ]
-[; ;mainproject.c: 264: }
-[; ;mainproject.c: 265: while( red>= 0 ){
-"265
-[e $U 362  ]
-[e :U 363 ]
-{
-[; ;mainproject.c: 267: red=red-10;
-"267
-[e = _red - _red -> 10 `i ]
-[; ;mainproject.c: 268: red2=red2-10;
-"268
-[e = _red2 - _red2 -> 10 `i ]
-[; ;mainproject.c: 269: rgbshow(red,green,blue,red2,green2,blue2,4);
-"269
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 271: rgbshow(red,green,blue,red2,green2,blue2,5);
-"271
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"272
-}
-[e :U 362 ]
-"265
-[e $ >= _red -> 0 `i 363  ]
-[e :U 364 ]
-[; ;mainproject.c: 272: }
-[; ;mainproject.c: 275: while( blue <= 70 ){
-"275
-[e $U 365  ]
-[e :U 366 ]
-{
-[; ;mainproject.c: 276: blue=blue+10;
-"276
-[e = _blue + _blue -> 10 `i ]
-[; ;mainproject.c: 277: red2=red2-10;
-"277
-[e = _red2 - _red2 -> 10 `i ]
-[; ;mainproject.c: 278: rgbshow(red,green,blue,red2,green2,blue2,4);
-"278
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 280: rgbshow(red,green,blue,red2,green2,blue2,5);
-"280
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"282
-}
-[e :U 365 ]
-"275
-[e $ <= _blue -> 70 `i 366  ]
-[e :U 367 ]
-[; ;mainproject.c: 282: }
-[; ;mainproject.c: 284: while( blue <= 140 ){
-"284
-[e $U 368  ]
-[e :U 369 ]
-{
-[; ;mainproject.c: 285: blue=blue+10;
-"285
-[e = _blue + _blue -> 10 `i ]
-[; ;mainproject.c: 286: blue2=blue2+10;
-"286
-[e = _blue2 + _blue2 -> 10 `i ]
-[; ;mainproject.c: 287: rgbshow(red,green,blue,red2,green2,blue2,4);
-"287
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 289: rgbshow(red,green,blue,red2,green2,blue2,5);
-"289
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"290
-}
-[e :U 368 ]
-"284
-[e $ <= _blue -> 140 `i 369  ]
-[e :U 370 ]
-[; ;mainproject.c: 290: }
-[; ;mainproject.c: 293: while( red <= 70 ){
-"293
-[e $U 371  ]
-[e :U 372 ]
-{
-[; ;mainproject.c: 294: red=red+10;
-"294
-[e = _red + _red -> 10 `i ]
-[; ;mainproject.c: 295: blue2=blue2+10;
-"295
-[e = _blue2 + _blue2 -> 10 `i ]
-[; ;mainproject.c: 296: rgbshow(red,green,blue,red2,green2,blue2,4);
-"296
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 298: rgbshow(red,green,blue,red2,green2,blue2,5);
-"298
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"299
-}
-[e :U 371 ]
-"293
-[e $ <= _red -> 70 `i 372  ]
-[e :U 373 ]
-[; ;mainproject.c: 299: }
-[; ;mainproject.c: 301: while( red <= 140 ){
-"301
-[e $U 374  ]
-[e :U 375 ]
-{
-[; ;mainproject.c: 302: red=red+10;
-"302
-[e = _red + _red -> 10 `i ]
-[; ;mainproject.c: 303: red2=red2+10;
-"303
-[e = _red2 + _red2 -> 10 `i ]
-[; ;mainproject.c: 304: rgbshow(red,green,blue,red2,green2,blue2,4);
-"304
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 306: rgbshow(red,green,blue,red2,green2,blue2,5);
-"306
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"307
-}
-[e :U 374 ]
-"301
-[e $ <= _red -> 140 `i 375  ]
-[e :U 376 ]
-[; ;mainproject.c: 307: }
-[; ;mainproject.c: 309: while(green>=70){
-"309
-[e $U 377  ]
-[e :U 378 ]
-{
-[; ;mainproject.c: 310: green=green-10;
-"310
-[e = _green - _green -> 10 `i ]
-[; ;mainproject.c: 311: red2=red2+10;
-"311
-[e = _red2 + _red2 -> 10 `i ]
-[; ;mainproject.c: 312: rgbshow(red,green,blue,red2,green2,blue2,4);
-"312
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 314: rgbshow(red,green,blue,red2,green2,blue2,5);
-"314
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"315
-}
-[e :U 377 ]
-"309
-[e $ >= _green -> 70 `i 378  ]
-[e :U 379 ]
-[; ;mainproject.c: 315: }
-[; ;mainproject.c: 316: while(green>= 0 ){
-"316
-[e $U 380  ]
-[e :U 381 ]
-{
-[; ;mainproject.c: 318: green=green-10;
-"318
-[e = _green - _green -> 10 `i ]
-[; ;mainproject.c: 319: green2=green2-10;
-"319
-[e = _green2 - _green2 -> 10 `i ]
-[; ;mainproject.c: 320: rgbshow(red,green,blue,red2,green2,blue2,4);
-"320
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 322: rgbshow(red,green,blue,red2,green2,blue2,5);
-"322
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"323
-}
-[e :U 380 ]
-"316
-[e $ >= _green -> 0 `i 381  ]
-[e :U 382 ]
-[; ;mainproject.c: 323: }
-[; ;mainproject.c: 325: while(red>=70){
-"325
-[e $U 383  ]
-[e :U 384 ]
-{
-[; ;mainproject.c: 326: red=red-10;
-"326
-[e = _red - _red -> 10 `i ]
-[; ;mainproject.c: 327: green2=green2-10;
-"327
-[e = _green2 - _green2 -> 10 `i ]
-[; ;mainproject.c: 328: rgbshow(red,green,blue,red2,green2,blue2,4);
-"328
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 330: rgbshow(red,green,blue,red2,green2,blue2,5);
-"330
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"331
-}
-[e :U 383 ]
-"325
-[e $ >= _red -> 70 `i 384  ]
-[e :U 385 ]
-[; ;mainproject.c: 331: }
-[; ;mainproject.c: 332: while( red>= 0 ){
-"332
-[e $U 386  ]
-[e :U 387 ]
-{
-[; ;mainproject.c: 334: red=red-10;
-"334
-[e = _red - _red -> 10 `i ]
-[; ;mainproject.c: 335: red2=red2-10;
-"335
-[e = _red2 - _red2 -> 10 `i ]
-[; ;mainproject.c: 336: rgbshow(red,green,blue,red2,green2,blue2,4);
-"336
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 338: rgbshow(red,green,blue,red2,green2,blue2,5);
-"338
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"339
-}
-[e :U 386 ]
-"332
-[e $ >= _red -> 0 `i 387  ]
-[e :U 388 ]
-[; ;mainproject.c: 339: }
-[; ;mainproject.c: 341: while(blue>=70){
-"341
-[e $U 389  ]
-[e :U 390 ]
-{
-[; ;mainproject.c: 342: blue=blue-10;
-"342
-[e = _blue - _blue -> 10 `i ]
-[; ;mainproject.c: 343: red2=red2-10;
-"343
-[e = _red2 - _red2 -> 10 `i ]
-[; ;mainproject.c: 344: rgbshow(red,green,blue,red2,green2,blue2,4);
-"344
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 346: rgbshow(red,green,blue,red2,green2,blue2,5);
-"346
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"347
-}
-[e :U 389 ]
-"341
-[e $ >= _blue -> 70 `i 390  ]
-[e :U 391 ]
-[; ;mainproject.c: 347: }
-[; ;mainproject.c: 348: while( blue>= 0 ){
-"348
-[e $U 392  ]
-[e :U 393 ]
-{
-[; ;mainproject.c: 349: blue=blue-10;
-"349
-[e = _blue - _blue -> 10 `i ]
-[; ;mainproject.c: 350: blue2=blue2-10;
-"350
-[e = _blue2 - _blue2 -> 10 `i ]
-[; ;mainproject.c: 351: rgbshow(red,green,blue,red2,green2,blue2,4);
-"351
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
-[; ;mainproject.c: 353: rgbshow(red,green,blue,red2,green2,blue2,5);
-"353
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
-"354
-}
-[e :U 392 ]
-"348
-[e $ >= _blue -> 0 `i 393  ]
-[e :U 394 ]
-[; ;mainproject.c: 354: }
-[; ;mainproject.c: 356: while( blue2 >= 0 ){
-"356
-[e $U 395  ]
-[e :U 396 ]
-{
-[; ;mainproject.c: 357: LATCbits.LATC0=0;
-"357
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-[; ;mainproject.c: 358: LATCbits.LATC1=0;
-"358
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-[; ;mainproject.c: 359: LATCbits.LATC2=0;
-"359
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-[; ;mainproject.c: 360: LATCbits.LATC3=0;
-"360
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-[; ;mainproject.c: 361: LATDbits.LATD0=0;
-"361
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-[; ;mainproject.c: 362: LATDbits.LATD1=0;
-"362
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-[; ;mainproject.c: 363: blue2=blue2-10;
-"363
-[e = _blue2 - _blue2 -> 10 `i ]
-[; ;mainproject.c: 364: rgbshow(red,green,blue,red2,green2,blue2,2);
-"364
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 2 `i ]
-[; ;mainproject.c: 366: rgbshow(red,green,blue,red2,green2,blue2,3);
-"366
-[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 3 `i ]
-"367
-}
-[e :U 395 ]
-"356
-[e $ >= _blue2 -> 0 `i 396  ]
-[e :U 397 ]
-[; ;mainproject.c: 367: }
-[; ;mainproject.c: 368: zerorgb();
-"368
+[; ;mainproject.c: 251: }
+[; ;mainproject.c: 371: zerorgb();
+"371
 [e ( _zerorgb ..  ]
-[; ;mainproject.c: 369: }
-"369
+[; ;mainproject.c: 372: }
+"372
 [e :UE 346 ]
 }
-"371
-[v _wshow `(v ~T0 @X0 1 ef1`i ]
-"372
-{
-[; ;mainproject.c: 371: void wshow(int wval)
-[; ;mainproject.c: 372: {
-[e :U _wshow ]
-"371
-[v _wval `i ~T0 @X0 1 r1 ]
-"372
-[f ]
-[; ;mainproject.c: 373: LATDbits.LATD4=1;
-"373
-[e = . . _LATDbits 0 4 -> -> 1 `i `uc ]
-[; ;mainproject.c: 374: for(int i=0;i<200;i++){
 "374
+[v _wshow `(v ~T0 @X0 1 ef1`i ]
+"375
+{
+[; ;mainproject.c: 374: void wshow(int wval)
+[; ;mainproject.c: 375: {
+[e :U _wshow ]
+"374
+[v _wval `i ~T0 @X0 1 r1 ]
+"375
+[f ]
+[; ;mainproject.c: 376: LATDbits.LATD4=1;
+"376
+[e = . . _LATDbits 0 4 -> -> 1 `i `uc ]
+[; ;mainproject.c: 377: for(int i=0;i<200;i++){
+"377
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 200 `i 399  ]
-[e $U 400  ]
-[e :U 399 ]
+[e $ < _i -> 200 `i 357  ]
+[e $U 358  ]
+[e :U 357 ]
 {
-[; ;mainproject.c: 375: if((wval--)==0) LATDbits.LATD4=0;
-"375
-[e $ ! == -- _wval -> 1 `i -> 0 `i 402  ]
+[; ;mainproject.c: 378: if((wval--)==0) LATDbits.LATD4=0;
+"378
+[e $ ! == -- _wval -> 1 `i -> 0 `i 360  ]
 [e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
-[e :U 402 ]
-"376
-}
-"374
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 200 `i 399  ]
-[e :U 400 ]
-"376
-}
-[; ;mainproject.c: 376: }
-[; ;mainproject.c: 377: }
-"377
-[e :UE 398 ]
-}
+[e :U 360 ]
 "379
+}
+"377
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 200 `i 357  ]
+[e :U 358 ]
+"379
+}
+[; ;mainproject.c: 379: }
+[; ;mainproject.c: 380: }
+"380
+[e :UE 356 ]
+}
+"382
 [v _wstart `(v ~T0 @X0 1 ef ]
 {
-[; ;mainproject.c: 379: void wstart(){
+[; ;mainproject.c: 382: void wstart(){
 [e :U _wstart ]
 [f ]
-[; ;mainproject.c: 380: while(white!=200){
-"380
-[e $U 404  ]
-[e :U 405 ]
-{
-[; ;mainproject.c: 381: white++;
-"381
-[e ++ _white -> 1 `i ]
-[; ;mainproject.c: 382: wshow(white);
-"382
-[e ( _wshow (1 _white ]
+[; ;mainproject.c: 383: while(white!=200){
 "383
-}
-[e :U 404 ]
-"380
-[e $ != _white -> 200 `i 405  ]
-[e :U 406 ]
-[; ;mainproject.c: 383: }
-[; ;mainproject.c: 384: while(white!=0){
-"384
-[e $U 407  ]
-[e :U 408 ]
+[e $U 362  ]
+[e :U 363 ]
 {
-[; ;mainproject.c: 385: white--;
-"385
-[e -- _white -> 1 `i ]
-[; ;mainproject.c: 386: wshow(white);
-"386
-[e ( _wshow (1 _white ]
-"387
-}
-[e :U 407 ]
+[; ;mainproject.c: 384: white++;
 "384
-[e $ != _white -> 0 `i 408  ]
-[e :U 409 ]
-[; ;mainproject.c: 387: }
-[; ;mainproject.c: 388: }
+[e ++ _white -> 1 `i ]
+[; ;mainproject.c: 385: wshow(white);
+"385
+[e ( _wshow (1 _white ]
+"386
+}
+[e :U 362 ]
+"383
+[e $ != _white -> 200 `i 363  ]
+[e :U 364 ]
+[; ;mainproject.c: 386: }
+[; ;mainproject.c: 387: while(white!=0){
+"387
+[e $U 365  ]
+[e :U 366 ]
+{
+[; ;mainproject.c: 388: white--;
 "388
-[e :UE 403 ]
+[e -- _white -> 1 `i ]
+[; ;mainproject.c: 389: wshow(white);
+"389
+[e ( _wshow (1 _white ]
+"390
+}
+[e :U 365 ]
+"387
+[e $ != _white -> 0 `i 366  ]
+[e :U 367 ]
+[; ;mainproject.c: 390: }
+[; ;mainproject.c: 391: }
+"391
+[e :UE 361 ]
 }
 [v $root$_Hi `(v ~T0 @X0 0 e ]
-[v F3288 `(v ~T0 @X0 1 tf ]
-"390
-[v _Hi `IF3288 ~T0 @X0 1 e ]
-"391
+[v F3286 `(v ~T0 @X0 1 tf ]
+"393
+[v _Hi `IF3286 ~T0 @X0 1 e ]
+"394
 {
-[; ;mainproject.c: 390: void interrupt Hi()
-[; ;mainproject.c: 391: {
+[; ;mainproject.c: 393: void interrupt Hi()
+[; ;mainproject.c: 394: {
 [e :U _Hi ]
 [f ]
-[; ;mainproject.c: 392: if(INTCONbits.INT0IF == 1) {
-"392
-[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 411  ]
+[; ;mainproject.c: 395: if(INTCONbits.INT0IF == 1) {
+"395
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 369  ]
 {
-[; ;mainproject.c: 393: LATDbits.LATD4=0;
-"393
-[e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
-[; ;mainproject.c: 394: rgbstart();
-"394
-[e ( _rgbstart ..  ]
-[; ;mainproject.c: 396: INTCONbits.INT0IF = 0;
+[; ;mainproject.c: 396: LATDbits.LATD4=0;
 "396
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
+[; ;mainproject.c: 397: rgbstart();
+"397
+[e ( _rgbstart ..  ]
+[; ;mainproject.c: 398: PORTBbits.RB0=0;
+"398
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[; ;mainproject.c: 399: LATBbits.LATB0=0;
 "399
-}
-[e :U 411 ]
-[; ;mainproject.c: 399: }
-[; ;mainproject.c: 401: }
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+[; ;mainproject.c: 400: INTCONbits.INT0IF = 0;
+"400
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "401
-[e :UE 410 ]
+}
+[e :U 369 ]
+[; ;mainproject.c: 401: }
+[; ;mainproject.c: 403: }
+"403
+[e :UE 368 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"403
+"405
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;mainproject.c: 403: void main(void) {
+[; ;mainproject.c: 405: void main(void) {
 [e :U _main ]
 [f ]
-[; ;mainproject.c: 404: init();
-"404
-[e ( _init ..  ]
-[; ;mainproject.c: 405: while(1) {
-"405
-[e :U 414 ]
-{
-[; ;mainproject.c: 406: wstart();
+[; ;mainproject.c: 406: init();
 "406
-[e ( _wstart ..  ]
+[e ( _init ..  ]
+[; ;mainproject.c: 407: while(1) {
 "407
+[e :U 372 ]
+{
+[; ;mainproject.c: 408: wstart();
+"408
+[e ( _wstart ..  ]
+"409
 [v _k `i ~T0 @X0 1 a ]
-[; ;mainproject.c: 407: int k = 10 , l = 255;
+[; ;mainproject.c: 409: int k = 10 , l = 255;
 [e = _k -> 10 `i ]
 [v _l `i ~T0 @X0 1 a ]
 [e = _l -> 255 `i ]
-[; ;mainproject.c: 408: while( k > 0 ) {
-"408
-[e $U 416  ]
-[e :U 417 ]
-{
-[; ;mainproject.c: 409: l = 255;
-"409
-[e = _l -> 255 `i ]
-[; ;mainproject.c: 410: while( l > 0) {
+[; ;mainproject.c: 410: while( k > 0 ) {
 "410
-[e $U 419  ]
-[e :U 420 ]
+[e $U 374  ]
+[e :U 375 ]
 {
-[; ;mainproject.c: 411: l--;
+[; ;mainproject.c: 411: l = 255;
 "411
-[e -- _l -> 1 `i ]
+[e = _l -> 255 `i ]
+[; ;mainproject.c: 412: while( l > 0) {
 "412
-}
-[e :U 419 ]
-"410
-[e $ > _l -> 0 `i 420  ]
-[e :U 421 ]
-[; ;mainproject.c: 412: }
-[; ;mainproject.c: 413: k--;
+[e $U 377  ]
+[e :U 378 ]
+{
+[; ;mainproject.c: 413: l--;
 "413
-[e -- _k -> 1 `i ]
+[e -- _l -> 1 `i ]
 "414
 }
-[e :U 416 ]
-"408
-[e $ > _k -> 0 `i 417  ]
-[e :U 418 ]
+[e :U 377 ]
+"412
+[e $ > _l -> 0 `i 378  ]
+[e :U 379 ]
 [; ;mainproject.c: 414: }
-[; ;mainproject.c: 416: if(RB5){
+[; ;mainproject.c: 415: k--;
+"415
+[e -- _k -> 1 `i ]
 "416
-[e $ ! _RB5 422  ]
-{
-[; ;mainproject.c: 418: INTCONbits.INT0IF = 1;
+}
+[e :U 374 ]
+"410
+[e $ > _k -> 0 `i 375  ]
+[e :U 376 ]
+[; ;mainproject.c: 416: }
+[; ;mainproject.c: 418: if(RB5){
 "418
-[e = . . _INTCONbits 0 1 -> -> 1 `i `uc ]
-"419
-}
-[e :U 422 ]
+[e $ ! _RB5 380  ]
+{
+[; ;mainproject.c: 420: INTCONbits.INT0IF = 1;
 "420
-}
-[e :U 413 ]
-"405
-[e $U 414  ]
-[e :U 415 ]
-[; ;mainproject.c: 419: }
-[; ;mainproject.c: 420: }
-[; ;mainproject.c: 421: }
+[e = . . _INTCONbits 0 1 -> -> 1 `i `uc ]
 "421
-[e :UE 412 ]
+}
+[e :U 380 ]
+"422
+}
+[e :U 371 ]
+"407
+[e $U 372  ]
+[e :U 373 ]
+[; ;mainproject.c: 421: }
+[; ;mainproject.c: 422: }
+[; ;mainproject.c: 423: }
+"423
+[e :UE 370 ]
 }

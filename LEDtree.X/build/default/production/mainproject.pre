@@ -4204,10 +4204,13 @@ rgbshow(red,green,blue,red2,green2,blue2,4);
 rgbshow(red,green,blue,red2,green2,blue2,5);
 
 }
-LATBbits.LATB4=1;
-_delay((unsigned long)((1)*(8000000/4000.0)));
+
 LATBbits.LATB4=0;
-_delay((unsigned long)((1)*(8000000/4000.0)));
+
+LATBbits.LATB4=1;
+
+LATBbits.LATB4=0;
+
 
 while( green <= 70 ){
 green=green+10;

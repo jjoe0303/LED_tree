@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/debug\LEDtree.X.debug.hex">
+  <executable name="dist/default/production\LED_negative.X.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>
-      <used>1982</used>
-      <free>30786</free>
+      <used>4210</used>
+      <free>28558</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>1536</length>
-      <used>78</used>
-      <free>1458</free>
+      <used>79</used>
+      <free>1457</free>
     </memory>
   </executable>
 </project>

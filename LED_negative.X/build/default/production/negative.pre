@@ -1,5 +1,5 @@
 
-# 1 "mainproject.c"
+# 1 "negative.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.44\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -3984,7 +3984,7 @@ extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
 
-# 17 "mainproject.c"
+# 17 "negative.c"
 #pragma config OSC = INTIO67
 #pragma config WDT = OFF
 #pragma config PWRT = OFF
@@ -4204,13 +4204,10 @@ rgbshow(red,green,blue,red2,green2,blue2,4);
 rgbshow(red,green,blue,red2,green2,blue2,5);
 
 }
-
-LATBbits.LATB4=0;
-
 LATBbits.LATB4=1;
-
+_delay((unsigned long)((1)*(8000000/4000.0)));
 LATBbits.LATB4=0;
-
+_delay((unsigned long)((1)*(8000000/4000.0)));
 
 while( green <= 70 ){
 green=green+10;
@@ -4221,7 +4218,124 @@ rgbshow(red,green,blue,red2,green2,blue2,5);
 
 }
 
-# 371
+while( green <= 140 ){
+green=green+10;
+green2=green2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while(red>=70){
+red=red-10;
+green2=green2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while( red>= 0 ){
+
+red=red-10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+
+while( blue <= 70 ){
+blue=blue+10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+
+}
+
+while( blue <= 140 ){
+blue=blue+10;
+blue2=blue2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+
+while( red <= 70 ){
+red=red+10;
+blue2=blue2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while( red <= 140 ){
+red=red+10;
+red2=red2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while(green>=70){
+green=green-10;
+red2=red2+10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while(green>= 0 ){
+
+green=green-10;
+green2=green2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while(red>=70){
+red=red-10;
+green2=green2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while( red>= 0 ){
+
+red=red-10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while(blue>=70){
+blue=blue-10;
+red2=red2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+while( blue>= 0 ){
+blue=blue-10;
+blue2=blue2-10;
+rgbshow(red,green,blue,red2,green2,blue2,4);
+
+rgbshow(red,green,blue,red2,green2,blue2,5);
+}
+
+while( blue2 >= 0 ){
+LATCbits.LATC0=0;
+LATCbits.LATC1=0;
+LATCbits.LATC2=0;
+LATCbits.LATC3=0;
+LATDbits.LATD0=0;
+LATDbits.LATD1=0;
+blue2=blue2-10;
+rgbshow(red,green,blue,red2,green2,blue2,2);
+
+rgbshow(red,green,blue,red2,green2,blue2,3);
+}
 zerorgb();
 }
 
@@ -4269,9 +4383,5 @@ l--;
 k--;
 }
 
-if(RB5){
-
-INTCONbits.INT0IF = 1;
-}
 }
 }

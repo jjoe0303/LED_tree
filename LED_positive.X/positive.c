@@ -227,10 +227,12 @@ void rgbstart()
         rgbshow(red,green,blue,red2,green2,blue2,5);
    
     }
+     LATBbits.LATB4=0;
+  //  __delay_ms(10);
     LATBbits.LATB4=1;
-    __delay_ms(1);
+  //  __delay_ms(100);
     LATBbits.LATB4=0;
-    __delay_ms(1);
+  //  __delay_ms(1);
   
    while( green <= 70 ){ //011
         green=green+10;

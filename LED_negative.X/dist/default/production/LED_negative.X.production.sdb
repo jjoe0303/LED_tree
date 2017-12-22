@@ -23,7 +23,7 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"40 C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+"40 C:\Users\knu\Desktop\LED_tree\LED_negative.X\negative.c
 [v _init init `(v  1 e 1 0 ]
 "74
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
@@ -35,13 +35,13 @@
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
 "218
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
-"374
+"371
 [v _wshow wshow `(v  1 e 1 0 ]
-"382
+"379
 [v _wstart wstart `(v  1 e 1 0 ]
-"393
+"390
 [v _Hi Hi `II(v  1 e 1 0 ]
-"405
+"402
 [v _main main `(v  1 e 1 0 ]
 [s S66 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -253,9 +253,7 @@
 ]
 [u S186 . 1 `S164 1 . 1 0 `S173 1 . 1 0 `S182 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES186  1 e 1 @4082 ]
-"7737
-[v _RB5 RB5 `VEb  1 e 0 @31757 ]
-"27 C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+"27 C:\Users\knu\Desktop\LED_tree\LED_negative.X\negative.c
 [v _red red `i  1 e 2 0 ]
 "28
 [v _green green `i  1 e 2 0 ]
@@ -269,42 +267,42 @@
 [v _blue2 blue2 `i  1 e 2 0 ]
 "35
 [v _white white `i  1 e 2 0 ]
-"405
+"402
 [v _main main `(v  1 e 1 0 ]
 {
-"409
-[v main@l l `i  1 a 2 2 ]
-[v main@k k `i  1 a 2 0 ]
-"423
+"406
+[v main@l l `i  1 a 2 4 ]
+[v main@k k `i  1 a 2 2 ]
+"416
 } 0
-"382
+"379
 [v _wstart wstart `(v  1 e 1 0 ]
 {
-"391
+"388
 } 0
-"374
+"371
 [v _wshow wshow `(v  1 e 1 0 ]
 {
-"377
-[v wshow@i i `i  1 a 2 54 ]
 "374
-[v wshow@wval wval `i  1 p 2 52 ]
-"380
+[v wshow@i i `i  1 a 2 0 ]
+"371
+[v wshow@wval wval `i  1 p 2 53 ]
+"377
 } 0
 "40
 [v _init init `(v  1 e 1 0 ]
 {
 "72
 } 0
-"393
+"390
 [v _Hi Hi `II(v  1 e 1 0 ]
 {
-"403
+"400
 } 0
 "218
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
 {
-"372
+"369
 } 0
 "198
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
@@ -330,7 +328,7 @@
 [v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
 {
 "173
-[v rgbshowsix@i_541 i `i  1 a 2 16 ]
+[v rgbshowsix@i_546 i `i  1 a 2 16 ]
 "149
 [v rgbshowsix@i i `i  1 a 2 14 ]
 "133
@@ -347,11 +345,11 @@
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
 {
 "126
-[v rgbshowone@i_531 i `i  1 a 2 14 ]
+[v rgbshowone@i_536 i `i  1 a 2 14 ]
 "111
-[v rgbshowone@i_530 i `i  1 a 2 12 ]
+[v rgbshowone@i_535 i `i  1 a 2 12 ]
 "98
-[v rgbshowone@i_529 i `i  1 a 2 10 ]
+[v rgbshowone@i_534 i `i  1 a 2 10 ]
 "83
 [v rgbshowone@i i `i  1 a 2 8 ]
 "74
