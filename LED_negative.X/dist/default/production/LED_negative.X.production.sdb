@@ -35,13 +35,13 @@
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
 "218
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
-"371
+"374
 [v _wshow wshow `(v  1 e 1 0 ]
-"379
+"382
 [v _wstart wstart `(v  1 e 1 0 ]
-"390
+"393
 [v _Hi Hi `II(v  1 e 1 0 ]
-"402
+"405
 [v _main main `(v  1 e 1 0 ]
 [s S66 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -267,42 +267,42 @@
 [v _blue2 blue2 `i  1 e 2 0 ]
 "35
 [v _white white `i  1 e 2 0 ]
-"402
+"405
 [v _main main `(v  1 e 1 0 ]
 {
-"406
-[v main@l l `i  1 a 2 4 ]
-[v main@k k `i  1 a 2 2 ]
-"416
+"409
+[v main@l l `i  1 a 2 2 ]
+[v main@k k `i  1 a 2 0 ]
+"423
 } 0
-"379
+"382
 [v _wstart wstart `(v  1 e 1 0 ]
 {
-"388
+"391
 } 0
-"371
+"374
 [v _wshow wshow `(v  1 e 1 0 ]
 {
-"374
-[v wshow@i i `i  1 a 2 0 ]
-"371
-[v wshow@wval wval `i  1 p 2 53 ]
 "377
+[v wshow@i i `i  1 a 2 54 ]
+"374
+[v wshow@wval wval `i  1 p 2 52 ]
+"380
 } 0
 "40
 [v _init init `(v  1 e 1 0 ]
 {
 "72
 } 0
-"390
+"393
 [v _Hi Hi `II(v  1 e 1 0 ]
 {
-"400
+"403
 } 0
 "218
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
 {
-"369
+"372
 } 0
 "198
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
@@ -328,7 +328,7 @@
 [v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
 {
 "173
-[v rgbshowsix@i_546 i `i  1 a 2 16 ]
+[v rgbshowsix@i_540 i `i  1 a 2 16 ]
 "149
 [v rgbshowsix@i i `i  1 a 2 14 ]
 "133
@@ -345,11 +345,11 @@
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
 {
 "126
-[v rgbshowone@i_536 i `i  1 a 2 14 ]
+[v rgbshowone@i_530 i `i  1 a 2 14 ]
 "111
-[v rgbshowone@i_535 i `i  1 a 2 12 ]
+[v rgbshowone@i_529 i `i  1 a 2 12 ]
 "98
-[v rgbshowone@i_534 i `i  1 a 2 10 ]
+[v rgbshowone@i_528 i `i  1 a 2 10 ]
 "83
 [v rgbshowone@i i `i  1 a 2 8 ]
 "74
