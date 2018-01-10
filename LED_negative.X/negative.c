@@ -36,6 +36,7 @@ int white;
 
 
 double distance;
+int cc;
 
 void init()
 {
@@ -69,6 +70,8 @@ void init()
     LATBbits.LATB5=0;
     
     white=0;
+    
+    cc=10;
 }
 
 void rgbshowone(int rval,int gval ,int bval,int flag){
@@ -405,7 +408,8 @@ void interrupt Hi()
 void main(void) {
     init();
     while(1) {
-        wstart();
+       while(cc>0){ 
+       wstart();
         int k = 10 , l = 255;
         while( k > 0 ) {
             l = 255;
@@ -414,10 +418,13 @@ void main(void) {
             }
             k--;
         }
-        
-       // if(RB5){
+        cc--;
+       }
+        rgbstart();
+        cc=20;
+        //if(RB5){
             //PORTBbits.RB0=1;
-        //    INTCONbits.INT0IF = 1;
-       // }
+           // INTCONbits.INT0IF = 1;
+        //}
     } 
 }

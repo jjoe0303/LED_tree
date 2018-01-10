@@ -23,25 +23,30 @@
 [v ___flmul __flmul `(d  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"34 C:\Users\knu\Desktop\LED_tree\LED_positive.X\positive.c
+"35 C:\Users\knu\Desktop\LED_tree\LED_positive.X\positive.c
 [v _init init `(v  1 e 1 0 ]
-"68
+"70
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
-"127
+[v i2_rgbshowone rgbshowone `(v  1 e 1 0 ]
+"129
 [v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
-"177
+[v i2_rgbshowsix rgbshowsix `(v  1 e 1 0 ]
+"179
 [v _rgbshow rgbshow `(v  1 e 1 0 ]
-"192
+[v i2_rgbshow rgbshow `(v  1 e 1 0 ]
+"194
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
-"212
+[v i2_zerorgb zerorgb `(v  1 e 1 0 ]
+"214
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
-"365
+[v i2_rgbstart rgbstart `(v  1 e 1 0 ]
+"369
 [v _wshow wshow `(v  1 e 1 0 ]
-"373
+"377
 [v _wstart wstart `(v  1 e 1 0 ]
-"384
+"388
 [v _Hi Hi `II(v  1 e 1 0 ]
-"396
+"400
 [v _main main `(v  1 e 1 0 ]
 [s S66 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
@@ -253,8 +258,6 @@
 ]
 [u S186 . 1 `S164 1 . 1 0 `S173 1 . 1 0 `S182 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES186  1 e 1 @4082 ]
-"7737
-[v _RB5 RB5 `VEb  1 e 0 @31757 ]
 "21 C:\Users\knu\Desktop\LED_tree\LED_positive.X\positive.c
 [v _red red `i  1 e 2 0 ]
 "22
@@ -269,95 +272,147 @@
 [v _blue2 blue2 `i  1 e 2 0 ]
 "29
 [v _white white `i  1 e 2 0 ]
-"396
+"33
+[v _cc cc `i  1 e 2 0 ]
+"400
 [v _main main `(v  1 e 1 0 ]
 {
-"400
-[v main@l l `i  1 a 2 4 ]
-[v main@k k `i  1 a 2 2 ]
-"414
+"405
+[v main@l l `i  1 a 2 22 ]
+[v main@k k `i  1 a 2 20 ]
+"418
 } 0
-"373
+"377
 [v _wstart wstart `(v  1 e 1 0 ]
 {
-"382
+"386
 } 0
-"365
+"369
 [v _wshow wshow `(v  1 e 1 0 ]
 {
-"368
-[v wshow@i i `i  1 a 2 0 ]
-"365
-[v wshow@wval wval `i  1 p 2 53 ]
-"371
+"372
+[v wshow@i i `i  1 a 2 54 ]
+"369
+[v wshow@wval wval `i  1 p 2 52 ]
+"375
 } 0
-"34
-[v _init init `(v  1 e 1 0 ]
-{
-"66
-} 0
-"384
-[v _Hi Hi `II(v  1 e 1 0 ]
-{
-"394
-} 0
-"212
+"214
 [v _rgbstart rgbstart `(v  1 e 1 0 ]
 {
-"363
+"367
 } 0
-"192
+"194
 [v _zerorgb zerorgb `(v  1 e 1 0 ]
 {
-"211
+"213
 } 0
-"177
+"179
 [v _rgbshow rgbshow `(v  1 e 1 0 ]
 {
+"181
+[v rgbshow@i i `i  1 a 2 18 ]
 "179
-[v rgbshow@i i `i  1 a 2 32 ]
-"177
-[v rgbshow@rval rval `i  1 p 2 18 ]
-[v rgbshow@gval gval `i  1 p 2 20 ]
-[v rgbshow@bval bval `i  1 p 2 22 ]
-[v rgbshow@rval2 rval2 `i  1 p 2 24 ]
-[v rgbshow@gval2 gval2 `i  1 p 2 26 ]
-[v rgbshow@bval2 bval2 `i  1 p 2 28 ]
-[v rgbshow@flag flag `i  1 p 2 30 ]
-"190
+[v rgbshow@rval rval `i  1 p 2 4 ]
+[v rgbshow@gval gval `i  1 p 2 6 ]
+[v rgbshow@bval bval `i  1 p 2 8 ]
+[v rgbshow@rval2 rval2 `i  1 p 2 10 ]
+[v rgbshow@gval2 gval2 `i  1 p 2 12 ]
+[v rgbshow@bval2 bval2 `i  1 p 2 14 ]
+[v rgbshow@flag flag `i  1 p 2 16 ]
+"192
 } 0
-"127
+"129
 [v _rgbshowsix rgbshowsix `(v  1 e 1 0 ]
 {
-"167
-[v rgbshowsix@i_547 i `i  1 a 2 16 ]
-"143
-[v rgbshowsix@i i `i  1 a 2 14 ]
-"127
-[v rgbshowsix@rval rval `i  1 p 2 0 ]
-[v rgbshowsix@gval gval `i  1 p 2 2 ]
-[v rgbshowsix@bval bval `i  1 p 2 4 ]
-[v rgbshowsix@rval2 rval2 `i  1 p 2 6 ]
-[v rgbshowsix@gval2 gval2 `i  1 p 2 8 ]
-[v rgbshowsix@bval2 bval2 `i  1 p 2 10 ]
-[v rgbshowsix@flag flag `i  1 p 2 12 ]
-"176
+"169
+[v rgbshowsix@i_541 i `i  1 a 2 2 ]
+"145
+[v rgbshowsix@i i `i  1 a 2 0 ]
+"129
+[v rgbshowsix@rval rval `i  1 p 2 52 ]
+[v rgbshowsix@gval gval `i  1 p 2 54 ]
+[v rgbshowsix@bval bval `i  1 p 2 56 ]
+[v rgbshowsix@rval2 rval2 `i  1 p 2 58 ]
+[v rgbshowsix@gval2 gval2 `i  1 p 2 60 ]
+[v rgbshowsix@bval2 bval2 `i  1 p 2 62 ]
+[v rgbshowsix@flag flag `i  1 p 2 64 ]
+"178
 } 0
-"68
+"70
 [v _rgbshowone rgbshowone `(v  1 e 1 0 ]
 {
-"120
-[v rgbshowone@i_537 i `i  1 a 2 14 ]
-"105
-[v rgbshowone@i_536 i `i  1 a 2 12 ]
-"92
-[v rgbshowone@i_535 i `i  1 a 2 10 ]
-"77
-[v rgbshowone@i i `i  1 a 2 8 ]
+"122
+[v rgbshowone@i_531 i `i  1 a 2 66 ]
+"107
+[v rgbshowone@i_530 i `i  1 a 2 64 ]
+"94
+[v rgbshowone@i_529 i `i  1 a 2 62 ]
+"79
+[v rgbshowone@i i `i  1 a 2 60 ]
+"70
+[v rgbshowone@rval rval `i  1 p 2 52 ]
+[v rgbshowone@gval gval `i  1 p 2 54 ]
+[v rgbshowone@bval bval `i  1 p 2 56 ]
+[v rgbshowone@flag flag `i  1 p 2 58 ]
+"128
+} 0
+"35
+[v _init init `(v  1 e 1 0 ]
+{
 "68
-[v rgbshowone@rval rval `i  1 p 2 0 ]
-[v rgbshowone@gval gval `i  1 p 2 2 ]
-[v rgbshowone@bval bval `i  1 p 2 4 ]
-[v rgbshowone@flag flag `i  1 p 2 6 ]
-"126
+} 0
+"388
+[v _Hi Hi `II(v  1 e 1 0 ]
+{
+"398
+} 0
+"214
+[v i2_rgbstart rgbstart `(v  1 e 1 0 ]
+{
+"367
+} 0
+"194
+[v i2_zerorgb zerorgb `(v  1 e 1 0 ]
+{
+"213
+} 0
+"179
+[v i2_rgbshow rgbshow `(v  1 e 1 0 ]
+{
+[v i2rgbshow@i rgbshow `i  1 a 2 32 ]
+[v i2rgbshow@rval rval `i  1 p 2 18 ]
+[v i2rgbshow@gval gval `i  1 p 2 20 ]
+[v i2rgbshow@bval bval `i  1 p 2 22 ]
+[v i2rgbshow@rval2 rval2 `i  1 p 2 24 ]
+[v i2rgbshow@gval2 gval2 `i  1 p 2 26 ]
+[v i2rgbshow@bval2 bval2 `i  1 p 2 28 ]
+[v i2rgbshow@flag flag `i  1 p 2 30 ]
+"192
+} 0
+"129
+[v i2_rgbshowsix rgbshowsix `(v  1 e 1 0 ]
+{
+[v i2rgbshowsix@i_541 rgbshowsix `i  1 a 2 16 ]
+[v i2rgbshowsix@i rgbshowsix `i  1 a 2 14 ]
+[v i2rgbshowsix@rval rval `i  1 p 2 0 ]
+[v i2rgbshowsix@gval gval `i  1 p 2 2 ]
+[v i2rgbshowsix@bval bval `i  1 p 2 4 ]
+[v i2rgbshowsix@rval2 rval2 `i  1 p 2 6 ]
+[v i2rgbshowsix@gval2 gval2 `i  1 p 2 8 ]
+[v i2rgbshowsix@bval2 bval2 `i  1 p 2 10 ]
+[v i2rgbshowsix@flag flag `i  1 p 2 12 ]
+"178
+} 0
+"70
+[v i2_rgbshowone rgbshowone `(v  1 e 1 0 ]
+{
+[v i2rgbshowone@i_531 rgbshowone `i  1 a 2 14 ]
+[v i2rgbshowone@i_530 rgbshowone `i  1 a 2 12 ]
+[v i2rgbshowone@i_529 rgbshowone `i  1 a 2 10 ]
+[v i2rgbshowone@i rgbshowone `i  1 a 2 8 ]
+[v i2rgbshowone@rval rval `i  1 p 2 0 ]
+[v i2rgbshowone@gval gval `i  1 p 2 2 ]
+[v i2rgbshowone@bval bval `i  1 p 2 4 ]
+[v i2rgbshowone@flag flag `i  1 p 2 6 ]
+"128
 } 0

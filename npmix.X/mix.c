@@ -1,9 +1,3 @@
-/*
- * File:   mainproject.c
- * Author: knu
- *
- * Created on 2017年12月21日, 下午 5:38
- */
 #define _XTAL_FREQ 8000000	/* Define freq */
 
 #include <xc.h>
@@ -36,6 +30,7 @@ int white;
 
 
 double distance;
+int cc;
 
 void init()
 {
@@ -45,18 +40,18 @@ void init()
     
     TRISC=0; //RGB init
     TRISD=0;
-    LATCbits.LATC0=0; //r  
-    LATCbits.LATC1=0 //g
-    LATCbits.LATC2=0; //b
-    LATCbits.LATC3=0;
-    LATDbits.LATD0=0;
-    LATDbits.LATD1=0;
-    LATCbits.LATC7=1; //r  
-    LATCbits.LATC6=1; //g
-    LATCbits.LATC5=1; //b
-    LATCbits.LATC4=1;
-    LATDbits.LATD3=1;
-    LATDbits.LATD2=1;
+    LATCbits.LATC0=1; //r  
+        LATCbits.LATC1=1; //g
+        LATCbits.LATC2=1; //b
+        LATCbits.LATC3=1;
+        LATDbits.LATD0=1;
+        LATDbits.LATD1=1;
+        LATCbits.LATC7=0; //r  
+        LATCbits.LATC6=0; //g
+        LATCbits.LATC5=0; //b
+        LATCbits.LATC4=0;
+        LATDbits.LATD3=0;
+        LATDbits.LATD2=0;
     
     TRISBbits.TRISB0=1;
     red=0;
@@ -79,25 +74,11 @@ void init()
     LATBbits.LATB5=0;
     
     white=0;
+    cc=10;
 }
 
 void rgbshowone(int rval,int gval ,int bval,int flag){
     if(flag==0){   
-        LATCbits.LATC0=1; //r  
-        LATCbits.LATC1=1; //g
-        LATCbits.LATC2=1; //b
-        LATCbits.LATC3=0;
-        LATDbits.LATD0=0;
-        LATDbits.LATD1=0;
-        
-        for(int i=0;i<140;i++){
-            if((rval--)==0) LATCbits.LATC0=0; //r  
-            if((gval--)==0) LATCbits.LATC1=0; //g  
-            if((bval--)==0) LATCbits.LATC2=0; //b 
-        }
-    }
-    
-    else if(flag==1){   
         LATCbits.LATC0=0; //r  
         LATCbits.LATC1=0; //g
         LATCbits.LATC2=0; //b
@@ -106,67 +87,58 @@ void rgbshowone(int rval,int gval ,int bval,int flag){
         LATDbits.LATD1=1;
         
         for(int i=0;i<140;i++){
-            if((rval--)==0) LATCbits.LATC3=0; //r  
-            if((gval--)==0) LATDbits.LATD0=0; //g  
-            if((bval--)==0) LATDbits.LATD1=0; //b 
-        }
-    }
-    else if(flag==2){
-        LATCbits.LATC7=0; //r  
-        LATCbits.LATC6=0; //g
-        LATCbits.LATC5=0; //b
-        LATCbits.LATC4=1;
-        LATDbits.LATD3=1;
-        LATDbits.LATD2=1;
-        for(int i=0;i<140;i++){
-            if((rval--)==0) LATCbits.LATC7=1; //r  
-            if((gval--)==0) LATCbits.LATC6=1; //g  
-            if((bval--)==0) LATCbits.LATC5=1; //b 
+            if((rval--)==0) LATCbits.LATC0=1; //r  
+            if((gval--)==0) LATCbits.LATC1=1; //g  
+            if((bval--)==0) LATCbits.LATC2=1; //b 
         }
     }
     
-     else if(flag==3){
+    else if(flag==1){   
+        LATCbits.LATC0=1; //r  
+        LATCbits.LATC1=1; //g
+        LATCbits.LATC2=1; //b
+        LATCbits.LATC3=0;
+        LATDbits.LATD0=0;
+        LATDbits.LATD1=0;
+        
+        for(int i=0;i<140;i++){
+            if((rval--)==0) LATCbits.LATC3=1; //r  
+            if((gval--)==0) LATDbits.LATD0=1; //g  
+            if((bval--)==0) LATDbits.LATD1=1; //b 
+        }
+    }
+    else if(flag==2){
         LATCbits.LATC7=1; //r  
         LATCbits.LATC6=1; //g
         LATCbits.LATC5=1; //b
         LATCbits.LATC4=0;
         LATDbits.LATD3=0;
         LATDbits.LATD2=0;
+        for(int i=0;i<140;i++){
+            if((rval--)==0) LATCbits.LATC7=0; //r  
+            if((gval--)==0) LATCbits.LATC6=0; //g  
+            if((bval--)==0) LATCbits.LATC5=0; //b 
+        }
+    }
+    
+     else if(flag==3){
+        LATCbits.LATC7=0; //r  
+        LATCbits.LATC6=0; //g
+        LATCbits.LATC5=0; //b
+        LATCbits.LATC4=1;
+        LATDbits.LATD3=1;
+        LATDbits.LATD2=1;
        
         for(int i=0;i<140;i++){
-            if((rval--)==0) LATCbits.LATC4=1; //r  
-            if((gval--)==0) LATDbits.LATD3=1; //g  
-            if((bval--)==0) LATDbits.LATD2=1; //b 
+            if((rval--)==0) LATCbits.LATC4=0; //r  
+            if((gval--)==0) LATDbits.LATD3=0; //g  
+            if((bval--)==0) LATDbits.LATD2=0; //b 
         }
     }
 }
 void rgbshowsix(int rval,int gval ,int bval,int rval2,int gval2 ,int bval2,int flag)
 {
     if(flag==4){   
-        LATCbits.LATC0=1; //r  
-        LATCbits.LATC1=1; //g
-        LATCbits.LATC2=1; //b
-        LATCbits.LATC3=0;
-        LATDbits.LATD0=0;
-        LATDbits.LATD1=0;
-        LATCbits.LATC7=0; //r  
-        LATCbits.LATC6=0; //g
-        LATCbits.LATC5=0; //b
-        LATCbits.LATC4=1;
-        LATDbits.LATD3=1;
-        LATDbits.LATD2=1;
-        
-        for(int i=0;i<140;i++){
-            if((rval--)==0) LATCbits.LATC0=0; //r  
-            if((gval--)==0) LATCbits.LATC1=0; //g  
-            if((bval--)==0) LATCbits.LATC2=0; //b 
-            if((rval2--)==0) LATCbits.LATC7=1; //r  
-            if((gval2--)==0) LATCbits.LATC6=1; //g  
-            if((bval2--)==0) LATCbits.LATC5=1; //b 
-        }
-    }
-    
-    else if(flag==5){  
         LATCbits.LATC0=0; //r  
         LATCbits.LATC1=0; //g
         LATCbits.LATC2=0; //b
@@ -179,14 +151,38 @@ void rgbshowsix(int rval,int gval ,int bval,int rval2,int gval2 ,int bval2,int f
         LATCbits.LATC4=0;
         LATDbits.LATD3=0;
         LATDbits.LATD2=0;
+        
+        for(int i=0;i<140;i++){
+            if((rval--)==0) LATCbits.LATC0=1; //r  
+            if((gval--)==0) LATCbits.LATC1=1; //g  
+            if((bval--)==0) LATCbits.LATC2=1; //b 
+            if((rval2--)==0) LATCbits.LATC7=0; //r  
+            if((gval2--)==0) LATCbits.LATC6=0; //g  
+            if((bval2--)==0) LATCbits.LATC5=0; //b 
+        }
+    }
+    
+    else if(flag==5){  
+        LATCbits.LATC0=1; //r  
+        LATCbits.LATC1=1; //g
+        LATCbits.LATC2=1; //b
+        LATCbits.LATC3=0;
+        LATDbits.LATD0=0;
+        LATDbits.LATD1=0;
+        LATCbits.LATC7=0; //r  
+        LATCbits.LATC6=0; //g
+        LATCbits.LATC5=0; //b
+        LATCbits.LATC4=1;
+        LATDbits.LATD3=1;
+        LATDbits.LATD2=1;
        
         for(int i=0;i<140;i++){
-            if((rval--)==0) LATCbits.LATC3=0; //r  
-            if((gval--)==0) LATDbits.LATD0=0; //g  
-            if((bval--)==0) LATDbits.LATD1=0; //b 
-            if((rval2--)==0) LATCbits.LATC4=1; //r  
-            if((gval2--)==0) LATDbits.LATD3=1; //g  
-            if((bval2--)==0) LATDbits.LATD2=1; //b 
+            if((rval--)==0) LATCbits.LATC3=1; //r  
+            if((gval--)==0) LATDbits.LATD0=1; //g  
+            if((bval--)==0) LATDbits.LATD1=1; //b 
+            if((rval2--)==0) LATCbits.LATC4=0; //r  
+            if((gval2--)==0) LATDbits.LATD3=0; //g  
+            if((bval2--)==0) LATDbits.LATD2=0; //b 
         }
     }
 }
@@ -206,18 +202,18 @@ void rgbshow(int rval,int gval ,int bval,int rval2,int gval2 ,int bval2,int flag
 }
 
 void zerorgb(){
-     LATCbits.LATC0=0; //r  
-     LATCbits.LATC1=0; //g
-     LATCbits.LATC2=0; //b
-     LATCbits.LATC3=0;
-     LATDbits.LATD0=0;
-     LATDbits.LATD1=0;
-     LATCbits.LATC7=1; //r  
-     LATCbits.LATC6=1; //g
-     LATCbits.LATC5=1; //b
-     LATCbits.LATC4=1;
-     LATDbits.LATD3=1;
-     LATDbits.LATD2=1;
+     LATCbits.LATC0=1; //r  
+     LATCbits.LATC1=1; //g
+     LATCbits.LATC2=1; //b
+     LATCbits.LATC3=1;
+     LATDbits.LATD0=1;
+     LATDbits.LATD1=1;
+     LATCbits.LATC7=0; //r  
+     LATCbits.LATC6=0; //g
+     LATCbits.LATC5=0; //b
+     LATCbits.LATC4=0;
+     LATDbits.LATD3=0;
+     LATDbits.LATD2=0;
     red=0;
     green=0;
     blue=0;
@@ -243,8 +239,7 @@ void rgbstart()
         rgbshow(red,green,blue,red2,green2,blue2,5);
    
     }
-    
-    LATBbits.LATB4=0;
+     LATBbits.LATB4=0;
   //  __delay_ms(10);
     LATBbits.LATB4=1;
   //  __delay_ms(100);
@@ -367,12 +362,12 @@ void rgbstart()
     }
     
     while( blue2 >= 0 ){ //000(ex)
-        LATCbits.LATC0=0; //r  
-        LATCbits.LATC1=0; //g
-        LATCbits.LATC2=0; //b
-        LATCbits.LATC3=0;
-        LATDbits.LATD0=0;
-        LATDbits.LATD1=0;
+        LATCbits.LATC0=1; //r  
+        LATCbits.LATC1=1; //g
+        LATCbits.LATC2=1; //b
+        LATCbits.LATC3=1;
+        LATDbits.LATD0=1;
+        LATDbits.LATD1=1;
         blue2=blue2-10;
         rgbshow(red,green,blue,red2,green2,blue2,2);
 
@@ -415,6 +410,7 @@ void interrupt Hi()
 void main(void) {
     init();
     while(1) {
+       while(cc>0){ 
         wstart();
         int k = 10 , l = 255;
         while( k > 0 ) {
@@ -424,10 +420,9 @@ void main(void) {
             }
             k--;
         }
-        
-       // if(RB5){
-            //PORTBbits.RB0=1;
-        //    INTCONbits.INT0IF = 1;
-       // }
+        cc--;
+       }
+        rgbstart();
+        cc=20;
     } 
 }

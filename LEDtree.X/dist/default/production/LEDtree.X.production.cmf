@@ -11,11 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\knu\AppData\Local\Temp\sbeg.obj
-idloc IDLOC 0 200000 200000 8 1
-init CODE 0 E E 4 1
-reset_vec CODE 0 0 0 4 1
-config CONFIG 0 300000 300000 E 1
 $dist/default/production\LEDtree.X.production.obj
 cinit CODE 0 104A 104A 16 1
 intcode_body CODE 0 D98 D98 A6 1
@@ -33,6 +28,11 @@ cstackBANK0 BANK0 1 80 80 4 1
 temp COMRAM 1 4A 4A 1 1
 intcode CODE 0 8 8 6 1
 bssCOMRAM COMRAM 1 39 39 11 1
+$C:\Users\knu\AppData\Local\Temp\s16o.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 E E 4 1
+reset_vec CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -400,20 +400,20 @@ F7E text0 CODE >416:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 F8C text0 CODE >418:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 F90 text0 CODE >420:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 F92 text0 CODE >407:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-104A cinit CODE >389:C:\Users\knu\AppData\Local\Temp\sbeg.
-104A cinit CODE >391:C:\Users\knu\AppData\Local\Temp\sbeg.
-104A cinit CODE >394:C:\Users\knu\AppData\Local\Temp\sbeg.
-104A cinit CODE >428:C:\Users\knu\AppData\Local\Temp\sbeg.
-104E cinit CODE >429:C:\Users\knu\AppData\Local\Temp\sbeg.
-1050 cinit CODE >430:C:\Users\knu\AppData\Local\Temp\sbeg.
-1050 cinit CODE >431:C:\Users\knu\AppData\Local\Temp\sbeg.
-1052 cinit CODE >432:C:\Users\knu\AppData\Local\Temp\sbeg.
-1054 cinit CODE >433:C:\Users\knu\AppData\Local\Temp\sbeg.
-1056 cinit CODE >439:C:\Users\knu\AppData\Local\Temp\sbeg.
-1056 cinit CODE >441:C:\Users\knu\AppData\Local\Temp\sbeg.
-1058 cinit CODE >442:C:\Users\knu\AppData\Local\Temp\sbeg.
-105A cinit CODE >443:C:\Users\knu\AppData\Local\Temp\sbeg.
-105C cinit CODE >444:C:\Users\knu\AppData\Local\Temp\sbeg.
+104A cinit CODE >389:C:\Users\knu\AppData\Local\Temp\s16o.
+104A cinit CODE >391:C:\Users\knu\AppData\Local\Temp\s16o.
+104A cinit CODE >394:C:\Users\knu\AppData\Local\Temp\s16o.
+104A cinit CODE >428:C:\Users\knu\AppData\Local\Temp\s16o.
+104E cinit CODE >429:C:\Users\knu\AppData\Local\Temp\s16o.
+1050 cinit CODE >430:C:\Users\knu\AppData\Local\Temp\s16o.
+1050 cinit CODE >431:C:\Users\knu\AppData\Local\Temp\s16o.
+1052 cinit CODE >432:C:\Users\knu\AppData\Local\Temp\s16o.
+1054 cinit CODE >433:C:\Users\knu\AppData\Local\Temp\s16o.
+1056 cinit CODE >439:C:\Users\knu\AppData\Local\Temp\s16o.
+1056 cinit CODE >441:C:\Users\knu\AppData\Local\Temp\s16o.
+1058 cinit CODE >442:C:\Users\knu\AppData\Local\Temp\s16o.
+105A cinit CODE >443:C:\Users\knu\AppData\Local\Temp\s16o.
+105C cinit CODE >444:C:\Users\knu\AppData\Local\Temp\s16o.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -431,7 +431,7 @@ __Hspace_0 30000E 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __Hspace_1 84 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\LEDtree.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\knu\AppData\Local\Temp\sbeg.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\knu\AppData\Local\Temp\s16o.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\LEDtree.X.production.obj
 __end_of_rgbshow EDC 0 CODE 0 text7 dist/default/production\LEDtree.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
@@ -445,13 +445,13 @@ rgbshowone@rval 1 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.prod
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\LEDtree.X.production.obj
 _LATC F8B 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\sbeg.obj
+___sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\s16o.obj
 _blue 44 0 COMRAM 1 bssCOMRAM dist/default/production\LEDtree.X.production.obj
 _init EDC 0 CODE 0 text3 dist/default/production\LEDtree.X.production.obj
 _main F42 0 CODE 0 text0 dist/default/production\LEDtree.X.production.obj
 _red2 42 0 COMRAM 1 bssCOMRAM dist/default/production\LEDtree.X.production.obj
 btemp 4A 0 COMRAM 1 temp dist/default/production\LEDtree.X.production.obj
-start E 0 CODE 0 init C:\Users\knu\AppData\Local\Temp\sbeg.obj
+start E 0 CODE 0 init C:\Users\knu\AppData\Local\Temp\s16o.obj
 __size_of_init 0 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\LEDtree.X.production.obj
@@ -459,11 +459,11 @@ _rgbshowone A98 0 CODE 0 text9 dist/default/production\LEDtree.X.production.obj
 _rgbshowsix C4A 0 CODE 0 text8 dist/default/production\LEDtree.X.production.obj
 __Hpowerup E 0 CODE 0 powerup dist/default/production\LEDtree.X.production.obj
 _distance 39 0 COMRAM 1 bssCOMRAM dist/default/production\LEDtree.X.production.obj
-__accesstop 80 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\sbeg.obj
-intlevel0 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sbeg.obj
-intlevel1 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sbeg.obj
-intlevel2 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sbeg.obj
-intlevel3 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sbeg.obj
+__accesstop 80 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\s16o.obj
+intlevel0 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\s16o.obj
+intlevel1 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\s16o.obj
+intlevel2 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\s16o.obj
+intlevel3 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\s16o.obj
 rgbshow@bval 17 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.production.obj
 rgbshow@flag 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.production.obj
 rgbshow@gval 15 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.production.obj
@@ -477,8 +477,8 @@ rgbshowsix@i F 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.product
 __size_of_rgbstart 0 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\LEDtree.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\LEDtree.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\sbeg.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\sbeg.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\s16o.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\s16o.obj
 __end_of_rgbshowone C4A 0 CODE 0 text9 dist/default/production\LEDtree.X.production.obj
 __end_of_rgbshowsix D98 0 CODE 0 text8 dist/default/production\LEDtree.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\LEDtree.X.production.obj
@@ -528,7 +528,7 @@ rgbshowsix@rval 1 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.prod
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\LEDtree.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\LEDtree.X.production.obj
 rgbshow@i 21 0 COMRAM 1 cstackCOMRAM dist/default/production\LEDtree.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\knu\AppData\Local\Temp\sbeg.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\knu\AppData\Local\Temp\s16o.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\LEDtree.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\LEDtree.X.production.obj
 __end_of_zerorgb FDE 0 CODE 0 text6 dist/default/production\LEDtree.X.production.obj
@@ -612,8 +612,8 @@ _LATCbits F8B 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 _LATDbits F8C 0 ABS 0 - dist/default/production\LEDtree.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\LEDtree.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\LEDtree.X.production.obj
-stackhi 5FF 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\sbeg.obj
-stacklo 84 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\sbeg.obj
+stackhi 5FF 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\s16o.obj
+stacklo 84 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\s16o.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\LEDtree.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\LEDtree.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\LEDtree.X.production.obj
@@ -647,7 +647,7 @@ __ptext7 E3E 0 CODE 0 text7 dist/default/production\LEDtree.X.production.obj
 __ptext8 C4A 0 CODE 0 text8 dist/default/production\LEDtree.X.production.obj
 __ptext9 A98 0 CODE 0 text9 dist/default/production\LEDtree.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\LEDtree.X.production.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\knu\AppData\Local\Temp\sbeg.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\knu\AppData\Local\Temp\s16o.obj
 _zerorgb F94 0 CODE 0 text6 dist/default/production\LEDtree.X.production.obj
 __Lpowerup E 0 CODE 0 powerup dist/default/production\LEDtree.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\LEDtree.X.production.obj

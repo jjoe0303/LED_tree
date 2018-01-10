@@ -237,7 +237,7 @@ void rgbstart()
     LATBbits.LATB4=0;
   //  __delay_ms(10);
     LATBbits.LATB4=1;
-  //  __delay_ms(100);
+   // __delay_ms(10);
     LATBbits.LATB4=0;
   //  __delay_ms(1);
   

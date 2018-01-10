@@ -11,28 +11,28 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\knu\AppData\Local\Temp\sb7s.obj
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 E E 4 1
+reset_vec CODE 0 0 0 6 1
+config CONFIG 0 300000 300000 E 1
 $dist/default/debug\LEDtree.X.debug.obj
-cinit CODE 0 7AA 7AA 16 1
-intcode_body CODE 0 4F8 4F8 A6 1
-text0 CODE 0 6A2 6A2 52 1
-text1 CODE 0 73E 73E 3A 1
-text2 CODE 0 778 778 32 1
-text3 CODE 0 63C 63C 66 1
-text5 CODE 0 12 12 1E6 1
-text6 CODE 0 6F4 6F4 4A 1
-text7 CODE 0 59E 59E 9E 1
-text8 CODE 0 3AA 3AA 14E 1
-text9 CODE 0 1F8 1F8 1B2 1
+cinit CODE 0 104A 104A 16 1
+intcode_body CODE 0 D98 D98 A6 1
+text0 CODE 0 F42 F42 52 1
+text1 CODE 0 FDE FDE 3A 1
+text2 CODE 0 1018 1018 32 1
+text3 CODE 0 EDC EDC 66 1
+text5 CODE 0 12 12 A86 1
+text6 CODE 0 F94 F94 4A 1
+text7 CODE 0 E3E E3E 9E 1
+text8 CODE 0 C4A C4A 14E 1
+text9 CODE 0 A98 A98 1B2 1
 cstackCOMRAM COMRAM 1 1 1 38 1
 cstackBANK0 BANK0 1 80 80 4 1
 temp COMRAM 1 4A 4A 1 1
 intcode CODE 0 8 8 6 1
 bssCOMRAM COMRAM 1 39 39 11 1
-$C:\Users\knu\AppData\Local\Temp\salg.obj
-idloc IDLOC 0 200000 200000 8 1
-init CODE 0 E E 4 1
-reset_vec CODE 0 0 0 6 1
-config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -53,16 +53,16 @@ BANK3 300-3FF 1
 BANK4 400-4FF 1
 BANK5 500-5EE 1
 CONST 6-7 1
-CONST 7C0-7CFF 1
+CONST 1060-7CFF 1
 STACK 84-5EE 1
-SMALLCONST 7C0-7CFF 1
+SMALLCONST 1060-7CFF 1
 CODE 6-7 1
-CODE 7C0-7CFF 1
+CODE 1060-7CFF 1
 BIGRAM 4B-7F 1
 BIGRAM 84-5EE 1
 COMRAM 4B-7F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 7C0-7CFF 1
+MEDIUMCONST 1060-7CFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -79,133 +79,133 @@ MEDIUMCONST 7C0-7CFF 1
 $dist/default/debug\LEDtree.X.debug.obj
 8 intcode CODE >72:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 8 intcode CODE >393:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-1F8 text9 CODE >74:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-1F8 text9 CODE >75:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-200 text9 CODE >76:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-202 text9 CODE >77:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-204 text9 CODE >78:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-206 text9 CODE >79:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-208 text9 CODE >80:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-20A text9 CODE >81:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-20C text9 CODE >83:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-228 text9 CODE >84:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-238 text9 CODE >85:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-248 text9 CODE >86:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-258 text9 CODE >83:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-266 text9 CODE >88:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-268 text9 CODE >90:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-270 text9 CODE >91:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-272 text9 CODE >92:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-274 text9 CODE >93:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-276 text9 CODE >94:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-278 text9 CODE >95:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-27A text9 CODE >96:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-27C text9 CODE >98:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-298 text9 CODE >99:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2A8 text9 CODE >100:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2B8 text9 CODE >101:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2C8 text9 CODE >98:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2D6 text9 CODE >103:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2D8 text9 CODE >104:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2E2 text9 CODE >105:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2E4 text9 CODE >106:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2E6 text9 CODE >107:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2E8 text9 CODE >108:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2EA text9 CODE >109:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2EC text9 CODE >110:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-2EE text9 CODE >111:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-306 text9 CODE >112:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-316 text9 CODE >113:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-326 text9 CODE >114:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-336 text9 CODE >111:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-344 text9 CODE >118:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-34E text9 CODE >119:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-350 text9 CODE >120:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-352 text9 CODE >121:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-354 text9 CODE >122:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-356 text9 CODE >123:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-358 text9 CODE >124:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-35A text9 CODE >126:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-372 text9 CODE >127:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-382 text9 CODE >128:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-392 text9 CODE >129:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3A2 text9 CODE >126:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3A8 text9 CODE >132:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3AA text8 CODE >133:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3AA text8 CODE >135:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3B4 text8 CODE >136:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3B6 text8 CODE >137:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3B8 text8 CODE >138:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3BA text8 CODE >139:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3BC text8 CODE >140:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3BE text8 CODE >141:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3C0 text8 CODE >142:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3C2 text8 CODE >143:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3C4 text8 CODE >144:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3C6 text8 CODE >145:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3C8 text8 CODE >146:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3CA text8 CODE >147:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3CC text8 CODE >149:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3E8 text8 CODE >150:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-3F8 text8 CODE >151:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-408 text8 CODE >152:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-418 text8 CODE >153:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-428 text8 CODE >154:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-438 text8 CODE >155:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-448 text8 CODE >149:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-456 text8 CODE >159:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-460 text8 CODE >160:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-462 text8 CODE >161:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-464 text8 CODE >162:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-466 text8 CODE >163:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-468 text8 CODE >164:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-46A text8 CODE >165:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-46C text8 CODE >166:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-46E text8 CODE >167:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-470 text8 CODE >168:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-472 text8 CODE >169:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-474 text8 CODE >170:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-476 text8 CODE >171:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-478 text8 CODE >173:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-490 text8 CODE >174:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4A0 text8 CODE >175:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4B0 text8 CODE >176:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4C0 text8 CODE >177:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4D0 text8 CODE >178:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4E0 text8 CODE >179:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4F0 text8 CODE >173:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4F6 text8 CODE >182:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-59E text7 CODE >183:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-59E text7 CODE >185:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5A6 text7 CODE >186:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5B8 text7 CODE >187:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5B8 text7 CODE >188:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5DC text7 CODE >187:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5DC text7 CODE >189:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5EE text7 CODE >192:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-5EE text7 CODE >193:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-62A text7 CODE >192:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-62A text7 CODE >194:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6F4 text6 CODE >198:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6F4 text6 CODE >199:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6F6 text6 CODE >200:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6F8 text6 CODE >201:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6FA text6 CODE >202:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6FC text6 CODE >203:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6FE text6 CODE >204:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-700 text6 CODE >205:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-702 text6 CODE >206:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-704 text6 CODE >207:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-706 text6 CODE >208:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-708 text6 CODE >209:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-70A text6 CODE >210:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-70C text6 CODE >211:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-714 text6 CODE >212:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-71C text6 CODE >213:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-724 text6 CODE >214:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-72C text6 CODE >215:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-734 text6 CODE >216:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-73C text6 CODE >217:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A98 text9 CODE >74:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A98 text9 CODE >75:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AA0 text9 CODE >76:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AA2 text9 CODE >77:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AA4 text9 CODE >78:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AA6 text9 CODE >79:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AA8 text9 CODE >80:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AAA text9 CODE >81:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AAC text9 CODE >83:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AC8 text9 CODE >84:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AD8 text9 CODE >85:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AE8 text9 CODE >86:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+AF8 text9 CODE >83:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B06 text9 CODE >88:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B08 text9 CODE >90:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B10 text9 CODE >91:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B12 text9 CODE >92:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B14 text9 CODE >93:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B16 text9 CODE >94:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B18 text9 CODE >95:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B1A text9 CODE >96:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B1C text9 CODE >98:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B38 text9 CODE >99:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B48 text9 CODE >100:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B58 text9 CODE >101:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B68 text9 CODE >98:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B76 text9 CODE >103:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B78 text9 CODE >104:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B82 text9 CODE >105:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B84 text9 CODE >106:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B86 text9 CODE >107:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B88 text9 CODE >108:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B8A text9 CODE >109:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B8C text9 CODE >110:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+B8E text9 CODE >111:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BA6 text9 CODE >112:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BB6 text9 CODE >113:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BC6 text9 CODE >114:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BD6 text9 CODE >111:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BE4 text9 CODE >118:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BEE text9 CODE >119:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BF0 text9 CODE >120:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BF2 text9 CODE >121:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BF4 text9 CODE >122:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BF6 text9 CODE >123:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BF8 text9 CODE >124:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+BFA text9 CODE >126:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C12 text9 CODE >127:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C22 text9 CODE >128:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C32 text9 CODE >129:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C42 text9 CODE >126:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C48 text9 CODE >132:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C4A text8 CODE >133:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C4A text8 CODE >135:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C54 text8 CODE >136:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C56 text8 CODE >137:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C58 text8 CODE >138:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C5A text8 CODE >139:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C5C text8 CODE >140:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C5E text8 CODE >141:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C60 text8 CODE >142:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C62 text8 CODE >143:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C64 text8 CODE >144:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C66 text8 CODE >145:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C68 text8 CODE >146:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C6A text8 CODE >147:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C6C text8 CODE >149:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C88 text8 CODE >150:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+C98 text8 CODE >151:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+CA8 text8 CODE >152:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+CB8 text8 CODE >153:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+CC8 text8 CODE >154:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+CD8 text8 CODE >155:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+CE8 text8 CODE >149:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+CF6 text8 CODE >159:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D00 text8 CODE >160:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D02 text8 CODE >161:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D04 text8 CODE >162:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D06 text8 CODE >163:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D08 text8 CODE >164:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D0A text8 CODE >165:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D0C text8 CODE >166:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D0E text8 CODE >167:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D10 text8 CODE >168:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D12 text8 CODE >169:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D14 text8 CODE >170:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D16 text8 CODE >171:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D18 text8 CODE >173:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D30 text8 CODE >174:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D40 text8 CODE >175:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D50 text8 CODE >176:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D60 text8 CODE >177:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D70 text8 CODE >178:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D80 text8 CODE >179:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D90 text8 CODE >173:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D96 text8 CODE >182:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E3E text7 CODE >183:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E3E text7 CODE >185:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E46 text7 CODE >186:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E58 text7 CODE >187:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E58 text7 CODE >188:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E7C text7 CODE >187:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E7C text7 CODE >189:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E8E text7 CODE >192:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+E8E text7 CODE >193:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+ECA text7 CODE >192:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+ECA text7 CODE >194:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F94 text6 CODE >198:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F94 text6 CODE >199:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F96 text6 CODE >200:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F98 text6 CODE >201:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F9A text6 CODE >202:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F9C text6 CODE >203:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F9E text6 CODE >204:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FA0 text6 CODE >205:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FA2 text6 CODE >206:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FA4 text6 CODE >207:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FA6 text6 CODE >208:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FA8 text6 CODE >209:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FAA text6 CODE >210:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FAC text6 CODE >211:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FB4 text6 CODE >212:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FBC text6 CODE >213:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FC4 text6 CODE >214:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FCC text6 CODE >215:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FD4 text6 CODE >216:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FDC text6 CODE >217:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 12 text5 CODE >218:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 12 text5 CODE >220:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 14 text5 CODE >221:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
@@ -230,92 +230,195 @@ FE text5 CODE >233:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 1A6 text5 CODE >249:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 1E2 text5 CODE >244:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
 1E2 text5 CODE >251:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-1F2 text5 CODE >371:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-1F6 text5 CODE >372:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-4F8 intcode_body CODE >393:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-542 intcode_body CODE >395:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-546 intcode_body CODE >396:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-548 intcode_body CODE >397:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-54C intcode_body CODE >398:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-54E intcode_body CODE >399:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-550 intcode_body CODE >400:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-552 intcode_body CODE >401:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-552 intcode_body CODE >403:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-63C text3 CODE >40:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-63C text3 CODE >42:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-63E text3 CODE >43:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-640 text3 CODE >44:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-642 text3 CODE >46:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-646 text3 CODE >47:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-64A text3 CODE >48:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-64E text3 CODE >49:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-652 text3 CODE >51:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-654 text3 CODE >52:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-65C text3 CODE >53:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-664 text3 CODE >54:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-66C text3 CODE >55:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-674 text3 CODE >56:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-67C text3 CODE >57:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-684 text3 CODE >59:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-686 text3 CODE >60:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-688 text3 CODE >61:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-68A text3 CODE >62:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-68C text3 CODE >63:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-68E text3 CODE >64:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-690 text3 CODE >65:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-692 text3 CODE >67:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-694 text3 CODE >68:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-696 text3 CODE >69:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-698 text3 CODE >71:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6A0 text3 CODE >72:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-778 text2 CODE >374:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-778 text2 CODE >376:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-77A text2 CODE >377:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-792 text2 CODE >378:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-7A2 text2 CODE >377:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-7A8 text2 CODE >380:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-73E text1 CODE >382:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-73E text1 CODE >383:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-740 text1 CODE >384:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-744 text1 CODE >385:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-750 text1 CODE >383:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-750 text1 CODE >386:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-75C text1 CODE >387:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-75C text1 CODE >388:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-762 text1 CODE >389:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-76E text1 CODE >387:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-76E text1 CODE >390:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6A2 text0 CODE >405:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6A2 text0 CODE >406:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6A6 text0 CODE >407:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6A6 text0 CODE >408:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6AA text0 CODE >409:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6BA text0 CODE >410:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6BC text0 CODE >411:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6C2 text0 CODE >412:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6C4 text0 CODE >413:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6CA text0 CODE >412:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6CA text0 CODE >414:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6D8 text0 CODE >415:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6DE text0 CODE >410:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6DE text0 CODE >416:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6EC text0 CODE >418:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6F0 text0 CODE >420:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-6F2 text0 CODE >407:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
-7AA cinit CODE >389:C:\Users\knu\AppData\Local\Temp\salg.
-7AA cinit CODE >391:C:\Users\knu\AppData\Local\Temp\salg.
-7AA cinit CODE >394:C:\Users\knu\AppData\Local\Temp\salg.
-7AA cinit CODE >428:C:\Users\knu\AppData\Local\Temp\salg.
-7AE cinit CODE >429:C:\Users\knu\AppData\Local\Temp\salg.
-7B0 cinit CODE >430:C:\Users\knu\AppData\Local\Temp\salg.
-7B0 cinit CODE >431:C:\Users\knu\AppData\Local\Temp\salg.
-7B2 cinit CODE >432:C:\Users\knu\AppData\Local\Temp\salg.
-7B4 cinit CODE >433:C:\Users\knu\AppData\Local\Temp\salg.
-7B6 cinit CODE >439:C:\Users\knu\AppData\Local\Temp\salg.
-7B6 cinit CODE >441:C:\Users\knu\AppData\Local\Temp\salg.
-7B8 cinit CODE >442:C:\Users\knu\AppData\Local\Temp\salg.
-7BA cinit CODE >443:C:\Users\knu\AppData\Local\Temp\salg.
-7BC cinit CODE >444:C:\Users\knu\AppData\Local\Temp\salg.
+1F4 text5 CODE >253:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1F4 text5 CODE >254:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+200 text5 CODE >255:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+20C text5 CODE >256:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+248 text5 CODE >258:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+284 text5 CODE >253:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+284 text5 CODE >259:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+296 text5 CODE >261:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+296 text5 CODE >262:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+2A2 text5 CODE >263:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+2AE text5 CODE >264:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+2EA text5 CODE >266:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+326 text5 CODE >261:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+326 text5 CODE >267:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+338 text5 CODE >268:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+338 text5 CODE >270:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+344 text5 CODE >271:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+350 text5 CODE >272:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+38C text5 CODE >274:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+3C8 text5 CODE >268:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+3C8 text5 CODE >275:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+3CE text5 CODE >278:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+3CE text5 CODE >279:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+3DA text5 CODE >280:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+3E6 text5 CODE >281:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+422 text5 CODE >283:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+45E text5 CODE >278:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+45E text5 CODE >285:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+470 text5 CODE >287:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+470 text5 CODE >288:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+47C text5 CODE >289:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+488 text5 CODE >290:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+4C4 text5 CODE >292:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+500 text5 CODE >287:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+500 text5 CODE >293:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+512 text5 CODE >296:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+512 text5 CODE >297:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+51E text5 CODE >298:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+52A text5 CODE >299:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+566 text5 CODE >301:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+5A2 text5 CODE >296:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+5A2 text5 CODE >302:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+5B4 text5 CODE >304:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+5B4 text5 CODE >305:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+5C0 text5 CODE >306:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+5CC text5 CODE >307:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+608 text5 CODE >309:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+644 text5 CODE >304:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+644 text5 CODE >310:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+656 text5 CODE >312:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+656 text5 CODE >313:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+662 text5 CODE >314:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+66E text5 CODE >315:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+6AA text5 CODE >317:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+6E6 text5 CODE >312:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+6E6 text5 CODE >318:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+6F8 text5 CODE >319:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+6F8 text5 CODE >321:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+704 text5 CODE >322:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+710 text5 CODE >323:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+74C text5 CODE >325:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+788 text5 CODE >319:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+788 text5 CODE >326:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+78E text5 CODE >328:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+78E text5 CODE >329:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+79A text5 CODE >330:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+7A6 text5 CODE >331:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+7E2 text5 CODE >333:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+81E text5 CODE >328:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+81E text5 CODE >334:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+830 text5 CODE >335:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+830 text5 CODE >337:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+83C text5 CODE >338:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+848 text5 CODE >339:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+884 text5 CODE >341:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+8C0 text5 CODE >335:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+8C0 text5 CODE >342:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+8C6 text5 CODE >344:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+8C6 text5 CODE >345:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+8D2 text5 CODE >346:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+8DE text5 CODE >347:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+91A text5 CODE >349:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+956 text5 CODE >344:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+956 text5 CODE >350:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+968 text5 CODE >351:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+968 text5 CODE >352:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+974 text5 CODE >353:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+980 text5 CODE >354:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+9BC text5 CODE >356:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+9F8 text5 CODE >351:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+9F8 text5 CODE >357:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+9FE text5 CODE >359:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+9FE text5 CODE >360:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A00 text5 CODE >361:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A02 text5 CODE >362:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A04 text5 CODE >363:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A06 text5 CODE >364:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A08 text5 CODE >365:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A0A text5 CODE >366:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A16 text5 CODE >367:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A52 text5 CODE >369:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A8E text5 CODE >359:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A8E text5 CODE >370:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A92 text5 CODE >371:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+A96 text5 CODE >372:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+D98 intcode_body CODE >393:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DE2 intcode_body CODE >395:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DE6 intcode_body CODE >396:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DE8 intcode_body CODE >397:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DEC intcode_body CODE >398:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DEE intcode_body CODE >399:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DF0 intcode_body CODE >400:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DF2 intcode_body CODE >401:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+DF2 intcode_body CODE >403:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EDC text3 CODE >40:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EDC text3 CODE >42:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EDE text3 CODE >43:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EE0 text3 CODE >44:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EE2 text3 CODE >46:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EE6 text3 CODE >47:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EEA text3 CODE >48:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EEE text3 CODE >49:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EF2 text3 CODE >51:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EF4 text3 CODE >52:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+EFC text3 CODE >53:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F04 text3 CODE >54:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F0C text3 CODE >55:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F14 text3 CODE >56:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F1C text3 CODE >57:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F24 text3 CODE >59:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F26 text3 CODE >60:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F28 text3 CODE >61:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F2A text3 CODE >62:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F2C text3 CODE >63:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F2E text3 CODE >64:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F30 text3 CODE >65:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F32 text3 CODE >67:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F34 text3 CODE >68:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F36 text3 CODE >69:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F38 text3 CODE >71:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F40 text3 CODE >72:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1018 text2 CODE >374:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1018 text2 CODE >376:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+101A text2 CODE >377:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1032 text2 CODE >378:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1042 text2 CODE >377:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1048 text2 CODE >380:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FDE text1 CODE >382:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FDE text1 CODE >383:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FE0 text1 CODE >384:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FE4 text1 CODE >385:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FF0 text1 CODE >383:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FF0 text1 CODE >386:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FFC text1 CODE >387:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+FFC text1 CODE >388:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+1002 text1 CODE >389:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+100E text1 CODE >387:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+100E text1 CODE >390:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F42 text0 CODE >405:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F42 text0 CODE >406:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F46 text0 CODE >407:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F46 text0 CODE >408:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F4A text0 CODE >409:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F5A text0 CODE >410:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F5C text0 CODE >411:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F62 text0 CODE >412:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F64 text0 CODE >413:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F6A text0 CODE >412:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F6A text0 CODE >414:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F78 text0 CODE >415:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F7E text0 CODE >410:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F7E text0 CODE >416:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F8C text0 CODE >418:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F90 text0 CODE >420:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+F92 text0 CODE >407:C:\Users\knu\Desktop\LED_tree\LEDtree.X\mainproject.c
+104A cinit CODE >389:C:\Users\knu\AppData\Local\Temp\sb7s.
+104A cinit CODE >391:C:\Users\knu\AppData\Local\Temp\sb7s.
+104A cinit CODE >394:C:\Users\knu\AppData\Local\Temp\sb7s.
+104A cinit CODE >428:C:\Users\knu\AppData\Local\Temp\sb7s.
+104E cinit CODE >429:C:\Users\knu\AppData\Local\Temp\sb7s.
+1050 cinit CODE >430:C:\Users\knu\AppData\Local\Temp\sb7s.
+1050 cinit CODE >431:C:\Users\knu\AppData\Local\Temp\sb7s.
+1052 cinit CODE >432:C:\Users\knu\AppData\Local\Temp\sb7s.
+1054 cinit CODE >433:C:\Users\knu\AppData\Local\Temp\sb7s.
+1056 cinit CODE >439:C:\Users\knu\AppData\Local\Temp\sb7s.
+1056 cinit CODE >441:C:\Users\knu\AppData\Local\Temp\sb7s.
+1058 cinit CODE >442:C:\Users\knu\AppData\Local\Temp\sb7s.
+105A cinit CODE >443:C:\Users\knu\AppData\Local\Temp\sb7s.
+105C cinit CODE >444:C:\Users\knu\AppData\Local\Temp\sb7s.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -333,9 +436,9 @@ __Hspace_0 30000E 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hspace_1 84 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hspace_2 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\LEDtree.X.debug.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\knu\AppData\Local\Temp\salg.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\knu\AppData\Local\Temp\sb7s.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\LEDtree.X.debug.obj
-__end_of_rgbshow 63C 0 CODE 0 text7 dist/default/debug\LEDtree.X.debug.obj
+__end_of_rgbshow EDC 0 CODE 0 text7 dist/default/debug\LEDtree.X.debug.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _Hi 8 0 CODE 0 intcode dist/default/debug\LEDtree.X.debug.obj
 main@k 80 0 BANK0 1 cstackBANK0 dist/default/debug\LEDtree.X.debug.obj
@@ -347,25 +450,25 @@ rgbshowone@rval 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\LEDtree.X.debug.obj
 _LATC F8B 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _LATD F8C 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
-___sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\salg.obj
+___sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\sb7s.obj
 _blue 44 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
-_init 63C 0 CODE 0 text3 dist/default/debug\LEDtree.X.debug.obj
-_main 6A2 0 CODE 0 text0 dist/default/debug\LEDtree.X.debug.obj
+_init EDC 0 CODE 0 text3 dist/default/debug\LEDtree.X.debug.obj
+_main F42 0 CODE 0 text0 dist/default/debug\LEDtree.X.debug.obj
 _red2 42 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
 btemp 4A 0 COMRAM 1 temp dist/default/debug\LEDtree.X.debug.obj
-start E 0 CODE 0 init C:\Users\knu\AppData\Local\Temp\salg.obj
+start E 0 CODE 0 init C:\Users\knu\AppData\Local\Temp\sb7s.obj
 __size_of_init 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __size_of_main 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
-_rgbshowone 1F8 0 CODE 0 text9 dist/default/debug\LEDtree.X.debug.obj
-_rgbshowsix 3AA 0 CODE 0 text8 dist/default/debug\LEDtree.X.debug.obj
+_rgbshowone A98 0 CODE 0 text9 dist/default/debug\LEDtree.X.debug.obj
+_rgbshowsix C4A 0 CODE 0 text8 dist/default/debug\LEDtree.X.debug.obj
 __Hpowerup E 0 CODE 0 powerup dist/default/debug\LEDtree.X.debug.obj
 _distance 39 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
-__accesstop 80 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\salg.obj
-intlevel0 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\salg.obj
-intlevel1 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\salg.obj
-intlevel2 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\salg.obj
-intlevel3 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\salg.obj
+__accesstop 80 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\sb7s.obj
+intlevel0 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sb7s.obj
+intlevel1 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sb7s.obj
+intlevel2 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sb7s.obj
+intlevel3 0 0 CODE 0 text C:\Users\knu\AppData\Local\Temp\sb7s.obj
 rgbshow@bval 17 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 rgbshow@flag 1F 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 rgbshow@gval 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
@@ -379,10 +482,10 @@ rgbshowsix@i F 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 __size_of_rgbstart 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\LEDtree.X.debug.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\LEDtree.X.debug.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\salg.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\salg.obj
-__end_of_rgbshowone 3AA 0 CODE 0 text9 dist/default/debug\LEDtree.X.debug.obj
-__end_of_rgbshowsix 4F8 0 CODE 0 text8 dist/default/debug\LEDtree.X.debug.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\sb7s.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\knu\AppData\Local\Temp\sb7s.obj
+__end_of_rgbshowone C4A 0 CODE 0 text9 dist/default/debug\LEDtree.X.debug.obj
+__end_of_rgbshowsix D98 0 CODE 0 text8 dist/default/debug\LEDtree.X.debug.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\LEDtree.X.debug.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\LEDtree.X.debug.obj
@@ -391,15 +494,15 @@ __Hintcodelo E 0 CODE 0 intcodelo dist/default/debug\LEDtree.X.debug.obj
 _rgbstart 12 0 CODE 0 text5 dist/default/debug\LEDtree.X.debug.obj
 __size_of_wshow 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
-__end_of_rgbstart 1F8 0 CODE 0 text5 dist/default/debug\LEDtree.X.debug.obj
+__end_of_rgbstart A98 0 CODE 0 text5 dist/default/debug\LEDtree.X.debug.obj
 __Lintcodelo E 0 CODE 0 intcodelo dist/default/debug\LEDtree.X.debug.obj
-start_initialization 7AA 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
+start_initialization 104A 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\LEDtree.X.debug.obj
 _TRISBbits F93 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 ___rparam_used 1 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
-__end_of_Hi 59E 0 CODE 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
+__end_of_Hi E3E 0 CODE 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
 __pcstackBANK0 80 0 BANK0 1 cstackBANK0 dist/default/debug\LEDtree.X.debug.obj
-_rgbshow 59E 0 CODE 0 text7 dist/default/debug\LEDtree.X.debug.obj
+_rgbshow E3E 0 CODE 0 text7 dist/default/debug\LEDtree.X.debug.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/debug\LEDtree.X.debug.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/debug\LEDtree.X.debug.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/debug\LEDtree.X.debug.obj
@@ -430,10 +533,10 @@ rgbshowsix@rval 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\LEDtree.X.debug.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\LEDtree.X.debug.obj
 rgbshow@i 21 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\knu\AppData\Local\Temp\salg.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\knu\AppData\Local\Temp\sb7s.obj
 __Hcomram 0 0 ABS 0 comram dist/default/debug\LEDtree.X.debug.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/debug\LEDtree.X.debug.obj
-__end_of_zerorgb 73E 0 CODE 0 text6 dist/default/debug\LEDtree.X.debug.obj
+__end_of_zerorgb FDE 0 CODE 0 text6 dist/default/debug\LEDtree.X.debug.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/debug\LEDtree.X.debug.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/debug\LEDtree.X.debug.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/debug\LEDtree.X.debug.obj
@@ -442,7 +545,7 @@ __Lbank4 0 0 ABS 0 bank4 dist/default/debug\LEDtree.X.debug.obj
 __Lbank5 0 0 ABS 0 bank5 dist/default/debug\LEDtree.X.debug.obj
 __Lcinit 0 0 ABS 0 cinit dist/default/debug\LEDtree.X.debug.obj
 __Lconst 0 0 CONST 0 const dist/default/debug\LEDtree.X.debug.obj
-__end_of_wstart 778 0 CODE 0 text1 dist/default/debug\LEDtree.X.debug.obj
+__end_of_wstart 1018 0 CODE 0 text1 dist/default/debug\LEDtree.X.debug.obj
 __Lidata 0 0 CODE 0 idata dist/default/debug\LEDtree.X.debug.obj
 __Lidloc 200000 0 IDLOC 0 idloc dist/default/debug\LEDtree.X.debug.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/default/debug\LEDtree.X.debug.obj
@@ -496,7 +599,7 @@ __size_of_rgbshowone 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __size_of_rgbshowsix 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\LEDtree.X.debug.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\LEDtree.X.debug.obj
-int_func 4F8 0 CODE 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
+int_func D98 0 CODE 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _green2 40 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/debug\LEDtree.X.debug.obj
@@ -504,7 +607,7 @@ __Hramtop 600 0 RAM 0 ramtop dist/default/debug\LEDtree.X.debug.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\LEDtree.X.debug.obj
 __activetblptr 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/debug\LEDtree.X.debug.obj
-__pintcode_body 4F8 0 CODE 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
+__pintcode_body D98 0 CODE 0 intcode_body dist/default/debug\LEDtree.X.debug.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\LEDtree.X.debug.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\LEDtree.X.debug.obj
 __Lcomram 0 0 ABS 0 comram dist/default/debug\LEDtree.X.debug.obj
@@ -514,13 +617,13 @@ _LATCbits F8B 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _LATDbits F8C 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/debug\LEDtree.X.debug.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/debug\LEDtree.X.debug.obj
-stackhi 5EE 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\salg.obj
-stacklo 84 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\salg.obj
+stackhi 5EE 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\sb7s.obj
+stacklo 84 0 ABS 0 - C:\Users\knu\AppData\Local\Temp\sb7s.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/debug\LEDtree.X.debug.obj
 __Lintret 0 0 ABS 0 intret dist/default/debug\LEDtree.X.debug.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\LEDtree.X.debug.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
-_wstart 73E 0 CODE 0 text1 dist/default/debug\LEDtree.X.debug.obj
+_wstart FDE 0 CODE 0 text1 dist/default/debug\LEDtree.X.debug.obj
 __Lspace_0 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Lspace_1 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Lspace_2 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
@@ -531,26 +634,26 @@ rgbshowsix@bval2 B 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.ob
 rgbshowsix@gval2 9 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 rgbshowsix@i_541 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 rgbshowsix@rval2 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
-end_of_initialization 7B6 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
+end_of_initialization 1056 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\LEDtree.X.debug.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\LEDtree.X.debug.obj
 _RCONbits FD0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hreset_vec 6 0 CODE 0 reset_vec dist/default/debug\LEDtree.X.debug.obj
 __Lramtop 600 0 RAM 0 ramtop dist/default/debug\LEDtree.X.debug.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\LEDtree.X.debug.obj
-__pcinit 7AA 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
-__ptext0 6A2 0 CODE 0 text0 dist/default/debug\LEDtree.X.debug.obj
-__ptext1 73E 0 CODE 0 text1 dist/default/debug\LEDtree.X.debug.obj
-__ptext2 778 0 CODE 0 text2 dist/default/debug\LEDtree.X.debug.obj
-__ptext3 63C 0 CODE 0 text3 dist/default/debug\LEDtree.X.debug.obj
+__pcinit 104A 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
+__ptext0 F42 0 CODE 0 text0 dist/default/debug\LEDtree.X.debug.obj
+__ptext1 FDE 0 CODE 0 text1 dist/default/debug\LEDtree.X.debug.obj
+__ptext2 1018 0 CODE 0 text2 dist/default/debug\LEDtree.X.debug.obj
+__ptext3 EDC 0 CODE 0 text3 dist/default/debug\LEDtree.X.debug.obj
 __ptext5 12 0 CODE 0 text5 dist/default/debug\LEDtree.X.debug.obj
-__ptext6 6F4 0 CODE 0 text6 dist/default/debug\LEDtree.X.debug.obj
-__ptext7 59E 0 CODE 0 text7 dist/default/debug\LEDtree.X.debug.obj
-__ptext8 3AA 0 CODE 0 text8 dist/default/debug\LEDtree.X.debug.obj
-__ptext9 1F8 0 CODE 0 text9 dist/default/debug\LEDtree.X.debug.obj
+__ptext6 F94 0 CODE 0 text6 dist/default/debug\LEDtree.X.debug.obj
+__ptext7 E3E 0 CODE 0 text7 dist/default/debug\LEDtree.X.debug.obj
+__ptext8 C4A 0 CODE 0 text8 dist/default/debug\LEDtree.X.debug.obj
+__ptext9 A98 0 CODE 0 text9 dist/default/debug\LEDtree.X.debug.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\LEDtree.X.debug.obj
-__ramtop 600 0 RAM 0 ramtop C:\Users\knu\AppData\Local\Temp\salg.obj
-_zerorgb 6F4 0 CODE 0 text6 dist/default/debug\LEDtree.X.debug.obj
+__ramtop 600 0 RAM 0 ramtop C:\Users\knu\AppData\Local\Temp\sb7s.obj
+_zerorgb F94 0 CODE 0 text6 dist/default/debug\LEDtree.X.debug.obj
 __Lpowerup E 0 CODE 0 powerup dist/default/debug\LEDtree.X.debug.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\LEDtree.X.debug.obj
 __size_of_wstart 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
@@ -561,7 +664,7 @@ __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\LEDtree.X.debug.obj
 ___param_bank 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\LEDtree.X.debug.obj
-__end_of__initialization 7B6 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
+__end_of__initialization 1056 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\LEDtree.X.debug.obj
 __size_of_rgbshow 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\LEDtree.X.debug.obj
@@ -569,12 +672,12 @@ wshow@i 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 wshow@wval 35 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\LEDtree.X.debug.obj
-__end_of_init 6A2 0 CODE 0 text3 dist/default/debug\LEDtree.X.debug.obj
-__end_of_main 6F4 0 CODE 0 text0 dist/default/debug\LEDtree.X.debug.obj
+__end_of_init F42 0 CODE 0 text3 dist/default/debug\LEDtree.X.debug.obj
+__end_of_main F94 0 CODE 0 text0 dist/default/debug\LEDtree.X.debug.obj
 __pintcode 8 0 CODE 0 intcode dist/default/debug\LEDtree.X.debug.obj
 _TRISC F94 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _TRISD F95 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
-__end_of_wshow 7AA 0 CODE 0 text2 dist/default/debug\LEDtree.X.debug.obj
+__end_of_wshow 104A 0 CODE 0 text2 dist/default/debug\LEDtree.X.debug.obj
 __HRAM 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 __Hbss 0 0 RAM 1 bss dist/default/debug\LEDtree.X.debug.obj
 __Hram 0 0 ABS 0 ram dist/default/debug\LEDtree.X.debug.obj
@@ -587,8 +690,8 @@ _blue2 3E 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
 _green 46 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\LEDtree.X.debug.obj
 _white 3C 0 COMRAM 1 bssCOMRAM dist/default/debug\LEDtree.X.debug.obj
-_wshow 778 0 CODE 0 text2 dist/default/debug\LEDtree.X.debug.obj
-__initialization 7AA 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
+_wshow 1018 0 CODE 0 text2 dist/default/debug\LEDtree.X.debug.obj
+__initialization 104A 0 CODE 0 cinit dist/default/debug\LEDtree.X.debug.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\LEDtree.X.debug.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/debug\LEDtree.X.debug.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/debug\LEDtree.X.debug.obj
@@ -622,5 +725,5 @@ idloc 0 200000 200000 8 1
 cstackCOMRAM 1 1 1 4A 1
 cstackBANK0 1 80 80 4 1
 reset_vec 0 0 0 6 1
-intcode 0 8 8 7B8 1
+intcode 0 8 8 1058 1
 config 0 300000 300000 E 1

@@ -3838,6 +3838,357 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ <= _green -> 70 `i 354  ]
 [e :U 355 ]
 [; ;mainproject.c: 251: }
+[; ;mainproject.c: 253: while( green <= 140 ){
+"253
+[e $U 356  ]
+[e :U 357 ]
+{
+[; ;mainproject.c: 254: green=green+10;
+"254
+[e = _green + _green -> 10 `i ]
+[; ;mainproject.c: 255: green2=green2+10;
+"255
+[e = _green2 + _green2 -> 10 `i ]
+[; ;mainproject.c: 256: rgbshow(red,green,blue,red2,green2,blue2,4);
+"256
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 258: rgbshow(red,green,blue,red2,green2,blue2,5);
+"258
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"259
+}
+[e :U 356 ]
+"253
+[e $ <= _green -> 140 `i 357  ]
+[e :U 358 ]
+[; ;mainproject.c: 259: }
+[; ;mainproject.c: 261: while(red>=70){
+"261
+[e $U 359  ]
+[e :U 360 ]
+{
+[; ;mainproject.c: 262: red=red-10;
+"262
+[e = _red - _red -> 10 `i ]
+[; ;mainproject.c: 263: green2=green2+10;
+"263
+[e = _green2 + _green2 -> 10 `i ]
+[; ;mainproject.c: 264: rgbshow(red,green,blue,red2,green2,blue2,4);
+"264
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 266: rgbshow(red,green,blue,red2,green2,blue2,5);
+"266
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"267
+}
+[e :U 359 ]
+"261
+[e $ >= _red -> 70 `i 360  ]
+[e :U 361 ]
+[; ;mainproject.c: 267: }
+[; ;mainproject.c: 268: while( red>= 0 ){
+"268
+[e $U 362  ]
+[e :U 363 ]
+{
+[; ;mainproject.c: 270: red=red-10;
+"270
+[e = _red - _red -> 10 `i ]
+[; ;mainproject.c: 271: red2=red2-10;
+"271
+[e = _red2 - _red2 -> 10 `i ]
+[; ;mainproject.c: 272: rgbshow(red,green,blue,red2,green2,blue2,4);
+"272
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 274: rgbshow(red,green,blue,red2,green2,blue2,5);
+"274
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"275
+}
+[e :U 362 ]
+"268
+[e $ >= _red -> 0 `i 363  ]
+[e :U 364 ]
+[; ;mainproject.c: 275: }
+[; ;mainproject.c: 278: while( blue <= 70 ){
+"278
+[e $U 365  ]
+[e :U 366 ]
+{
+[; ;mainproject.c: 279: blue=blue+10;
+"279
+[e = _blue + _blue -> 10 `i ]
+[; ;mainproject.c: 280: red2=red2-10;
+"280
+[e = _red2 - _red2 -> 10 `i ]
+[; ;mainproject.c: 281: rgbshow(red,green,blue,red2,green2,blue2,4);
+"281
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 283: rgbshow(red,green,blue,red2,green2,blue2,5);
+"283
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"285
+}
+[e :U 365 ]
+"278
+[e $ <= _blue -> 70 `i 366  ]
+[e :U 367 ]
+[; ;mainproject.c: 285: }
+[; ;mainproject.c: 287: while( blue <= 140 ){
+"287
+[e $U 368  ]
+[e :U 369 ]
+{
+[; ;mainproject.c: 288: blue=blue+10;
+"288
+[e = _blue + _blue -> 10 `i ]
+[; ;mainproject.c: 289: blue2=blue2+10;
+"289
+[e = _blue2 + _blue2 -> 10 `i ]
+[; ;mainproject.c: 290: rgbshow(red,green,blue,red2,green2,blue2,4);
+"290
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 292: rgbshow(red,green,blue,red2,green2,blue2,5);
+"292
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"293
+}
+[e :U 368 ]
+"287
+[e $ <= _blue -> 140 `i 369  ]
+[e :U 370 ]
+[; ;mainproject.c: 293: }
+[; ;mainproject.c: 296: while( red <= 70 ){
+"296
+[e $U 371  ]
+[e :U 372 ]
+{
+[; ;mainproject.c: 297: red=red+10;
+"297
+[e = _red + _red -> 10 `i ]
+[; ;mainproject.c: 298: blue2=blue2+10;
+"298
+[e = _blue2 + _blue2 -> 10 `i ]
+[; ;mainproject.c: 299: rgbshow(red,green,blue,red2,green2,blue2,4);
+"299
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 301: rgbshow(red,green,blue,red2,green2,blue2,5);
+"301
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"302
+}
+[e :U 371 ]
+"296
+[e $ <= _red -> 70 `i 372  ]
+[e :U 373 ]
+[; ;mainproject.c: 302: }
+[; ;mainproject.c: 304: while( red <= 140 ){
+"304
+[e $U 374  ]
+[e :U 375 ]
+{
+[; ;mainproject.c: 305: red=red+10;
+"305
+[e = _red + _red -> 10 `i ]
+[; ;mainproject.c: 306: red2=red2+10;
+"306
+[e = _red2 + _red2 -> 10 `i ]
+[; ;mainproject.c: 307: rgbshow(red,green,blue,red2,green2,blue2,4);
+"307
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 309: rgbshow(red,green,blue,red2,green2,blue2,5);
+"309
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"310
+}
+[e :U 374 ]
+"304
+[e $ <= _red -> 140 `i 375  ]
+[e :U 376 ]
+[; ;mainproject.c: 310: }
+[; ;mainproject.c: 312: while(green>=70){
+"312
+[e $U 377  ]
+[e :U 378 ]
+{
+[; ;mainproject.c: 313: green=green-10;
+"313
+[e = _green - _green -> 10 `i ]
+[; ;mainproject.c: 314: red2=red2+10;
+"314
+[e = _red2 + _red2 -> 10 `i ]
+[; ;mainproject.c: 315: rgbshow(red,green,blue,red2,green2,blue2,4);
+"315
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 317: rgbshow(red,green,blue,red2,green2,blue2,5);
+"317
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"318
+}
+[e :U 377 ]
+"312
+[e $ >= _green -> 70 `i 378  ]
+[e :U 379 ]
+[; ;mainproject.c: 318: }
+[; ;mainproject.c: 319: while(green>= 0 ){
+"319
+[e $U 380  ]
+[e :U 381 ]
+{
+[; ;mainproject.c: 321: green=green-10;
+"321
+[e = _green - _green -> 10 `i ]
+[; ;mainproject.c: 322: green2=green2-10;
+"322
+[e = _green2 - _green2 -> 10 `i ]
+[; ;mainproject.c: 323: rgbshow(red,green,blue,red2,green2,blue2,4);
+"323
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 325: rgbshow(red,green,blue,red2,green2,blue2,5);
+"325
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"326
+}
+[e :U 380 ]
+"319
+[e $ >= _green -> 0 `i 381  ]
+[e :U 382 ]
+[; ;mainproject.c: 326: }
+[; ;mainproject.c: 328: while(red>=70){
+"328
+[e $U 383  ]
+[e :U 384 ]
+{
+[; ;mainproject.c: 329: red=red-10;
+"329
+[e = _red - _red -> 10 `i ]
+[; ;mainproject.c: 330: green2=green2-10;
+"330
+[e = _green2 - _green2 -> 10 `i ]
+[; ;mainproject.c: 331: rgbshow(red,green,blue,red2,green2,blue2,4);
+"331
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 333: rgbshow(red,green,blue,red2,green2,blue2,5);
+"333
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"334
+}
+[e :U 383 ]
+"328
+[e $ >= _red -> 70 `i 384  ]
+[e :U 385 ]
+[; ;mainproject.c: 334: }
+[; ;mainproject.c: 335: while( red>= 0 ){
+"335
+[e $U 386  ]
+[e :U 387 ]
+{
+[; ;mainproject.c: 337: red=red-10;
+"337
+[e = _red - _red -> 10 `i ]
+[; ;mainproject.c: 338: red2=red2-10;
+"338
+[e = _red2 - _red2 -> 10 `i ]
+[; ;mainproject.c: 339: rgbshow(red,green,blue,red2,green2,blue2,4);
+"339
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 341: rgbshow(red,green,blue,red2,green2,blue2,5);
+"341
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"342
+}
+[e :U 386 ]
+"335
+[e $ >= _red -> 0 `i 387  ]
+[e :U 388 ]
+[; ;mainproject.c: 342: }
+[; ;mainproject.c: 344: while(blue>=70){
+"344
+[e $U 389  ]
+[e :U 390 ]
+{
+[; ;mainproject.c: 345: blue=blue-10;
+"345
+[e = _blue - _blue -> 10 `i ]
+[; ;mainproject.c: 346: red2=red2-10;
+"346
+[e = _red2 - _red2 -> 10 `i ]
+[; ;mainproject.c: 347: rgbshow(red,green,blue,red2,green2,blue2,4);
+"347
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 349: rgbshow(red,green,blue,red2,green2,blue2,5);
+"349
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"350
+}
+[e :U 389 ]
+"344
+[e $ >= _blue -> 70 `i 390  ]
+[e :U 391 ]
+[; ;mainproject.c: 350: }
+[; ;mainproject.c: 351: while( blue>= 0 ){
+"351
+[e $U 392  ]
+[e :U 393 ]
+{
+[; ;mainproject.c: 352: blue=blue-10;
+"352
+[e = _blue - _blue -> 10 `i ]
+[; ;mainproject.c: 353: blue2=blue2-10;
+"353
+[e = _blue2 - _blue2 -> 10 `i ]
+[; ;mainproject.c: 354: rgbshow(red,green,blue,red2,green2,blue2,4);
+"354
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 4 `i ]
+[; ;mainproject.c: 356: rgbshow(red,green,blue,red2,green2,blue2,5);
+"356
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 5 `i ]
+"357
+}
+[e :U 392 ]
+"351
+[e $ >= _blue -> 0 `i 393  ]
+[e :U 394 ]
+[; ;mainproject.c: 357: }
+[; ;mainproject.c: 359: while( blue2 >= 0 ){
+"359
+[e $U 395  ]
+[e :U 396 ]
+{
+[; ;mainproject.c: 360: LATCbits.LATC0=0;
+"360
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+[; ;mainproject.c: 361: LATCbits.LATC1=0;
+"361
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+[; ;mainproject.c: 362: LATCbits.LATC2=0;
+"362
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+[; ;mainproject.c: 363: LATCbits.LATC3=0;
+"363
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+[; ;mainproject.c: 364: LATDbits.LATD0=0;
+"364
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+[; ;mainproject.c: 365: LATDbits.LATD1=0;
+"365
+[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
+[; ;mainproject.c: 366: blue2=blue2-10;
+"366
+[e = _blue2 - _blue2 -> 10 `i ]
+[; ;mainproject.c: 367: rgbshow(red,green,blue,red2,green2,blue2,2);
+"367
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 2 `i ]
+[; ;mainproject.c: 369: rgbshow(red,green,blue,red2,green2,blue2,3);
+"369
+[e ( _rgbshow (4 , , , , , , _red _green _blue _red2 _green2 _blue2 -> 3 `i ]
+"370
+}
+[e :U 395 ]
+"359
+[e $ >= _blue2 -> 0 `i 396  ]
+[e :U 397 ]
+[; ;mainproject.c: 370: }
 [; ;mainproject.c: 371: zerorgb();
 "371
 [e ( _zerorgb ..  ]
@@ -3864,27 +4215,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 200 `i 357  ]
-[e $U 358  ]
-[e :U 357 ]
+[e $ < _i -> 200 `i 399  ]
+[e $U 400  ]
+[e :U 399 ]
 {
 [; ;mainproject.c: 378: if((wval--)==0) LATDbits.LATD4=0;
 "378
-[e $ ! == -- _wval -> 1 `i -> 0 `i 360  ]
+[e $ ! == -- _wval -> 1 `i -> 0 `i 402  ]
 [e = . . _LATDbits 0 4 -> -> 0 `i `uc ]
-[e :U 360 ]
+[e :U 402 ]
 "379
 }
 "377
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 200 `i 357  ]
-[e :U 358 ]
+[e $ < _i -> 200 `i 399  ]
+[e :U 400 ]
 "379
 }
 [; ;mainproject.c: 379: }
 [; ;mainproject.c: 380: }
 "380
-[e :UE 356 ]
+[e :UE 398 ]
 }
 "382
 [v _wstart `(v ~T0 @X0 1 ef ]
@@ -3894,8 +4245,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;mainproject.c: 383: while(white!=200){
 "383
-[e $U 362  ]
-[e :U 363 ]
+[e $U 404  ]
+[e :U 405 ]
 {
 [; ;mainproject.c: 384: white++;
 "384
@@ -3905,15 +4256,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _wshow (1 _white ]
 "386
 }
-[e :U 362 ]
+[e :U 404 ]
 "383
-[e $ != _white -> 200 `i 363  ]
-[e :U 364 ]
+[e $ != _white -> 200 `i 405  ]
+[e :U 406 ]
 [; ;mainproject.c: 386: }
 [; ;mainproject.c: 387: while(white!=0){
 "387
-[e $U 365  ]
-[e :U 366 ]
+[e $U 407  ]
+[e :U 408 ]
 {
 [; ;mainproject.c: 388: white--;
 "388
@@ -3923,14 +4274,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _wshow (1 _white ]
 "390
 }
-[e :U 365 ]
+[e :U 407 ]
 "387
-[e $ != _white -> 0 `i 366  ]
-[e :U 367 ]
+[e $ != _white -> 0 `i 408  ]
+[e :U 409 ]
 [; ;mainproject.c: 390: }
 [; ;mainproject.c: 391: }
 "391
-[e :UE 361 ]
+[e :UE 403 ]
 }
 [v $root$_Hi `(v ~T0 @X0 0 e ]
 [v F3286 `(v ~T0 @X0 1 tf ]
@@ -3944,7 +4295,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;mainproject.c: 395: if(INTCONbits.INT0IF == 1) {
 "395
-[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 369  ]
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 411  ]
 {
 [; ;mainproject.c: 396: LATDbits.LATD4=0;
 "396
@@ -3963,11 +4314,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "401
 }
-[e :U 369 ]
+[e :U 411 ]
 [; ;mainproject.c: 401: }
 [; ;mainproject.c: 403: }
 "403
-[e :UE 368 ]
+[e :UE 410 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "405
@@ -3981,7 +4332,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e ( _init ..  ]
 [; ;mainproject.c: 407: while(1) {
 "407
-[e :U 372 ]
+[e :U 414 ]
 {
 [; ;mainproject.c: 408: wstart();
 "408
@@ -3994,56 +4345,56 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _l -> 255 `i ]
 [; ;mainproject.c: 410: while( k > 0 ) {
 "410
-[e $U 374  ]
-[e :U 375 ]
+[e $U 416  ]
+[e :U 417 ]
 {
 [; ;mainproject.c: 411: l = 255;
 "411
 [e = _l -> 255 `i ]
 [; ;mainproject.c: 412: while( l > 0) {
 "412
-[e $U 377  ]
-[e :U 378 ]
+[e $U 419  ]
+[e :U 420 ]
 {
 [; ;mainproject.c: 413: l--;
 "413
 [e -- _l -> 1 `i ]
 "414
 }
-[e :U 377 ]
+[e :U 419 ]
 "412
-[e $ > _l -> 0 `i 378  ]
-[e :U 379 ]
+[e $ > _l -> 0 `i 420  ]
+[e :U 421 ]
 [; ;mainproject.c: 414: }
 [; ;mainproject.c: 415: k--;
 "415
 [e -- _k -> 1 `i ]
 "416
 }
-[e :U 374 ]
+[e :U 416 ]
 "410
-[e $ > _k -> 0 `i 375  ]
-[e :U 376 ]
+[e $ > _k -> 0 `i 417  ]
+[e :U 418 ]
 [; ;mainproject.c: 416: }
 [; ;mainproject.c: 418: if(RB5){
 "418
-[e $ ! _RB5 380  ]
+[e $ ! _RB5 422  ]
 {
 [; ;mainproject.c: 420: INTCONbits.INT0IF = 1;
 "420
 [e = . . _INTCONbits 0 1 -> -> 1 `i `uc ]
 "421
 }
-[e :U 380 ]
+[e :U 422 ]
 "422
 }
-[e :U 371 ]
+[e :U 413 ]
 "407
-[e $U 372  ]
-[e :U 373 ]
+[e $U 414  ]
+[e :U 415 ]
 [; ;mainproject.c: 421: }
 [; ;mainproject.c: 422: }
 [; ;mainproject.c: 423: }
 "423
-[e :UE 370 ]
+[e :UE 412 ]
 }

@@ -4007,6 +4007,7 @@ int white;
 
 
 double distance;
+int cc;
 
 void init()
 {
@@ -4040,6 +4041,7 @@ TRISBbits.TRISB5=1;
 LATBbits.LATB5=0;
 
 white=0;
+cc=10;
 }
 
 void rgbshowone(int rval,int gval ,int bval,int flag){
@@ -4204,10 +4206,12 @@ rgbshow(red,green,blue,red2,green2,blue2,4);
 rgbshow(red,green,blue,red2,green2,blue2,5);
 
 }
-LATBbits.LATB4=1;
-_delay((unsigned long)((1)*(8000000/4000.0)));
 LATBbits.LATB4=0;
-_delay((unsigned long)((1)*(8000000/4000.0)));
+
+LATBbits.LATB4=1;
+
+LATBbits.LATB4=0;
+
 
 while( green <= 70 ){
 green=green+10;
@@ -4373,6 +4377,7 @@ INTCONbits.INT0IF = 0;
 void main(void) {
 init();
 while(1) {
+while(cc>0){
 wstart();
 int k = 10 , l = 255;
 while( k > 0 ) {
@@ -4382,10 +4387,9 @@ l--;
 }
 k--;
 }
-
-if(RB5){
-
-INTCONbits.INT0IF = 1;
+cc--;
 }
+rgbstart();
+cc=30;
 }
 }
